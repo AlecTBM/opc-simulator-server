@@ -31,9 +31,12 @@ export default class ServerDeviceObject {
         }
     }
 
-    private registerDeviceFolderNode(owner: UAFolder, folder: DeviceFolder) {
-        return this.namespace.addFolder(owner, { browseName: folder.name });
-    }
+	private registerDeviceFolderNode(owner: UAFolder, folder: DeviceFolder) {
+		return this.namespace.addFolder(owner, {
+			nodeId: folder.id,
+			browseName: folder.name
+		});
+	}
 
     private registerDeviceVariableNode(owner: UAFolder, node: DeviceNode) {
         let _variableValue = node.value;

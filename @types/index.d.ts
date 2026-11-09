@@ -3,7 +3,7 @@ import { DataType } from 'node-opcua';
 export interface DeviceFolder {
     name: string;
     id: string;
-    items: DeviceFolder[] | DeviceNode[];
+    items: (DeviceFolder | DeviceNode)[];
 }
 
 export interface DeviceNode {
