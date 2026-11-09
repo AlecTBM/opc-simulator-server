@@ -1,16 +1,10 @@
-version: '3.8'
 services:
-    app:
-        build:
-            dockerfile: dockerfiles/Dev.Dockerfile
-        volumes:
-            - ./:/app
-        ports:
-            - '4840:4840'
-    # app_deploy:
-    #     build:
-    #         dockerfile: dockerfiles/Dev.Dockerfile
-    #     volumes:
-    #         - ./data:/app/data
-    #     ports:
-    #         - '4840:4840'
+  app:
+    build:
+      context: .
+      dockerfile: dockerfiles/Dev.Dockerfile
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    ports:
+      - "4840:4840"
