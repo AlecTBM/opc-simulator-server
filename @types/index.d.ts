@@ -41,6 +41,7 @@ export interface DeviceNode {
             max: number;
             targetValue: SimulationValue;
             threshold: number;
+            duration: number;
             ends?: boolean;
         };
     };

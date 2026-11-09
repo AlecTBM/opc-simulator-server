@@ -108,9 +108,10 @@
             "max": { "type": "number" },
             "ends": { "type": "boolean" },
             "targetValue": { "$ref": "#/$defs/value" },
-            "threshold": { "type": "number", "minimum": 0, "maximum": 1 }
+            "threshold": { "type": "number", "minimum": 0, "maximum": 1 },
+            "duration": { "type": "number", "exclusiveMinimum": 0 }
           },
-          "required": ["min", "max", "targetValue", "threshold"],
+          "required": ["min", "max", "targetValue", "threshold", "duration"],
           "additionalProperties": false
         }
       },

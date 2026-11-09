@@ -153,66 +153,52 @@ export default class Simulator {
   }
 
   private anomaly() {
-    const anomalyDetectionInterval = 10000;
-    let anomalyInterval: ReturnType<typeof setInterval>;
-    let isActive = true;
+    const simulation = this.node.simulation;
+    const config = simulation?.anomaly;
+    if (!simulation || !config) return;
 
-    const runAnomaly = () => {
-      if (!this.conditionsSatisfied()) return;
-      if (this.t > 3200) this.t = 1;
+    const normalValue = this.node.value;
+    let anomalyActive = false;
+    let anomalyStartedAt = 0;
+    let elapsed = 0;
 
-      const config = this.node.simulation?.anomaly;
-      if (!config) return;
-
-      const belowMinTime = this.t <= config.min;
-      const reachedMaxTime = this.t >= config.max;
-      const betweenMinAndMax = !belowMinTime && !reachedMaxTime;
-
-      const increaseTimePassed = () => {
-        Logger.debug(`[Node ${this.node.id}]: Time passed: ${this.t} / ${config.max}`);
-        this.t++;
-      };
-
-      const setAnomalyValue = () => {
-        this.node.value = config.targetValue;
-        Logger.debug(`[Node ${this.node.id}]: Conditions for anomaly met. Set node value to ${this.node.value}`);
-        this.t = 0;
-      };
-
-      const stopAnomalySimulation = () => {
-        Logger.debug(`[Node ${this.node.id}]: Already set to anomaly value: ${this.node.value}`);
-        isActive = false;
-        clearInterval(anomalyInterval);
-      };
-
-      if (this.node.value === config.targetValue) {
-        stopAnomalySimulation();
+    setInterval(() => {
+      if (!this.conditionsSatisfied()) {
         return;
       }
 
-      if (betweenMinAndMax) {
-        const relativeTimePassed = this.t / config.max;
-        const chanceToTrigger = Math.random() * (Math.random() - relativeTimePassed) + relativeTimePassed;
-        Logger.debug(`[Node ${this.node.id}]: Chance to trigger anomaly: ${chanceToTrigger}`);
-        if (chanceToTrigger > (config.threshold || 0.85)) setAnomalyValue();
-        else increaseTimePassed();
-      } else if (belowMinTime) {
-        increaseTimePassed();
-      } else if (reachedMaxTime) {
-        setAnomalyValue();
+      if (anomalyActive) {
+        const activeSeconds = (Date.now() - anomalyStartedAt) / 1000;
+        if (activeSeconds >= config.duration) {
+          this.node.value = normalValue;
+          anomalyActive = false;
+          elapsed = 0;
+          Logger.debug(
+            `[Node ${this.node.id}]: Anomaly ended after ${config.duration}s. Restored value to ${normalValue}`
+          );
+        }
+        return;
       }
-    };
 
-    anomalyInterval = setInterval(runAnomaly, (this.node.simulation?.interval || 1) * 1000);
+      elapsed += simulation.interval;
 
-    setInterval(() => {
-      if (!isActive) {
-        Logger.debug(`[Node ${this.node.id}]: Checking if anomaly should be triggered for node with id: "${this.node.id}"`);
-        isActive = true;
-        clearInterval(anomalyInterval);
-        anomalyInterval = setInterval(runAnomaly, (this.node.simulation?.interval || 1) * 1000);
+      if (elapsed < config.min) {
+        return;
       }
-    }, anomalyDetectionInterval);
+
+      const reachedMaxTime = elapsed >= config.max;
+      const progress = Math.min(1, (elapsed - config.min) / Math.max(1, config.max - config.min));
+      const shouldTrigger = reachedMaxTime || Math.random() + progress > 1 + config.threshold;
+
+      if (shouldTrigger) {
+        this.node.value = config.targetValue;
+        anomalyActive = true;
+        anomalyStartedAt = Date.now();
+        Logger.debug(
+          `[Node ${this.node.id}]: Anomaly triggered. Set value to ${config.targetValue} for ${config.duration}s`
+        );
+      }
+    }, simulation.interval * 1000);
   }
 
   private getNodeValue(nodeNs: string): SimulationValue | undefined {
