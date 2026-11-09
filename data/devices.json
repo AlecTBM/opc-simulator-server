@@ -4,10 +4,10 @@
     "items": [
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / RawMaterialTank01",
-        "id": "ns=1;b=A0000003",
+        "id": "ns=0;b=40010RawMaterialTan",
         "items": [
           {
-            "id": "ns=1;b=A0000004",
+            "id": "ns=1;b=40011LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -23,7 +23,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000005",
+            "id": "ns=1;b=40012TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -40,7 +40,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000006",
+            "id": "ns=1;b=40013LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -49,7 +49,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000007",
+            "id": "ns=1;b=40014HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -58,7 +58,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000008",
+            "id": "ns=1;b=40015OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -70,10 +70,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / RawMaterialTank02",
-        "id": "ns=1;b=A0000009",
+        "id": "ns=0;b=40020RawMaterialTan",
         "items": [
           {
-            "id": "ns=1;b=A000000A",
+            "id": "ns=1;b=40021LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -89,7 +89,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000000B",
+            "id": "ns=1;b=40022TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -106,7 +106,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000000C",
+            "id": "ns=1;b=40023LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -115,7 +115,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000000D",
+            "id": "ns=1;b=40024HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -124,7 +124,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000000E",
+            "id": "ns=1;b=40025OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -136,10 +136,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / Smaksmia",
-        "id": "ns=1;b=A000000F",
+        "id": "ns=0;b=40030Smaksmia",
         "items": [
           {
-            "id": "ns=1;b=A0000010",
+            "id": "ns=1;b=40031Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -148,7 +148,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000011",
+            "id": "ns=1;b=40032SourceTank",
             "name": "SourceTank",
             "value": 1,
             "valueMethods": [
@@ -157,7 +157,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000012",
+            "id": "ns=1;b=40033DestinationTank",
             "name": "DestinationTank",
             "value": 1,
             "valueMethods": [
@@ -166,7 +166,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000013",
+            "id": "ns=1;b=40034Pressurebar",
             "name": "Pressure_bar",
             "value": 3.2,
             "simulation": {
@@ -182,7 +182,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000014",
+            "id": "ns=1;b=40035FlowLh",
             "name": "Flow_L_h",
             "value": 7800,
             "simulation": {
@@ -199,7 +199,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000015",
+            "id": "ns=1;b=40036TemperatureInC",
             "name": "TemperatureIn_C",
             "value": 6,
             "simulation": {
@@ -216,7 +216,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000016",
+            "id": "ns=1;b=40037TemperatureOutC",
             "name": "TemperatureOut_C",
             "value": 76,
             "simulation": {
@@ -233,7 +233,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000017",
+            "id": "ns=1;b=40038TotalProcessedL",
             "name": "TotalProcessed_L",
             "value": 0,
             "simulation": {
@@ -241,7 +241,7 @@
               "interval": 5,
               "value": 10,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000010",
+                "nodeNs": "ns=1;b=40031Running",
                 "value": true
               }
             },
@@ -253,10 +253,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank01",
-        "id": "ns=1;b=A0000018",
+        "id": "ns=0;b=40040FillingTank01",
         "items": [
           {
-            "id": "ns=1;b=A0000019",
+            "id": "ns=1;b=40041LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -272,7 +272,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000001A",
+            "id": "ns=1;b=40042TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -289,7 +289,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000001B",
+            "id": "ns=1;b=40043LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -298,7 +298,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000001C",
+            "id": "ns=1;b=40044HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -307,7 +307,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000001D",
+            "id": "ns=1;b=40045OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -319,10 +319,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank02",
-        "id": "ns=1;b=A000001E",
+        "id": "ns=0;b=40050FillingTank02",
         "items": [
           {
-            "id": "ns=1;b=A000001F",
+            "id": "ns=1;b=40051LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -338,7 +338,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000020",
+            "id": "ns=1;b=40052TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -355,7 +355,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000021",
+            "id": "ns=1;b=40053LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -364,7 +364,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000022",
+            "id": "ns=1;b=40054HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -373,7 +373,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000023",
+            "id": "ns=1;b=40055OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -385,10 +385,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank03",
-        "id": "ns=1;b=A0000024",
+        "id": "ns=0;b=40060FillingTank03",
         "items": [
           {
-            "id": "ns=1;b=A0000025",
+            "id": "ns=1;b=40061LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -404,7 +404,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000026",
+            "id": "ns=1;b=40062TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -421,7 +421,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000027",
+            "id": "ns=1;b=40063LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -430,7 +430,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000028",
+            "id": "ns=1;b=40064HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -439,7 +439,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000029",
+            "id": "ns=1;b=40065OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -451,10 +451,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren",
-        "id": "ns=1;b=A000002B",
+        "id": "ns=0;b=40070Fjordfylleren",
         "items": [
           {
-            "id": "ns=1;b=A000002C",
+            "id": "ns=1;b=40071Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -463,7 +463,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000032",
+            "id": "ns=1;b=40072State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -472,7 +472,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000033",
+            "id": "ns=1;b=40073ActualSpeedperh",
             "name": "ActualSpeed_per_h",
             "value": 9600,
             "simulation": {
@@ -489,7 +489,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000034",
+            "id": "ns=1;b=40074TotalProduced",
             "name": "TotalProduced",
             "value": 0,
             "simulation": {
@@ -497,7 +497,7 @@
               "interval": 3,
               "value": 8,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A000002C",
+                "nodeNs": "ns=1;b=40071Running",
                 "value": true
               }
             },
@@ -506,7 +506,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000035",
+            "id": "ns=1;b=40075ScrapUnderweight",
             "name": "ScrapUnderweight",
             "value": 0,
             "simulation": {
@@ -522,10 +522,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / Recipe",
-        "id": "ns=1;b=A000002D",
+        "id": "ns=0;b=40080Recipe",
         "items": [
           {
-            "id": "ns=1;b=A000002E",
+            "id": "ns=1;b=40081SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -534,7 +534,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000030",
+            "id": "ns=1;b=40082ProductSize",
             "name": "ProductSize",
             "value": 250,
             "valueMethods": [
@@ -543,7 +543,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000031",
+            "id": "ns=1;b=40083NominalSpeedperh",
             "name": "NominalSpeed_per_h",
             "value": 9600,
             "valueMethods": [
@@ -555,10 +555,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / Hopper",
-        "id": "ns=1;b=A0000036",
+        "id": "ns=0;b=40090Hopper",
         "items": [
           {
-            "id": "ns=1;b=A0000037",
+            "id": "ns=1;b=40091LevelL",
             "name": "Level_L",
             "value": 65,
             "simulation": {
@@ -574,7 +574,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000038",
+            "id": "ns=1;b=40092LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -583,7 +583,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000039",
+            "id": "ns=1;b=40093HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -595,10 +595,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / ProductTester",
-        "id": "ns=1;b=A000003A",
+        "id": "ns=0;b=40100ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A000003B",
+            "id": "ns=1;b=40101MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 250,
             "simulation": {
@@ -615,7 +615,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000003C",
+            "id": "ns=1;b=40102ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -635,7 +635,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000003D",
+            "id": "ns=1;b=40103TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -648,7 +648,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000003E",
+            "id": "ns=1;b=40104TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -664,10 +664,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver",
-        "id": "ns=1;b=A000003F",
+        "id": "ns=0;b=40110Firklver",
         "items": [
           {
-            "id": "ns=1;b=A0000046",
+            "id": "ns=1;b=40111SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -676,7 +676,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000047",
+            "id": "ns=1;b=40112UnitsPerPack",
             "name": "UnitsPerPack",
             "value": 2,
             "valueMethods": [
@@ -685,7 +685,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000048",
+            "id": "ns=1;b=40113ActualRateperh",
             "name": "ActualRate_per_h",
             "value": 3000,
             "simulation": {
@@ -702,7 +702,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000049",
+            "id": "ns=1;b=40114TotalPackages",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -710,7 +710,7 @@
               "interval": 5,
               "value": 4,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000041",
+                "nodeNs": "ns=1;b=40121Execute",
                 "value": true
               }
             },
@@ -719,7 +719,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000004A",
+            "id": "ns=1;b=40115ScrapPackages",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -735,10 +735,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver / PackML",
-        "id": "ns=1;b=A0000040",
+        "id": "ns=0;b=40120PackML",
         "items": [
           {
-            "id": "ns=1;b=A0000041",
+            "id": "ns=1;b=40121Execute",
             "name": "Execute",
             "value": true,
             "valueMethods": [
@@ -747,7 +747,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000042",
+            "id": "ns=1;b=40122StateCurrent",
             "name": "StateCurrent",
             "value": 6,
             "valueMethods": [
@@ -756,7 +756,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000043",
+            "id": "ns=1;b=40123ModeCurrent",
             "name": "ModeCurrent",
             "value": 1,
             "valueMethods": [
@@ -765,7 +765,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000044",
+            "id": "ns=1;b=40124Hold",
             "name": "Hold",
             "value": false,
             "valueMethods": [
@@ -774,7 +774,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000045",
+            "id": "ns=1;b=40125Reset",
             "name": "Reset",
             "value": false,
             "valueMethods": [
@@ -786,10 +786,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver / ProductTester",
-        "id": "ns=1;b=A000004B",
+        "id": "ns=0;b=40130ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A000004C",
+            "id": "ns=1;b=40131MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 2,
             "simulation": {
@@ -806,7 +806,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000004D",
+            "id": "ns=1;b=40132ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -826,7 +826,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000004E",
+            "id": "ns=1;b=40133TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -839,7 +839,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000004F",
+            "id": "ns=1;b=40134TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -855,10 +855,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Eskeballetten",
-        "id": "ns=1;b=A0000050",
+        "id": "ns=0;b=40140Eskeballetten",
         "items": [
           {
-            "id": "ns=1;b=A0000051",
+            "id": "ns=1;b=40141Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -867,7 +867,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000052",
+            "id": "ns=1;b=40142State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -876,7 +876,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000053",
+            "id": "ns=1;b=40143SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -885,7 +885,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000054",
+            "id": "ns=1;b=40144UnitsPerPack",
             "name": "UnitsPerPack",
             "value": 12,
             "valueMethods": [
@@ -894,7 +894,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000055",
+            "id": "ns=1;b=40145ActualRateperh",
             "name": "ActualRate_per_h",
             "value": 450,
             "simulation": {
@@ -911,7 +911,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000056",
+            "id": "ns=1;b=40146TotalPackages",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -919,7 +919,7 @@
               "interval": 5,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000051",
+                "nodeNs": "ns=1;b=40141Running",
                 "value": true
               }
             },
@@ -928,7 +928,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000057",
+            "id": "ns=1;b=40147ScrapPackages",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -944,10 +944,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Eskeballetten / ProductTester",
-        "id": "ns=1;b=A0000058",
+        "id": "ns=0;b=40150ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A0000059",
+            "id": "ns=1;b=40151MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 12,
             "simulation": {
@@ -964,7 +964,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000005A",
+            "id": "ns=1;b=40152ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -984,7 +984,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000005B",
+            "id": "ns=1;b=40153TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -997,7 +997,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000005C",
+            "id": "ns=1;b=40154TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -1013,10 +1013,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Palle-Petter",
-        "id": "ns=1;b=A000005D",
+        "id": "ns=0;b=40160PallePetter",
         "items": [
           {
-            "id": "ns=1;b=A000005E",
+            "id": "ns=1;b=40161Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1025,7 +1025,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000005F",
+            "id": "ns=1;b=40162State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -1034,7 +1034,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000060",
+            "id": "ns=1;b=40163PackagesReceived",
             "name": "PackagesReceived",
             "value": 0,
             "simulation": {
@@ -1042,7 +1042,7 @@
               "interval": 8,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A000005E",
+                "nodeNs": "ns=1;b=40161Running",
                 "value": true
               }
             },
@@ -1051,7 +1051,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000061",
+            "id": "ns=1;b=40164PalletCount",
             "name": "PalletCount",
             "value": 0,
             "simulation": {
@@ -1059,7 +1059,7 @@
               "interval": 300,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A000005E",
+                "nodeNs": "ns=1;b=40161Running",
                 "value": true
               }
             },
@@ -1068,7 +1068,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000062",
+            "id": "ns=1;b=40165PalletFull",
             "name": "PalletFull",
             "value": false,
             "simulation": {
@@ -1091,10 +1091,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren",
-        "id": "ns=1;b=A0000064",
+        "id": "ns=0;b=40170Glttfylleren",
         "items": [
           {
-            "id": "ns=1;b=A0000065",
+            "id": "ns=1;b=40171Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1103,7 +1103,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000006B",
+            "id": "ns=1;b=40172State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -1112,7 +1112,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000006C",
+            "id": "ns=1;b=40173ActualSpeedperh",
             "name": "ActualSpeed_per_h",
             "value": 7200,
             "simulation": {
@@ -1129,7 +1129,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000006D",
+            "id": "ns=1;b=40174TotalProduced",
             "name": "TotalProduced",
             "value": 0,
             "simulation": {
@@ -1137,7 +1137,7 @@
               "interval": 3,
               "value": 6,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000065",
+                "nodeNs": "ns=1;b=40171Running",
                 "value": true
               }
             },
@@ -1146,7 +1146,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000006E",
+            "id": "ns=1;b=40175ScrapUnderweight",
             "name": "ScrapUnderweight",
             "value": 0,
             "simulation": {
@@ -1162,10 +1162,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / Recipe",
-        "id": "ns=1;b=A0000066",
+        "id": "ns=0;b=40180Recipe",
         "items": [
           {
-            "id": "ns=1;b=A0000067",
+            "id": "ns=1;b=40181SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -1174,7 +1174,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000069",
+            "id": "ns=1;b=40182ProductSize",
             "name": "ProductSize",
             "value": 100,
             "valueMethods": [
@@ -1183,7 +1183,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000006A",
+            "id": "ns=1;b=40183NominalSpeedperh",
             "name": "NominalSpeed_per_h",
             "value": 7200,
             "valueMethods": [
@@ -1195,10 +1195,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / Hopper",
-        "id": "ns=1;b=A000006F",
+        "id": "ns=0;b=40190Hopper",
         "items": [
           {
-            "id": "ns=1;b=A0000070",
+            "id": "ns=1;b=40191LevelL",
             "name": "Level_L",
             "value": 65,
             "simulation": {
@@ -1214,7 +1214,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000071",
+            "id": "ns=1;b=40192LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1223,7 +1223,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000072",
+            "id": "ns=1;b=40193HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -1235,10 +1235,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / ProductTester",
-        "id": "ns=1;b=A0000073",
+        "id": "ns=0;b=40200ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A0000074",
+            "id": "ns=1;b=40201MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 100,
             "simulation": {
@@ -1255,7 +1255,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000075",
+            "id": "ns=1;b=40202ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -1275,7 +1275,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000076",
+            "id": "ns=1;b=40203TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -1288,7 +1288,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000077",
+            "id": "ns=1;b=40204TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -1304,10 +1304,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Åtteball",
-        "id": "ns=1;b=A0000079",
+        "id": "ns=0;b=40210tteball",
         "items": [
           {
-            "id": "ns=1;b=A000007A",
+            "id": "ns=1;b=40211Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1316,7 +1316,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000007B",
+            "id": "ns=1;b=40212State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -1325,7 +1325,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000007C",
+            "id": "ns=1;b=40213SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -1334,7 +1334,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000007D",
+            "id": "ns=1;b=40214UnitsPerPack",
             "name": "UnitsPerPack",
             "value": 8,
             "valueMethods": [
@@ -1343,7 +1343,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000007E",
+            "id": "ns=1;b=40215ActualRateperh",
             "name": "ActualRate_per_h",
             "value": 800,
             "simulation": {
@@ -1360,7 +1360,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000007F",
+            "id": "ns=1;b=40216TotalPackages",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -1368,7 +1368,7 @@
               "interval": 5,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A000007A",
+                "nodeNs": "ns=1;b=40211Running",
                 "value": true
               }
             },
@@ -1377,7 +1377,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000080",
+            "id": "ns=1;b=40217ScrapPackages",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -1393,10 +1393,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Åtteball / ProductTester",
-        "id": "ns=1;b=A0000081",
+        "id": "ns=0;b=40220ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A0000082",
+            "id": "ns=1;b=40221MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 8,
             "simulation": {
@@ -1413,7 +1413,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000083",
+            "id": "ns=1;b=40222ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -1433,7 +1433,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000084",
+            "id": "ns=1;b=40223TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -1446,7 +1446,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000085",
+            "id": "ns=1;b=40224TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -1462,10 +1462,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Oktapakk",
-        "id": "ns=1;b=A0000086",
+        "id": "ns=0;b=40230Oktapakk",
         "items": [
           {
-            "id": "ns=1;b=A0000087",
+            "id": "ns=1;b=40231Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1474,7 +1474,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000088",
+            "id": "ns=1;b=40232State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -1483,7 +1483,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000089",
+            "id": "ns=1;b=40233SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -1492,7 +1492,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000008A",
+            "id": "ns=1;b=40234UnitsPerPack",
             "name": "UnitsPerPack",
             "value": 8,
             "valueMethods": [
@@ -1501,7 +1501,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000008B",
+            "id": "ns=1;b=40235ActualRateperh",
             "name": "ActualRate_per_h",
             "value": 800,
             "simulation": {
@@ -1518,7 +1518,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000008C",
+            "id": "ns=1;b=40236TotalPackages",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -1526,7 +1526,7 @@
               "interval": 5,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000087",
+                "nodeNs": "ns=1;b=40231Running",
                 "value": true
               }
             },
@@ -1535,7 +1535,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000008D",
+            "id": "ns=1;b=40237ScrapPackages",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -1551,10 +1551,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Oktapakk / ProductTester",
-        "id": "ns=1;b=A000008E",
+        "id": "ns=0;b=40240ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A000008F",
+            "id": "ns=1;b=40241MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 8,
             "simulation": {
@@ -1571,7 +1571,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000090",
+            "id": "ns=1;b=40242ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -1591,7 +1591,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000091",
+            "id": "ns=1;b=40243TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -1604,7 +1604,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000092",
+            "id": "ns=1;b=40244TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -1620,10 +1620,10 @@
       },
       {
         "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Palladium",
-        "id": "ns=1;b=A0000093",
+        "id": "ns=0;b=40250Palladium",
         "items": [
           {
-            "id": "ns=1;b=A0000094",
+            "id": "ns=1;b=40251Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1632,7 +1632,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000095",
+            "id": "ns=1;b=40252State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -1641,7 +1641,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000096",
+            "id": "ns=1;b=40253PackagesReceived",
             "name": "PackagesReceived",
             "value": 0,
             "simulation": {
@@ -1649,7 +1649,7 @@
               "interval": 8,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000094",
+                "nodeNs": "ns=1;b=40251Running",
                 "value": true
               }
             },
@@ -1658,7 +1658,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000097",
+            "id": "ns=1;b=40254PalletCount",
             "name": "PalletCount",
             "value": 0,
             "simulation": {
@@ -1666,7 +1666,7 @@
               "interval": 300,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A0000094",
+                "nodeNs": "ns=1;b=40251Running",
                 "value": true
               }
             },
@@ -1675,7 +1675,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A0000098",
+            "id": "ns=1;b=40255PalletFull",
             "name": "PalletFull",
             "value": false,
             "simulation": {
@@ -1703,10 +1703,10 @@
     "items": [
       {
         "name": "Nordlys Matverk Smakstun / Process / RawMaterialTank01",
-        "id": "ns=1;b=A000009B",
+        "id": "ns=0;b=40260RawMaterialTan",
         "items": [
           {
-            "id": "ns=1;b=A000009C",
+            "id": "ns=1;b=40261LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1722,7 +1722,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000009D",
+            "id": "ns=1;b=40262TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1739,7 +1739,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000009E",
+            "id": "ns=1;b=40263LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1748,7 +1748,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A000009F",
+            "id": "ns=1;b=40264HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -1757,7 +1757,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A0",
+            "id": "ns=1;b=40265OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -1769,10 +1769,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / RawMaterialTank02",
-        "id": "ns=1;b=A00000A1",
+        "id": "ns=0;b=40270RawMaterialTan",
         "items": [
           {
-            "id": "ns=1;b=A00000A2",
+            "id": "ns=1;b=40271LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1788,7 +1788,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A3",
+            "id": "ns=1;b=40272TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1805,7 +1805,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A4",
+            "id": "ns=1;b=40273LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1814,7 +1814,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A5",
+            "id": "ns=1;b=40274HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -1823,7 +1823,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A6",
+            "id": "ns=1;b=40275OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -1835,10 +1835,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / Produktportalen",
-        "id": "ns=1;b=A00000A7",
+        "id": "ns=0;b=40280Produktportale",
         "items": [
           {
-            "id": "ns=1;b=A00000A8",
+            "id": "ns=1;b=40281Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1847,7 +1847,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000A9",
+            "id": "ns=1;b=40282SourceTank",
             "name": "SourceTank",
             "value": 1,
             "valueMethods": [
@@ -1856,7 +1856,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AA",
+            "id": "ns=1;b=40283DestinationTank",
             "name": "DestinationTank",
             "value": 1,
             "valueMethods": [
@@ -1865,7 +1865,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AB",
+            "id": "ns=1;b=40284Pressurebar",
             "name": "Pressure_bar",
             "value": 3.2,
             "simulation": {
@@ -1881,7 +1881,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AC",
+            "id": "ns=1;b=40285FlowLh",
             "name": "Flow_L_h",
             "value": 7800,
             "simulation": {
@@ -1898,7 +1898,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AD",
+            "id": "ns=1;b=40286TemperatureInC",
             "name": "TemperatureIn_C",
             "value": 6,
             "simulation": {
@@ -1915,7 +1915,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AE",
+            "id": "ns=1;b=40287TemperatureOutC",
             "name": "TemperatureOut_C",
             "value": 76,
             "simulation": {
@@ -1932,7 +1932,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000AF",
+            "id": "ns=1;b=40288TotalProcessedL",
             "name": "TotalProcessed_L",
             "value": 0,
             "simulation": {
@@ -1940,7 +1940,7 @@
               "interval": 5,
               "value": 10,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A00000A8",
+                "nodeNs": "ns=1;b=40281Running",
                 "value": true
               }
             },
@@ -1952,10 +1952,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / FillingTank01",
-        "id": "ns=1;b=A00000B0",
+        "id": "ns=0;b=40290FillingTank01",
         "items": [
           {
-            "id": "ns=1;b=A00000B1",
+            "id": "ns=1;b=40291LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1971,7 +1971,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B2",
+            "id": "ns=1;b=40292TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1988,7 +1988,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B3",
+            "id": "ns=1;b=40293LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1997,7 +1997,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B4",
+            "id": "ns=1;b=40294HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2006,7 +2006,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B5",
+            "id": "ns=1;b=40295OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -2018,10 +2018,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / FillingTank02",
-        "id": "ns=1;b=A00000B6",
+        "id": "ns=0;b=40300FillingTank02",
         "items": [
           {
-            "id": "ns=1;b=A00000B7",
+            "id": "ns=1;b=40301LevelL",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -2037,7 +2037,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B8",
+            "id": "ns=1;b=40302TemperatureC",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -2054,7 +2054,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000B9",
+            "id": "ns=1;b=40303LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -2063,7 +2063,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000BA",
+            "id": "ns=1;b=40304HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2072,7 +2072,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000BB",
+            "id": "ns=1;b=40305OutletRoute",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -2084,10 +2084,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars",
-        "id": "ns=1;b=A00000BD",
+        "id": "ns=0;b=40310LiterLars",
         "items": [
           {
-            "id": "ns=1;b=A00000BE",
+            "id": "ns=1;b=40311Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -2096,7 +2096,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000BF",
+            "id": "ns=1;b=40312RECNO",
             "name": "RECNO",
             "value": 1,
             "valueMethods": [
@@ -2105,7 +2105,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C0",
+            "id": "ns=1;b=40313RECSIZE",
             "name": "RECSIZE",
             "value": 500,
             "valueMethods": [
@@ -2114,7 +2114,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C1",
+            "id": "ns=1;b=40314RECSPEED",
             "name": "RECSPEED",
             "value": 3600,
             "valueMethods": [
@@ -2123,7 +2123,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C2",
+            "id": "ns=1;b=40315State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -2132,7 +2132,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C3",
+            "id": "ns=1;b=40316ActualSpeedperh",
             "name": "ActualSpeed_per_h",
             "value": 3600,
             "simulation": {
@@ -2149,7 +2149,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C4",
+            "id": "ns=1;b=40317TotalProduced",
             "name": "TotalProduced",
             "value": 0,
             "simulation": {
@@ -2157,7 +2157,7 @@
               "interval": 3,
               "value": 3,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A00000BE",
+                "nodeNs": "ns=1;b=40311Running",
                 "value": true
               }
             },
@@ -2166,7 +2166,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C5",
+            "id": "ns=1;b=40318ScrapUnderweight",
             "name": "ScrapUnderweight",
             "value": 0,
             "simulation": {
@@ -2182,10 +2182,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars / Hopper",
-        "id": "ns=1;b=A00000C6",
+        "id": "ns=0;b=40320Hopper",
         "items": [
           {
-            "id": "ns=1;b=A00000C7",
+            "id": "ns=1;b=40321LevelL",
             "name": "Level_L",
             "value": 65,
             "simulation": {
@@ -2201,7 +2201,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C8",
+            "id": "ns=1;b=40322LowLevel",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -2210,7 +2210,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000C9",
+            "id": "ns=1;b=40323HighLevel",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2222,10 +2222,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars / ProductTester",
-        "id": "ns=1;b=A00000CA",
+        "id": "ns=0;b=40330ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A00000CB",
+            "id": "ns=1;b=40331MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 500,
             "simulation": {
@@ -2242,7 +2242,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000CC",
+            "id": "ns=1;b=40332ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -2262,7 +2262,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000CD",
+            "id": "ns=1;b=40333TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -2275,7 +2275,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000CE",
+            "id": "ns=1;b=40334TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -2291,10 +2291,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Tiern",
-        "id": "ns=1;b=A00000CF",
+        "id": "ns=0;b=40340Tiern",
         "items": [
           {
-            "id": "ns=1;b=A00000D0",
+            "id": "ns=1;b=40341RUN",
             "name": "RUN",
             "value": true,
             "valueMethods": [
@@ -2303,7 +2303,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D1",
+            "id": "ns=1;b=40342STATE",
             "name": "STATE",
             "value": 6,
             "valueMethods": [
@@ -2312,7 +2312,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D2",
+            "id": "ns=1;b=40343MODE",
             "name": "MODE",
             "value": 1,
             "valueMethods": [
@@ -2321,7 +2321,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D3",
+            "id": "ns=1;b=40344HOLD",
             "name": "HOLD",
             "value": false,
             "valueMethods": [
@@ -2330,7 +2330,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D4",
+            "id": "ns=1;b=40345RESET",
             "name": "RESET",
             "value": false,
             "valueMethods": [
@@ -2339,7 +2339,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D5",
+            "id": "ns=1;b=40346SelectedRecipe",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -2348,7 +2348,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D6",
+            "id": "ns=1;b=40347UnitsPerPack",
             "name": "UnitsPerPack",
             "value": 10,
             "valueMethods": [
@@ -2357,7 +2357,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D7",
+            "id": "ns=1;b=40348ActualRateperh",
             "name": "ActualRate_per_h",
             "value": 360,
             "simulation": {
@@ -2374,7 +2374,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D8",
+            "id": "ns=1;b=40349TotalPackages",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -2382,7 +2382,7 @@
               "interval": 5,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A00000D0",
+                "nodeNs": "ns=1;b=40341RUN",
                 "value": true
               }
             },
@@ -2391,7 +2391,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000D9",
+            "id": "ns=1;b=40350ScrapPackages",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -2407,10 +2407,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Tiern / ProductTester",
-        "id": "ns=1;b=A00000DA",
+        "id": "ns=0;b=40350ProductTester",
         "items": [
           {
-            "id": "ns=1;b=A00000DB",
+            "id": "ns=1;b=40351MeasuredWeight",
             "name": "MeasuredWeight",
             "value": 10,
             "simulation": {
@@ -2427,7 +2427,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000DC",
+            "id": "ns=1;b=40352ProductOK",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -2447,7 +2447,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000DD",
+            "id": "ns=1;b=40353TotalTested",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -2460,7 +2460,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000DE",
+            "id": "ns=1;b=40354TotalRejected",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -2476,10 +2476,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Stable-Ståle",
-        "id": "ns=1;b=A00000DF",
+        "id": "ns=0;b=40360StableStle",
         "items": [
           {
-            "id": "ns=1;b=A00000E0",
+            "id": "ns=1;b=40361Running",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -2488,7 +2488,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000E1",
+            "id": "ns=1;b=40362State",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -2497,7 +2497,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000E2",
+            "id": "ns=1;b=40363PackagesReceived",
             "name": "PackagesReceived",
             "value": 0,
             "simulation": {
@@ -2505,7 +2505,7 @@
               "interval": 8,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A00000E0",
+                "nodeNs": "ns=1;b=40361Running",
                 "value": true
               }
             },
@@ -2514,7 +2514,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000E3",
+            "id": "ns=1;b=40364PalletCount",
             "name": "PalletCount",
             "value": 0,
             "simulation": {
@@ -2522,7 +2522,7 @@
               "interval": 300,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=A00000E0",
+                "nodeNs": "ns=1;b=40361Running",
                 "value": true
               }
             },
@@ -2531,7 +2531,7 @@
             ]
           },
           {
-            "id": "ns=1;b=A00000E4",
+            "id": "ns=1;b=40365PalletFull",
             "name": "PalletFull",
             "value": false,
             "simulation": {
@@ -2555,4 +2555,3 @@
     ]
   }
 }
- 
