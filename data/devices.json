@@ -1,206 +1,100 @@
 {
-  "Nordlys_Logic_Test": {
-    "name": "Nordlys Logic Test Factory",
+  "Condition_Test_Factory": {
+    "name": "Condition Logic Test Factory",
     "items": [
       {
-        "id": "ns=1;s=TEST.Line01",
-        "name": "FillingLine01",
+        "id": "ns=1;s=TEST.SharedInputs",
+        "name": "00_SharedInputs",
         "items": [
-          {
-            "id": "ns=1;s=TEST.Line01.Filler01",
-            "name": "Filler01",
-            "items": [
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Controls",
-                "name": "Controls",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Controls.Running",
-                    "name": "Running",
-                    "value": true,
-                    "valueMethods": ["get", "set"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Controls.State",
-                    "name": "State",
-                    "value": 30,
-                    "valueMethods": ["get", "set"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Controls.ZeroState",
-                    "name": "ZeroState",
-                    "value": 0,
-                    "valueMethods": ["get", "set"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Status",
-                "name": "Status",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Status.StateText",
-                    "name": "StateText",
-                    "value": "Running",
-                    "valueMethods": ["get", "set"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Status.EquipmentId",
-                    "name": "EquipmentId",
-                    "value": "FILLER-01",
-                    "valueMethods": ["get"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Production",
-                "name": "Production",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Production.TotalProduced",
-                    "name": "TotalProduced",
-                    "value": 0,
-                    "simulation": {
-                      "type": "increase",
-                      "interval": 1,
-                      "value": 3,
-                      "dependsOn": {
-                        "nodeNs": "ns=1;s=TEST.Line01.Filler01.Controls.Running",
-                        "value": true
-                      }
-                    },
-                    "valueMethods": ["get"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Production.ZeroDependencyCounter",
-                    "name": "ZeroDependencyCounter",
-                    "value": 0,
-                    "simulation": {
-                      "type": "increase",
-                      "interval": 1,
-                      "value": 1,
-                      "dependsOn": {
-                        "nodeNs": "ns=1;s=TEST.Line01.Filler01.Controls.ZeroState",
-                        "value": 0
-                      }
-                    },
-                    "valueMethods": ["get"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Hopper",
-                "name": "Hopper",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Hopper.Level",
-                    "name": "Level",
-                    "value": 90,
-                    "simulation": {
-                      "type": "decrease",
-                      "interval": 1,
-                      "value": 0.5,
-                      "dependsOn": {
-                        "nodeNs": "ns=1;s=TEST.Line01.Filler01.Controls.Running",
-                        "value": true
-                      }
-                    },
-                    "valueMethods": ["get", "set"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Measurements",
-                "name": "Measurements",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Measurements.Temperature",
-                    "name": "Temperature",
-                    "value": 72,
-                    "simulation": {
-                      "type": "randomize",
-                      "interval": 2,
-                      "randomize": {
-                        "base": 72,
-                        "min": 1,
-                        "max": 1
-                      },
-                      "dependsOn": {
-                        "nodeNs": "ns=1;s=TEST.Line01.Filler01.Controls.Running",
-                        "value": true
-                      }
-                    },
-                    "valueMethods": ["get"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Measurements.Pressure",
-                    "name": "Pressure",
-                    "value": 3.2,
-                    "simulation": {
-                      "type": "sinus",
-                      "interval": 1,
-                      "sinus": {
-                        "amplitude": 0.4,
-                        "offset": 3.2
-                      },
-                      "dependsOn": {
-                        "nodeNs": "ns=1;s=TEST.Line01.Filler01.Controls.Running",
-                        "value": true
-                      }
-                    },
-                    "valueMethods": ["get"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Recipe",
-                "name": "Recipe",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Recipe.SelectedRecipe",
-                    "name": "SelectedRecipe",
-                    "value": 1,
-                    "valueMethods": ["get", "set"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Recipe.RecipeName",
-                    "name": "RecipeName",
-                    "value": "Mini 250",
-                    "valueMethods": ["get", "set"]
-                  },
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Recipe.ProductCode",
-                    "name": "ProductCode",
-                    "value": "FG-250-NAT",
-                    "valueMethods": ["get", "set"]
-                  }
-                ]
-              },
-              {
-                "id": "ns=1;s=TEST.Line01.Filler01.Alarms",
-                "name": "Alarms",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.Line01.Filler01.Alarms.RandomFault",
-                    "name": "RandomFault",
-                    "value": false,
-                    "simulation": {
-                      "type": "anomaly",
-                      "interval": 5,
-                      "anomaly": {
-                        "min": 30,
-                        "max": 120,
-                        "ends": false,
-                        "targetValue": true,
-                        "threshold": 0.9
-                      }
-                    },
-                    "valueMethods": ["get", "set"]
-                  }
-                ]
-              }
-            ]
-          }
+          {"id":"ns=1;s=TEST.Input.Run","name":"Run","value":true,"valueMethods":["get","set"]},
+          {"id":"ns=1;s=TEST.Input.Ready","name":"Ready","value":true,"valueMethods":["get","set"]},
+          {"id":"ns=1;s=TEST.Input.Fault","name":"Fault","value":false,"valueMethods":["get","set"]},
+          {"id":"ns=1;s=TEST.Input.Level","name":"Level","value":50,"valueMethods":["get","set"]},
+          {"id":"ns=1;s=TEST.Input.State","name":"State","value":30,"valueMethods":["get","set"]},
+          {"id":"ns=1;s=TEST.Input.Mode","name":"Mode","value":"AUTO","valueMethods":["get","set"]}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.SingleEquality","name":"01_SingleCondition_Equality","items":[
+          {"id":"ns=1;s=TEST.SingleEquality.Counter","name":"Counter","value":0,"valueMethods":["get"],"simulation":{"type":"increase","interval":1,"value":1,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.NotEqual","name":"02_Operator_NotEqual","items":[
+          {"id":"ns=1;s=TEST.NotEqual.Result","name":"Result","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Mode","operator":"!=","value":"MANUAL"}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.LessThan","name":"03_Operator_LessThan","items":[
+          {"id":"ns=1;s=TEST.LessThan.Result","name":"LevelLow","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Level","operator":"<","value":15}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.LessEqual","name":"04_Operator_LessEqual","items":[
+          {"id":"ns=1;s=TEST.LessEqual.Result","name":"LevelLowOrEqual","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Level","operator":"<=","value":15}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.GreaterThan","name":"05_Operator_GreaterThan","items":[
+          {"id":"ns=1;s=TEST.GreaterThan.Result","name":"LevelHigh","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Level","operator":">","value":85}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.GreaterEqual","name":"06_Operator_GreaterEqual","items":[
+          {"id":"ns=1;s=TEST.GreaterEqual.Result","name":"LevelHighOrEqual","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Level","operator":">=","value":85}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.MultiAnd","name":"07_MultipleConditions_AND","items":[
+          {"id":"ns=1;s=TEST.MultiAnd.Result","name":"CanProduce","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Ready","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Fault","operator":"==","value":false},{"nodeNs":"ns=1;s=TEST.Input.Level","operator":">","value":10}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.MultiOr","name":"08_MultipleConditions_OR","items":[
+          {"id":"ns=1;s=TEST.MultiOr.Result","name":"StopRequested","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"OR","items":[{"nodeNs":"ns=1;s=TEST.Input.Fault","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Level","operator":"<","value":5},{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":false}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.CondValues","name":"09_Conditional_ResultTypes","items":[
+          {"id":"ns=1;s=TEST.CondValues.Boolean","name":"BooleanResult","value":false,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":true,"falseValue":false,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.State","operator":"==","value":30}]}}},
+          {"id":"ns=1;s=TEST.CondValues.Number","name":"NumberResult","value":0,"valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":100,"falseValue":0,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Fault","operator":"==","value":true}]}}},
+          {"id":"ns=1;s=TEST.CondValues.String","name":"StringResult","value":"Stopped","valueMethods":["get"],"simulation":{"type":"conditional","interval":1,"trueValue":"Running","falseValue":"Stopped","conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.IncreaseConditions","name":"10_Increase_WithMultipleConditions","items":[
+          {"id":"ns=1;s=TEST.IncreaseConditions.Counter","name":"ProductionCounter","value":0,"valueMethods":["get"],"simulation":{"type":"increase","interval":1,"value":3,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Ready","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Fault","operator":"==","value":false}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.DecreaseConditions","name":"11_Decrease_WithConditions","items":[
+          {"id":"ns=1;s=TEST.DecreaseConditions.Level","name":"SimulatedLevel","value":100,"valueMethods":["get","set"],"simulation":{"type":"decrease","interval":1,"value":0.5,"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.State","operator":">=","value":30}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.RandomizeConditions","name":"12_Randomize_WithConditions","items":[
+          {"id":"ns=1;s=TEST.RandomizeConditions.Temperature","name":"Temperature","value":72,"valueMethods":["get"],"simulation":{"type":"randomize","interval":1,"randomize":{"base":72,"min":1,"max":1},"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.SinusConditions","name":"13_Sinus_WithConditions","items":[
+          {"id":"ns=1;s=TEST.SinusConditions.Pressure","name":"Pressure","value":3.2,"valueMethods":["get"],"simulation":{"type":"sinus","interval":1,"sinus":{"amplitude":0.4,"offset":3.2},"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Mode","operator":"==","value":"AUTO"}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.AnomalyConditions","name":"14_Anomaly_WithConditions","items":[
+          {"id":"ns=1;s=TEST.AnomalyConditions.Fault","name":"RandomFault","value":false,"valueMethods":["get","set"],"simulation":{"type":"anomaly","interval":1,"anomaly":{"min":3,"max":10,"ends":false,"targetValue":true,"threshold":0.8},"conditions":{"logic":"AND","items":[{"nodeNs":"ns=1;s=TEST.Input.Run","operator":"==","value":true},{"nodeNs":"ns=1;s=TEST.Input.Fault","operator":"==","value":false}]}}}
+        ]
+      },
+      {
+        "id":"ns=1;s=TEST.DeepFolders","name":"15_RecursiveFolders_And_StringNodeIds","items":[
+          {"id":"ns=1;s=TEST.DeepFolders.Level2","name":"Level2","items":[
+            {"id":"ns=1;s=TEST.DeepFolders.Level2.Level3","name":"Level3","items":[
+              {"id":"ns=1;s=TEST.DeepFolders.Level2.Level3.Level4","name":"Level4","items":[
+                {"id":"ns=1;s=TEST.DeepFolders.Level2.Level3.Level4.Value","name":"DeepValue","value":"Recursive folders OK","valueMethods":["get","set"]}
+              ]}
+            ]}
+          ]}
         ]
       }
     ]
