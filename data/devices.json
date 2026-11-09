@@ -3,1695 +3,1755 @@
     "name": "Nordlys Matverk Fjordgløtt",
     "items": [
       {
-        "name": "Nordlys Matverk Fjordgløtt / Process / RawMaterialTank01",
-        "id": "ns=1;b=ADAwMDAwMXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8",
+        "name": "Process",
+        "id": "ns=1;b=ADkwMDAwMXxQcm9jZXNz",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDAwMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8TGV2ZWxfTA==",
-            "name": "Level_L",
-            "value": 6500.0,
-            "simulation": {
-              "type": "sinus",
-              "interval": 3,
-              "sinus": {
-                "amplitude": 2500.0,
-                "offset": 6000.0
+            "name": "RawMaterialTank01",
+            "id": "ns=1;b=A0000003",
+            "items": [
+              {
+                "id": "ns=1;b=A0000004",
+                "name": "Level_L",
+                "value": 6500.0,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 3,
+                  "sinus": {
+                    "amplitude": 2500.0,
+                    "offset": 6000.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000005",
+                "name": "Temperature_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.4,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000006",
+                "name": "LowLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000007",
+                "name": "HighLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000008",
+                "name": "OutletRoute",
+                "value": 0,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAwM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8VGVtcGVyYXR1cmVfQw==",
-            "name": "Temperature_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.4,
-                "max": 0.5
+            "name": "RawMaterialTank02",
+            "id": "ns=1;b=A0000009",
+            "items": [
+              {
+                "id": "ns=1;b=A000000A",
+                "name": "Level_L",
+                "value": 6500.0,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 3,
+                  "sinus": {
+                    "amplitude": 2500.0,
+                    "offset": 6000.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000000B",
+                "name": "Temperature_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.4,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000000C",
+                "name": "LowLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000000D",
+                "name": "HighLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000000E",
+                "name": "OutletRoute",
+                "value": 0,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAwNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8TG93TGV2ZWw=",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "Smaksmia",
+            "id": "ns=1;b=A000000F",
+            "items": [
+              {
+                "id": "ns=1;b=A0000010",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000011",
+                "name": "SourceTank",
+                "value": 1,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000012",
+                "name": "DestinationTank",
+                "value": 1,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000013",
+                "name": "Pressure_bar",
+                "value": 3.2,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 1,
+                  "sinus": {
+                    "amplitude": 0.35,
+                    "offset": 3.2
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000014",
+                "name": "Flow_L_h",
+                "value": 7800,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 2,
+                  "randomize": {
+                    "base": 7800,
+                    "min": 300,
+                    "max": 350
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000015",
+                "name": "TemperatureIn_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.5,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000016",
+                "name": "TemperatureOut_C",
+                "value": 76,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 4,
+                  "randomize": {
+                    "base": 76,
+                    "min": 1.1,
+                    "max": 1.4
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000017",
+                "name": "TotalProcessed_L",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 5,
+                  "value": 10,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000010",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              }
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAwNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8SGlnaExldmVs",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "FillingTank01",
+            "id": "ns=1;b=A0000018",
+            "items": [
+              {
+                "id": "ns=1;b=A0000019",
+                "name": "Level_L",
+                "value": 6500.0,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 3,
+                  "sinus": {
+                    "amplitude": 2500.0,
+                    "offset": 6000.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000001A",
+                "name": "Temperature_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.4,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000001B",
+                "name": "LowLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000001C",
+                "name": "HighLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000001D",
+                "name": "OutletRoute",
+                "value": 0,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              }
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAwNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDF8T3V0bGV0Um91dGU=",
-            "name": "OutletRoute",
-            "value": 0,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "FillingTank02",
+            "id": "ns=1;b=A000001E",
+            "items": [
+              {
+                "id": "ns=1;b=A000001F",
+                "name": "Level_L",
+                "value": 6500.0,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 3,
+                  "sinus": {
+                    "amplitude": 2500.0,
+                    "offset": 6000.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000020",
+                "name": "Temperature_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.4,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000021",
+                "name": "LowLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000022",
+                "name": "HighLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000023",
+                "name": "OutletRoute",
+                "value": 0,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "FillingTank03",
+            "id": "ns=1;b=A0000024",
+            "items": [
+              {
+                "id": "ns=1;b=A0000025",
+                "name": "Level_L",
+                "value": 6500.0,
+                "simulation": {
+                  "type": "sinus",
+                  "interval": 3,
+                  "sinus": {
+                    "amplitude": 2500.0,
+                    "offset": 6000.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000026",
+                "name": "Temperature_C",
+                "value": 6,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 5,
+                  "randomize": {
+                    "base": 6,
+                    "min": 0.4,
+                    "max": 0.5
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000027",
+                "name": "LowLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000028",
+                "name": "HighLevel",
+                "value": false,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000029",
+                "name": "OutletRoute",
+                "value": 0,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "name": "Nordlys Matverk Fjordgløtt / Process / RawMaterialTank02",
-        "id": "ns=1;b=ADAwMDAwN3xEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8",
+        "name": "FillingLine01 - Fjordfylleren",
+        "id": "ns=1;b=ADkwMDAwMnxGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbg==",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDAwOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8TGV2ZWxfTA==",
-            "name": "Level_L",
-            "value": 6500.0,
-            "simulation": {
-              "type": "sinus",
-              "interval": 3,
-              "sinus": {
-                "amplitude": 2500.0,
-                "offset": 6000.0
+            "name": "Fjordfylleren",
+            "id": "ns=1;b=ADkwMDAwM3xGam9yZGZ5bGxlcmVu",
+            "items": [
+              {
+                "name": "Recipe",
+                "id": "ns=1;b=A000002D",
+                "items": [
+                  {
+                    "id": "ns=1;b=A000002E",
+                    "name": "SelectedRecipe",
+                    "value": 1,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000030",
+                    "name": "ProductSize",
+                    "value": 250,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000031",
+                    "name": "NominalSpeed_per_h",
+                    "value": 9600,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Hopper",
+                "id": "ns=1;b=A0000036",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000037",
+                    "name": "Level_L",
+                    "value": 65,
+                    "simulation": {
+                      "type": "sinus",
+                      "interval": 2,
+                      "sinus": {
+                        "amplitude": 28,
+                        "offset": 60
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000038",
+                    "name": "LowLevel",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000039",
+                    "name": "HighLevel",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ProductTester",
+                "id": "ns=1;b=A000003A",
+                "items": [
+                  {
+                    "id": "ns=1;b=A000003B",
+                    "name": "MeasuredWeight",
+                    "value": 250,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 2,
+                      "randomize": {
+                        "base": 250,
+                        "min": 3.75,
+                        "max": 3.75
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000003C",
+                    "name": "ProductOK",
+                    "value": true,
+                    "simulation": {
+                      "type": "anomaly",
+                      "interval": 5,
+                      "value": 1,
+                      "anomaly": {
+                        "targetValue": false,
+                        "min": 90,
+                        "max": 420,
+                        "ends": false,
+                        "threshold": 0.93
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000003D",
+                    "name": "TotalTested",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 2,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000003E",
+                    "name": "TotalRejected",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 60,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAwOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8VGVtcGVyYXR1cmVfQw==",
-            "name": "Temperature_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.4,
-                "max": 0.5
+            "name": "Firkløver",
+            "id": "ns=1;b=ADkwMDAwNHxGaXJrbMO4dmVy",
+            "items": [
+              {
+                "name": "PackML",
+                "id": "ns=1;b=A0000040",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000041",
+                    "name": "Execute",
+                    "value": true,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000042",
+                    "name": "StateCurrent",
+                    "value": 6,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000043",
+                    "name": "ModeCurrent",
+                    "value": 1,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000044",
+                    "name": "Hold",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000045",
+                    "name": "Reset",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ProductTester",
+                "id": "ns=1;b=A000004B",
+                "items": [
+                  {
+                    "id": "ns=1;b=A000004C",
+                    "name": "MeasuredWeight",
+                    "value": 2,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 2,
+                      "randomize": {
+                        "base": 2,
+                        "min": 0.03,
+                        "max": 0.03
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000004D",
+                    "name": "ProductOK",
+                    "value": true,
+                    "simulation": {
+                      "type": "anomaly",
+                      "interval": 5,
+                      "value": 1,
+                      "anomaly": {
+                        "targetValue": false,
+                        "min": 90,
+                        "max": 420,
+                        "ends": false,
+                        "threshold": 0.93
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000004E",
+                    "name": "TotalTested",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 2,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000004F",
+                    "name": "TotalRejected",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 60,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAxMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8TG93TGV2ZWw=",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "Eskeballetten",
+            "id": "ns=1;b=ADkwMDAwNXxFc2tlYmFsbGV0dGVu",
+            "items": [
+              {
+                "name": "ProductTester",
+                "id": "ns=1;b=A0000058",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000059",
+                    "name": "MeasuredWeight",
+                    "value": 12,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 2,
+                      "randomize": {
+                        "base": 12,
+                        "min": 0.18,
+                        "max": 0.18
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000005A",
+                    "name": "ProductOK",
+                    "value": true,
+                    "simulation": {
+                      "type": "anomaly",
+                      "interval": 5,
+                      "value": 1,
+                      "anomaly": {
+                        "targetValue": false,
+                        "min": 90,
+                        "max": 420,
+                        "ends": false,
+                        "threshold": 0.93
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000005B",
+                    "name": "TotalTested",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 2,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000005C",
+                    "name": "TotalRejected",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 60,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAxMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8SGlnaExldmVs",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "Fjordfylleren",
+            "id": "ns=1;b=A000002B",
+            "items": [
+              {
+                "id": "ns=1;b=A000002C",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000032",
+                "name": "State",
+                "value": 30,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000033",
+                "name": "ActualSpeed_per_h",
+                "value": 9600,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 3,
+                  "randomize": {
+                    "base": 9600,
+                    "min": 288.0,
+                    "max": 288.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000034",
+                "name": "TotalProduced",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 3,
+                  "value": 8,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A000002C",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000035",
+                "name": "ScrapUnderweight",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 90,
+                  "value": 1
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              }
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAxMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gUmF3TWF0ZXJpYWxUYW5rMDJ8T3V0bGV0Um91dGU=",
-            "name": "OutletRoute",
-            "value": 0,
-            "valueMethods": [
-              "get",
-              "set"
+            "name": "Firkløver",
+            "id": "ns=1;b=A000003F",
+            "items": [
+              {
+                "id": "ns=1;b=A0000046",
+                "name": "SelectedRecipe",
+                "value": 1,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000047",
+                "name": "UnitsPerPack",
+                "value": 2,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000048",
+                "name": "ActualRate_per_h",
+                "value": 3000,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 4,
+                  "randomize": {
+                    "base": 3000,
+                    "min": 105.00000000000001,
+                    "max": 105.00000000000001
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000049",
+                "name": "TotalPackages",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 5,
+                  "value": 4,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000041",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000004A",
+                "name": "ScrapPackages",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 120,
+                  "value": 1
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Eskeballetten",
+            "id": "ns=1;b=A0000050",
+            "items": [
+              {
+                "id": "ns=1;b=A0000051",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000052",
+                "name": "State",
+                "value": 30,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000053",
+                "name": "SelectedRecipe",
+                "value": 1,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000054",
+                "name": "UnitsPerPack",
+                "value": 12,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000055",
+                "name": "ActualRate_per_h",
+                "value": 450,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 4,
+                  "randomize": {
+                    "base": 450,
+                    "min": 15.750000000000002,
+                    "max": 15.750000000000002
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000056",
+                "name": "TotalPackages",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 5,
+                  "value": 1,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000051",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000057",
+                "name": "ScrapPackages",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 120,
+                  "value": 1
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              }
+            ]
+          },
+          {
+            "name": "Palle-Petter",
+            "id": "ns=1;b=A000005D",
+            "items": [
+              {
+                "id": "ns=1;b=A000005E",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000005F",
+                "name": "State",
+                "value": 30,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000060",
+                "name": "PackagesReceived",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 8,
+                  "value": 1,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A000005E",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000061",
+                "name": "PalletCount",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 300,
+                  "value": 1,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A000005E",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000062",
+                "name": "PalletFull",
+                "value": false,
+                "simulation": {
+                  "type": "anomaly",
+                  "interval": 5,
+                  "value": 1,
+                  "anomaly": {
+                    "targetValue": true,
+                    "min": 180,
+                    "max": 600,
+                    "ends": false,
+                    "threshold": 0.95
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              }
             ]
           }
         ]
       },
       {
-        "name": "Nordlys Matverk Fjordgløtt / Process / Smaksmia",
-        "id": "ns=1;b=ADAwMDAxM3xEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8",
+        "name": "FillingLine02 - Gløttlinja",
+        "id": "ns=1;b=ADkwMDAwNnxGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamE=",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDAxNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8UnVubmluZw==",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAxNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8U291cmNlVGFuaw==",
-            "name": "SourceTank",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAxNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8RGVzdGluYXRpb25UYW5r",
-            "name": "DestinationTank",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAxN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8UHJlc3N1cmVfYmFy",
-            "name": "Pressure_bar",
-            "value": 3.2,
-            "simulation": {
-              "type": "sinus",
-              "interval": 1,
-              "sinus": {
-                "amplitude": 0.35,
-                "offset": 3.2
+            "name": "Gløttfylleren",
+            "id": "ns=1;b=ADkwMDAwN3xHbMO4dHRmeWxsZXJlbg==",
+            "items": [
+              {
+                "name": "Recipe",
+                "id": "ns=1;b=A0000066",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000067",
+                    "name": "SelectedRecipe",
+                    "value": 1,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000069",
+                    "name": "ProductSize",
+                    "value": 100,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000006A",
+                    "name": "NominalSpeed_per_h",
+                    "value": 7200,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Hopper",
+                "id": "ns=1;b=A000006F",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000070",
+                    "name": "Level_L",
+                    "value": 65,
+                    "simulation": {
+                      "type": "sinus",
+                      "interval": 2,
+                      "sinus": {
+                        "amplitude": 28,
+                        "offset": 60
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000071",
+                    "name": "LowLevel",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000072",
+                    "name": "HighLevel",
+                    "value": false,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "ProductTester",
+                "id": "ns=1;b=A0000073",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000074",
+                    "name": "MeasuredWeight",
+                    "value": 100,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 2,
+                      "randomize": {
+                        "base": 100,
+                        "min": 1.5,
+                        "max": 1.5
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000075",
+                    "name": "ProductOK",
+                    "value": true,
+                    "simulation": {
+                      "type": "anomaly",
+                      "interval": 5,
+                      "value": 1,
+                      "anomaly": {
+                        "targetValue": false,
+                        "min": 90,
+                        "max": 420,
+                        "ends": false,
+                        "threshold": 0.93
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000076",
+                    "name": "TotalTested",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 2,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000077",
+                    "name": "TotalRejected",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 60,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAxOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8Rmxvd19MX2g=",
-            "name": "Flow_L_h",
-            "value": 7800,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 7800,
-                "min": 300,
-                "max": 350
+            "name": "ParallelPackers",
+            "id": "ns=1;b=ADkwMDAwOHxQYXJhbGxlbFBhY2tlcnM=",
+            "items": [
+              {
+                "name": "Åtteball",
+                "id": "ns=1;b=ADkwMDAwOXzDhXR0ZWJhbGw=",
+                "items": [
+                  {
+                    "name": "ProductTester",
+                    "id": "ns=1;b=A0000081",
+                    "items": [
+                      {
+                        "id": "ns=1;b=A0000082",
+                        "name": "MeasuredWeight",
+                        "value": 8,
+                        "simulation": {
+                          "type": "randomize",
+                          "interval": 2,
+                          "randomize": {
+                            "base": 8,
+                            "min": 0.12,
+                            "max": 0.12
+                          }
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000083",
+                        "name": "ProductOK",
+                        "value": true,
+                        "simulation": {
+                          "type": "anomaly",
+                          "interval": 5,
+                          "value": 1,
+                          "anomaly": {
+                            "targetValue": false,
+                            "min": 90,
+                            "max": 420,
+                            "ends": false,
+                            "threshold": 0.93
+                          }
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000084",
+                        "name": "TotalTested",
+                        "value": 0,
+                        "simulation": {
+                          "type": "increase",
+                          "interval": 2,
+                          "value": 1
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000085",
+                        "name": "TotalRejected",
+                        "value": 0,
+                        "simulation": {
+                          "type": "increase",
+                          "interval": 60,
+                          "value": 1
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Oktapakk",
+                "id": "ns=1;b=ADkwMDAxMHxPa3RhcGFraw==",
+                "items": [
+                  {
+                    "name": "ProductTester",
+                    "id": "ns=1;b=A000008E",
+                    "items": [
+                      {
+                        "id": "ns=1;b=A000008F",
+                        "name": "MeasuredWeight",
+                        "value": 8,
+                        "simulation": {
+                          "type": "randomize",
+                          "interval": 2,
+                          "randomize": {
+                            "base": 8,
+                            "min": 0.12,
+                            "max": 0.12
+                          }
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000090",
+                        "name": "ProductOK",
+                        "value": true,
+                        "simulation": {
+                          "type": "anomaly",
+                          "interval": 5,
+                          "value": 1,
+                          "anomaly": {
+                            "targetValue": false,
+                            "min": 90,
+                            "max": 420,
+                            "ends": false,
+                            "threshold": 0.93
+                          }
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000091",
+                        "name": "TotalTested",
+                        "value": 0,
+                        "simulation": {
+                          "type": "increase",
+                          "interval": 2,
+                          "value": 1
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      },
+                      {
+                        "id": "ns=1;b=A0000092",
+                        "name": "TotalRejected",
+                        "value": 0,
+                        "simulation": {
+                          "type": "increase",
+                          "interval": 60,
+                          "value": 1
+                        },
+                        "valueMethods": [
+                          "get"
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Åtteball",
+                "id": "ns=1;b=A0000079",
+                "items": [
+                  {
+                    "id": "ns=1;b=A000007A",
+                    "name": "Running",
+                    "value": true,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000007B",
+                    "name": "State",
+                    "value": 30,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000007C",
+                    "name": "SelectedRecipe",
+                    "value": 1,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000007D",
+                    "name": "UnitsPerPack",
+                    "value": 8,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000007E",
+                    "name": "ActualRate_per_h",
+                    "value": 800,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 4,
+                      "randomize": {
+                        "base": 800,
+                        "min": 28.000000000000004,
+                        "max": 28.000000000000004
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000007F",
+                    "name": "TotalPackages",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 5,
+                      "value": 1,
+                      "dependsOn": {
+                        "nodeNs": "ns=1;b=A000007A",
+                        "value": true
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000080",
+                    "name": "ScrapPackages",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 120,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
+              },
+              {
+                "name": "Oktapakk",
+                "id": "ns=1;b=A0000086",
+                "items": [
+                  {
+                    "id": "ns=1;b=A0000087",
+                    "name": "Running",
+                    "value": true,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000088",
+                    "name": "State",
+                    "value": 30,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A0000089",
+                    "name": "SelectedRecipe",
+                    "value": 1,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000008A",
+                    "name": "UnitsPerPack",
+                    "value": 8,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000008B",
+                    "name": "ActualRate_per_h",
+                    "value": 800,
+                    "simulation": {
+                      "type": "randomize",
+                      "interval": 4,
+                      "randomize": {
+                        "base": 800,
+                        "min": 28.000000000000004,
+                        "max": 28.000000000000004
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000008C",
+                    "name": "TotalPackages",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 5,
+                      "value": 1,
+                      "dependsOn": {
+                        "nodeNs": "ns=1;b=A0000087",
+                        "value": true
+                      }
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;b=A000008D",
+                    "name": "ScrapPackages",
+                    "value": 0,
+                    "simulation": {
+                      "type": "increase",
+                      "interval": 120,
+                      "value": 1
+                    },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  }
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAxOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8VGVtcGVyYXR1cmVJbl9D",
-            "name": "TemperatureIn_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.5,
-                "max": 0.5
+            "name": "Gløttfylleren",
+            "id": "ns=1;b=A0000064",
+            "items": [
+              {
+                "id": "ns=1;b=A0000065",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000006B",
+                "name": "State",
+                "value": 30,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000006C",
+                "name": "ActualSpeed_per_h",
+                "value": 7200,
+                "simulation": {
+                  "type": "randomize",
+                  "interval": 3,
+                  "randomize": {
+                    "base": 7200,
+                    "min": 216.0,
+                    "max": 216.0
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000006D",
+                "name": "TotalProduced",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 3,
+                  "value": 6,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000065",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A000006E",
+                "name": "ScrapUnderweight",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 90,
+                  "value": 1
+                },
+                "valueMethods": [
+                  "get"
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDAyMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8VGVtcGVyYXR1cmVPdXRfQw==",
-            "name": "TemperatureOut_C",
-            "value": 76,
-            "simulation": {
-              "type": "randomize",
-              "interval": 4,
-              "randomize": {
-                "base": 76,
-                "min": 1.1,
-                "max": 1.4
+            "name": "Palladium",
+            "id": "ns=1;b=A0000093",
+            "items": [
+              {
+                "id": "ns=1;b=A0000094",
+                "name": "Running",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000095",
+                "name": "State",
+                "value": 30,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000096",
+                "name": "PackagesReceived",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 8,
+                  "value": 1,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000094",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000097",
+                "name": "PalletCount",
+                "value": 0,
+                "simulation": {
+                  "type": "increase",
+                  "interval": 300,
+                  "value": 1,
+                  "dependsOn": {
+                    "nodeNs": "ns=1;b=A0000094",
+                    "value": true
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
+              },
+              {
+                "id": "ns=1;b=A0000098",
+                "name": "PalletFull",
+                "value": false,
+                "simulation": {
+                  "type": "anomaly",
+                  "interval": 5,
+                  "value": 1,
+                  "anomaly": {
+                    "targetValue": true,
+                    "min": 180,
+                    "max": 600,
+                    "ends": false,
+                    "threshold": 0.95
+                  }
+                },
+                "valueMethods": [
+                  "get"
+                ]
               }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAyMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8VG90YWxQcm9jZXNzZWRfTA==",
-            "name": "TotalProcessed_L",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 5,
-              "value": 10,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDAxNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gU21ha3NtaWF8UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank01",
-        "id": "ns=1;b=ADAwMDAyMnxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDAyM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXxMZXZlbF9M",
-            "name": "Level_L",
-            "value": 6500.0,
-            "simulation": {
-              "type": "sinus",
-              "interval": 3,
-              "sinus": {
-                "amplitude": 2500.0,
-                "offset": 6000.0
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAyNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXxUZW1wZXJhdHVyZV9D",
-            "name": "Temperature_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.4,
-                "max": 0.5
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAyNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXxMb3dMZXZlbA==",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAyNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXxIaWdoTGV2ZWw=",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAyN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMXxPdXRsZXRSb3V0ZQ==",
-            "name": "OutletRoute",
-            "value": 0,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank02",
-        "id": "ns=1;b=ADAwMDAyOHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDAyOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnxMZXZlbF9M",
-            "name": "Level_L",
-            "value": 6500.0,
-            "simulation": {
-              "type": "sinus",
-              "interval": 3,
-              "sinus": {
-                "amplitude": 2500.0,
-                "offset": 6000.0
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnxUZW1wZXJhdHVyZV9D",
-            "name": "Temperature_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.4,
-                "max": 0.5
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnxMb3dMZXZlbA==",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnxIaWdoTGV2ZWw=",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswMnxPdXRsZXRSb3V0ZQ==",
-            "name": "OutletRoute",
-            "value": 0,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / Process / FillingTank03",
-        "id": "ns=1;b=ADAwMDAzNHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3w=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDAzNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3xMZXZlbF9M",
-            "name": "Level_L",
-            "value": 6500.0,
-            "simulation": {
-              "type": "sinus",
-              "interval": 3,
-              "sinus": {
-                "amplitude": 2500.0,
-                "offset": 6000.0
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3xUZW1wZXJhdHVyZV9D",
-            "name": "Temperature_C",
-            "value": 6,
-            "simulation": {
-              "type": "randomize",
-              "interval": 5,
-              "randomize": {
-                "base": 6,
-                "min": 0.4,
-                "max": 0.5
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3xMb3dMZXZlbA==",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3xIaWdoTGV2ZWw=",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDAzOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBQcm9jZXNzIC8gRmlsbGluZ1RhbmswM3xPdXRsZXRSb3V0ZQ==",
-            "name": "OutletRoute",
-            "value": 0,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren",
-        "id": "ns=1;b=ADAwMDA0MHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA0MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58UnVubmluZw==",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58U3RhdGU=",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58QWN0dWFsU3BlZWRfcGVyX2g=",
-            "name": "ActualSpeed_per_h",
-            "value": 9600,
-            "simulation": {
-              "type": "randomize",
-              "interval": 3,
-              "randomize": {
-                "base": 9600,
-                "min": 288.0,
-                "max": 288.0
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0NHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58VG90YWxQcm9kdWNlZA==",
-            "name": "TotalProduced",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 3,
-              "value": 8,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA0MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0NXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW58U2NyYXBVbmRlcndlaWdodA==",
-            "name": "ScrapUnderweight",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 90,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / Recipe",
-        "id": "ns=1;b=ADAwMDA0NnxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBSZWNpcGV8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA0N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBSZWNpcGV8U2VsZWN0ZWRSZWNpcGU=",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBSZWNpcGV8UHJvZHVjdFNpemU=",
-            "name": "ProductSize",
-            "value": 250,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA0OXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBSZWNpcGV8Tm9taW5hbFNwZWVkX3Blcl9o",
-            "name": "NominalSpeed_per_h",
-            "value": 9600,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / Hopper",
-        "id": "ns=1;b=ADAwMDA1MHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBIb3BwZXJ8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA1MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBIb3BwZXJ8TGV2ZWxfTA==",
-            "name": "Level_L",
-            "value": 65,
-            "simulation": {
-              "type": "sinus",
-              "interval": 2,
-              "sinus": {
-                "amplitude": 28,
-                "offset": 60
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA1MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBIb3BwZXJ8TG93TGV2ZWw=",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA1M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBIb3BwZXJ8SGlnaExldmVs",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Fjordfylleren / ProductTester",
-        "id": "ns=1;b=ADAwMDA1NHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBQcm9kdWN0VGVzdGVyfA==",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA1NXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBQcm9kdWN0VGVzdGVyfE1lYXN1cmVkV2VpZ2h0",
-            "name": "MeasuredWeight",
-            "value": 250,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 250,
-                "min": 3.75,
-                "max": 3.75
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA1NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBQcm9kdWN0VGVzdGVyfFByb2R1Y3RPSw==",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA1N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBQcm9kdWN0VGVzdGVyfFRvdGFsVGVzdGVk",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA1OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZqb3JkZnlsbGVyZW4gLyBQcm9kdWN0VGVzdGVyfFRvdGFsUmVqZWN0ZWQ=",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver",
-        "id": "ns=1;b=ADAwMDA1OXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA2MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8U2VsZWN0ZWRSZWNpcGU=",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8VW5pdHNQZXJQYWNr",
-            "name": "UnitsPerPack",
-            "value": 2,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8QWN0dWFsUmF0ZV9wZXJfaA==",
-            "name": "ActualRate_per_h",
-            "value": 3000,
-            "simulation": {
-              "type": "randomize",
-              "interval": 4,
-              "randomize": {
-                "base": 3000,
-                "min": 105.00000000000001,
-                "max": 105.00000000000001
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8VG90YWxQYWNrYWdlcw==",
-            "name": "TotalPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 5,
-              "value": 4,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA2NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8RXhlY3V0ZQ==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2NHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXJ8U2NyYXBQYWNrYWdlcw==",
-            "name": "ScrapPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 120,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver / PackML",
-        "id": "ns=1;b=ADAwMDA2NXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA2NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8RXhlY3V0ZQ==",
-            "name": "Execute",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8U3RhdGVDdXJyZW50",
-            "name": "StateCurrent",
-            "value": 6,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8TW9kZUN1cnJlbnQ=",
-            "name": "ModeCurrent",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA2OXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8SG9sZA==",
-            "name": "Hold",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQYWNrTUx8UmVzZXQ=",
-            "name": "Reset",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Firkløver / ProductTester",
-        "id": "ns=1;b=ADAwMDA3MXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQcm9kdWN0VGVzdGVyfA==",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA3MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQcm9kdWN0VGVzdGVyfE1lYXN1cmVkV2VpZ2h0",
-            "name": "MeasuredWeight",
-            "value": 2,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 2,
-                "min": 0.03,
-                "max": 0.03
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQcm9kdWN0VGVzdGVyfFByb2R1Y3RPSw==",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3NHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQcm9kdWN0VGVzdGVyfFRvdGFsVGVzdGVk",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3NXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEZpcmtsw7h2ZXIgLyBQcm9kdWN0VGVzdGVyfFRvdGFsUmVqZWN0ZWQ=",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Eskeballetten",
-        "id": "ns=1;b=ADAwMDA3NnxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA3N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58UnVubmluZw==",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58U3RhdGU=",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA3OXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58U2VsZWN0ZWRSZWNpcGU=",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58VW5pdHNQZXJQYWNr",
-            "name": "UnitsPerPack",
-            "value": 12,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58QWN0dWFsUmF0ZV9wZXJfaA==",
-            "name": "ActualRate_per_h",
-            "value": 450,
-            "simulation": {
-              "type": "randomize",
-              "interval": 4,
-              "randomize": {
-                "base": 450,
-                "min": 15.750000000000002,
-                "max": 15.750000000000002
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58VG90YWxQYWNrYWdlcw==",
-            "name": "TotalPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 5,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA3N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW58U2NyYXBQYWNrYWdlcw==",
-            "name": "ScrapPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 120,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Eskeballetten / ProductTester",
-        "id": "ns=1;b=ADAwMDA4NHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW4gLyBQcm9kdWN0VGVzdGVyfA==",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA4NXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW4gLyBQcm9kdWN0VGVzdGVyfE1lYXN1cmVkV2VpZ2h0",
-            "name": "MeasuredWeight",
-            "value": 12,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 12,
-                "min": 0.18,
-                "max": 0.18
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW4gLyBQcm9kdWN0VGVzdGVyfFByb2R1Y3RPSw==",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW4gLyBQcm9kdWN0VGVzdGVyfFRvdGFsVGVzdGVk",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA4OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIEVza2ViYWxsZXR0ZW4gLyBQcm9kdWN0VGVzdGVyfFRvdGFsUmVqZWN0ZWQ=",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine01 - Fjordfylleren / Palle-Petter",
-        "id": "ns=1;b=ADAwMDA4OXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA5MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxSdW5uaW5n",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxTdGF0ZQ==",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxQYWNrYWdlc1JlY2VpdmVk",
-            "name": "PackagesReceived",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 8,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA5MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxSdW5uaW5n",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxQYWxsZXRDb3VudA==",
-            "name": "PalletCount",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 300,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA5MHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxSdW5uaW5n",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5NHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAxIC0gRmpvcmRmeWxsZXJlbiAvIFBhbGxlLVBldHRlcnxQYWxsZXRGdWxs",
-            "name": "PalletFull",
-            "value": false,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": true,
-                "min": 180,
-                "max": 600,
-                "ends": false,
-                "threshold": 0.95
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren",
-        "id": "ns=1;b=ADAwMDA5NXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDA5NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxSdW5uaW5n",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5N3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxTdGF0ZQ==",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5OHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxBY3R1YWxTcGVlZF9wZXJfaA==",
-            "name": "ActualSpeed_per_h",
-            "value": 7200,
-            "simulation": {
-              "type": "randomize",
-              "interval": 3,
-              "randomize": {
-                "base": 7200,
-                "min": 216.0,
-                "max": 216.0
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDA5OXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxUb3RhbFByb2R1Y2Vk",
-            "name": "TotalProduced",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 3,
-              "value": 6,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDA5NnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxSdW5uaW5n",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEwMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbnxTY3JhcFVuZGVyd2VpZ2h0",
-            "name": "ScrapUnderweight",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 90,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / Recipe",
-        "id": "ns=1;b=ADAwMDEwMXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFJlY2lwZXw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDEwMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFJlY2lwZXxTZWxlY3RlZFJlY2lwZQ==",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEwM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFJlY2lwZXxQcm9kdWN0U2l6ZQ==",
-            "name": "ProductSize",
-            "value": 100,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEwNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFJlY2lwZXxOb21pbmFsU3BlZWRfcGVyX2g=",
-            "name": "NominalSpeed_per_h",
-            "value": 7200,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / Hopper",
-        "id": "ns=1;b=ADAwMDEwNXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIEhvcHBlcnw=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDEwNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIEhvcHBlcnxMZXZlbF9M",
-            "name": "Level_L",
-            "value": 65,
-            "simulation": {
-              "type": "sinus",
-              "interval": 2,
-              "sinus": {
-                "amplitude": 28,
-                "offset": 60
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEwN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIEhvcHBlcnxMb3dMZXZlbA==",
-            "name": "LowLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEwOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIEhvcHBlcnxIaWdoTGV2ZWw=",
-            "name": "HighLevel",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Gløttfylleren / ProductTester",
-        "id": "ns=1;b=ADAwMDEwOXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFByb2R1Y3RUZXN0ZXJ8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDExMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFByb2R1Y3RUZXN0ZXJ8TWVhc3VyZWRXZWlnaHQ=",
-            "name": "MeasuredWeight",
-            "value": 100,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 100,
-                "min": 1.5,
-                "max": 1.5
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFByb2R1Y3RUZXN0ZXJ8UHJvZHVjdE9L",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFByb2R1Y3RUZXN0ZXJ8VG90YWxUZXN0ZWQ=",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBHbMO4dHRmeWxsZXJlbiAvIFByb2R1Y3RUZXN0ZXJ8VG90YWxSZWplY3RlZA==",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Åtteball",
-        "id": "ns=1;b=ADAwMDExNHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDExNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8UnVubmluZw==",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8U3RhdGU=",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8U2VsZWN0ZWRSZWNpcGU=",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8VW5pdHNQZXJQYWNr",
-            "name": "UnitsPerPack",
-            "value": 8,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDExOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8QWN0dWFsUmF0ZV9wZXJfaA==",
-            "name": "ActualRate_per_h",
-            "value": 800,
-            "simulation": {
-              "type": "randomize",
-              "interval": 4,
-              "randomize": {
-                "base": 800,
-                "min": 28.000000000000004,
-                "max": 28.000000000000004
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8VG90YWxQYWNrYWdlcw==",
-            "name": "TotalPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 5,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDExNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGx8U2NyYXBQYWNrYWdlcw==",
-            "name": "ScrapPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 120,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Åtteball / ProductTester",
-        "id": "ns=1;b=ADAwMDEyMnxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGwgLyBQcm9kdWN0VGVzdGVyfA==",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDEyM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGwgLyBQcm9kdWN0VGVzdGVyfE1lYXN1cmVkV2VpZ2h0",
-            "name": "MeasuredWeight",
-            "value": 8,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 8,
-                "min": 0.12,
-                "max": 0.12
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGwgLyBQcm9kdWN0VGVzdGVyfFByb2R1Y3RPSw==",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyNXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGwgLyBQcm9kdWN0VGVzdGVyfFRvdGFsVGVzdGVk",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyDDhXR0ZWJhbGwgLyBQcm9kdWN0VGVzdGVyfFRvdGFsUmVqZWN0ZWQ=",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Oktapakk",
-        "id": "ns=1;b=ADAwMDEyN3xEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3w=",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDEyOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xSdW5uaW5n",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEyOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xTdGF0ZQ==",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzMHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xTZWxlY3RlZFJlY2lwZQ==",
-            "name": "SelectedRecipe",
-            "value": 1,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzMXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xVbml0c1BlclBhY2s=",
-            "name": "UnitsPerPack",
-            "value": 8,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzMnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xBY3R1YWxSYXRlX3Blcl9o",
-            "name": "ActualRate_per_h",
-            "value": 800,
-            "simulation": {
-              "type": "randomize",
-              "interval": 4,
-              "randomize": {
-                "base": 800,
-                "min": 28.000000000000004,
-                "max": 28.000000000000004
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzM3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xUb3RhbFBhY2thZ2Vz",
-            "name": "TotalPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 5,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDEyOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xSdW5uaW5n",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzNHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFra3xTY3JhcFBhY2thZ2Vz",
-            "name": "ScrapPackages",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 120,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / ParallelPackers / Oktapakk / ProductTester",
-        "id": "ns=1;b=ADAwMDEzNXxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFrayAvIFByb2R1Y3RUZXN0ZXJ8",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDEzNnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFrayAvIFByb2R1Y3RUZXN0ZXJ8TWVhc3VyZWRXZWlnaHQ=",
-            "name": "MeasuredWeight",
-            "value": 8,
-            "simulation": {
-              "type": "randomize",
-              "interval": 2,
-              "randomize": {
-                "base": 8,
-                "min": 0.12,
-                "max": 0.12
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzN3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFrayAvIFByb2R1Y3RUZXN0ZXJ8UHJvZHVjdE9L",
-            "name": "ProductOK",
-            "value": true,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": false,
-                "min": 90,
-                "max": 420,
-                "ends": false,
-                "threshold": 0.93
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzOHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFrayAvIFByb2R1Y3RUZXN0ZXJ8VG90YWxUZXN0ZWQ=",
-            "name": "TotalTested",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 2,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDEzOXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYXJhbGxlbFBhY2tlcnMgLyBPa3RhcGFrayAvIFByb2R1Y3RUZXN0ZXJ8VG90YWxSZWplY3RlZA==",
-            "name": "TotalRejected",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 60,
-              "value": 1
-            },
-            "valueMethods": [
-              "get"
-            ]
-          }
-        ]
-      },
-      {
-        "name": "Nordlys Matverk Fjordgløtt / FillingLine02 - Gløttlinja / Palladium",
-        "id": "ns=1;b=ADAwMDE0MHxEfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18",
-        "items": [
-          {
-            "id": "ns=1;b=ADAwMDE0MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UnVubmluZw==",
-            "name": "Running",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDE0MnxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18U3RhdGU=",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDE0M3xWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UGFja2FnZXNSZWNlaXZlZA==",
-            "name": "PackagesReceived",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 8,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDE0MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDE0NHxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UGFsbGV0Q291bnQ=",
-            "name": "PalletCount",
-            "value": 0,
-            "simulation": {
-              "type": "increase",
-              "interval": 300,
-              "value": 1,
-              "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDE0MXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UnVubmluZw==",
-                "value": true
-              }
-            },
-            "valueMethods": [
-              "get"
-            ]
-          },
-          {
-            "id": "ns=1;b=ADAwMDE0NXxWfE5vcmRseXNfRmpvcmRnbG90dHxOb3JkbHlzIE1hdHZlcmsgRmpvcmRnbMO4dHQgLyBGaWxsaW5nTGluZTAyIC0gR2zDuHR0bGluamEgLyBQYWxsYWRpdW18UGFsbGV0RnVsbA==",
-            "name": "PalletFull",
-            "value": false,
-            "simulation": {
-              "type": "anomaly",
-              "interval": 5,
-              "value": 1,
-              "anomaly": {
-                "targetValue": true,
-                "min": 180,
-                "max": 600,
-                "ends": false,
-                "threshold": 0.95
-              }
-            },
-            "valueMethods": [
-              "get"
             ]
           }
         ]
@@ -1703,10 +1763,10 @@
     "items": [
       {
         "name": "Nordlys Matverk Smakstun / Process / RawMaterialTank01",
-        "id": "ns=1;b=ADAwMDE0NnxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfA==",
+        "id": "ns=1;b=A000009B",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE0N3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfExldmVsX0w=",
+            "id": "ns=1;b=A000009C",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1722,7 +1782,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE0OHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfFRlbXBlcmF0dXJlX0M=",
+            "id": "ns=1;b=A000009D",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1739,7 +1799,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE0OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfExvd0xldmVs",
+            "id": "ns=1;b=A000009E",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1748,7 +1808,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfEhpZ2hMZXZlbA==",
+            "id": "ns=1;b=A000009F",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -1757,7 +1817,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1MXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAxfE91dGxldFJvdXRl",
+            "id": "ns=1;b=A00000A0",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -1769,10 +1829,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / RawMaterialTank02",
-        "id": "ns=1;b=ADAwMDE1MnxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfA==",
+        "id": "ns=1;b=A00000A1",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE1M3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfExldmVsX0w=",
+            "id": "ns=1;b=A00000A2",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1788,7 +1848,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1NHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfFRlbXBlcmF0dXJlX0M=",
+            "id": "ns=1;b=A00000A3",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1805,7 +1865,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1NXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfExvd0xldmVs",
+            "id": "ns=1;b=A00000A4",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1814,7 +1874,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1NnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfEhpZ2hMZXZlbA==",
+            "id": "ns=1;b=A00000A5",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -1823,7 +1883,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE1N3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFJhd01hdGVyaWFsVGFuazAyfE91dGxldFJvdXRl",
+            "id": "ns=1;b=A00000A6",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -1835,10 +1895,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / Produktportalen",
-        "id": "ns=1;b=ADAwMDE1OHxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnw=",
+        "id": "ns=1;b=A00000A7",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE1OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxSdW5uaW5n",
+            "id": "ns=1;b=A00000A8",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -1847,7 +1907,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxTb3VyY2VUYW5r",
+            "id": "ns=1;b=A00000A9",
             "name": "SourceTank",
             "value": 1,
             "valueMethods": [
@@ -1856,7 +1916,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2MXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxEZXN0aW5hdGlvblRhbms=",
+            "id": "ns=1;b=A00000AA",
             "name": "DestinationTank",
             "value": 1,
             "valueMethods": [
@@ -1865,7 +1925,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2MnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxQcmVzc3VyZV9iYXI=",
+            "id": "ns=1;b=A00000AB",
             "name": "Pressure_bar",
             "value": 3.2,
             "simulation": {
@@ -1881,7 +1941,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2M3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxGbG93X0xfaA==",
+            "id": "ns=1;b=A00000AC",
             "name": "Flow_L_h",
             "value": 7800,
             "simulation": {
@@ -1898,7 +1958,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2NHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxUZW1wZXJhdHVyZUluX0M=",
+            "id": "ns=1;b=A00000AD",
             "name": "TemperatureIn_C",
             "value": 6,
             "simulation": {
@@ -1915,7 +1975,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2NXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxUZW1wZXJhdHVyZU91dF9D",
+            "id": "ns=1;b=A00000AE",
             "name": "TemperatureOut_C",
             "value": 76,
             "simulation": {
@@ -1932,7 +1992,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2NnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxUb3RhbFByb2Nlc3NlZF9M",
+            "id": "ns=1;b=A00000AF",
             "name": "TotalProcessed_L",
             "value": 0,
             "simulation": {
@@ -1940,7 +2000,7 @@
               "interval": 5,
               "value": 10,
               "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDE1OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIFByb2R1a3Rwb3J0YWxlbnxSdW5uaW5n",
+                "nodeNs": "ns=1;b=A00000A8",
                 "value": true
               }
             },
@@ -1952,10 +2012,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / FillingTank01",
-        "id": "ns=1;b=ADAwMDE2N3xEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8",
+        "id": "ns=1;b=A00000B0",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE2OHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8TGV2ZWxfTA==",
+            "id": "ns=1;b=A00000B1",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -1971,7 +2031,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE2OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8VGVtcGVyYXR1cmVfQw==",
+            "id": "ns=1;b=A00000B2",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -1988,7 +2048,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8TG93TGV2ZWw=",
+            "id": "ns=1;b=A00000B3",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -1997,7 +2057,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3MXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8SGlnaExldmVs",
+            "id": "ns=1;b=A00000B4",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2006,7 +2066,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3MnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDF8T3V0bGV0Um91dGU=",
+            "id": "ns=1;b=A00000B5",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -2018,10 +2078,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / Process / FillingTank02",
-        "id": "ns=1;b=ADAwMDE3M3xEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8",
+        "id": "ns=1;b=A00000B6",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE3NHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8TGV2ZWxfTA==",
+            "id": "ns=1;b=A00000B7",
             "name": "Level_L",
             "value": 6500.0,
             "simulation": {
@@ -2037,7 +2097,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3NXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8VGVtcGVyYXR1cmVfQw==",
+            "id": "ns=1;b=A00000B8",
             "name": "Temperature_C",
             "value": 6,
             "simulation": {
@@ -2054,7 +2114,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3NnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8TG93TGV2ZWw=",
+            "id": "ns=1;b=A00000B9",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -2063,7 +2123,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3N3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8SGlnaExldmVs",
+            "id": "ns=1;b=A00000BA",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2072,7 +2132,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE3OHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gUHJvY2VzcyAvIEZpbGxpbmdUYW5rMDJ8T3V0bGV0Um91dGU=",
+            "id": "ns=1;b=A00000BB",
             "name": "OutletRoute",
             "value": 0,
             "valueMethods": [
@@ -2084,10 +2144,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars",
-        "id": "ns=1;b=ADAwMDE3OXxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8",
+        "id": "ns=1;b=A00000BD",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE4MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8UnVubmluZw==",
+            "id": "ns=1;b=A00000BE",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -2096,7 +2156,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4MXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8UkVDTk8=",
+            "id": "ns=1;b=A00000BF",
             "name": "RECNO",
             "value": 1,
             "valueMethods": [
@@ -2105,7 +2165,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4MnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8UkVDU0laRQ==",
+            "id": "ns=1;b=A00000C0",
             "name": "RECSIZE",
             "value": 500,
             "valueMethods": [
@@ -2114,7 +2174,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4M3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8UkVDU1BFRUQ=",
+            "id": "ns=1;b=A00000C1",
             "name": "RECSPEED",
             "value": 3600,
             "valueMethods": [
@@ -2123,7 +2183,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4NHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8U3RhdGU=",
+            "id": "ns=1;b=A00000C2",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -2132,7 +2192,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4NXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8QWN0dWFsU3BlZWRfcGVyX2g=",
+            "id": "ns=1;b=A00000C3",
             "name": "ActualSpeed_per_h",
             "value": 3600,
             "simulation": {
@@ -2149,7 +2209,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4NnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8VG90YWxQcm9kdWNlZA==",
+            "id": "ns=1;b=A00000C4",
             "name": "TotalProduced",
             "value": 0,
             "simulation": {
@@ -2157,7 +2217,7 @@
               "interval": 3,
               "value": 3,
               "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDE4MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8UnVubmluZw==",
+                "nodeNs": "ns=1;b=A00000BE",
                 "value": true
               }
             },
@@ -2166,7 +2226,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE4N3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnN8U2NyYXBVbmRlcndlaWdodA==",
+            "id": "ns=1;b=A00000C5",
             "name": "ScrapUnderweight",
             "value": 0,
             "simulation": {
@@ -2182,10 +2242,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars / Hopper",
-        "id": "ns=1;b=ADAwMDE4OHxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBIb3BwZXJ8",
+        "id": "ns=1;b=A00000C6",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE4OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBIb3BwZXJ8TGV2ZWxfTA==",
+            "id": "ns=1;b=A00000C7",
             "name": "Level_L",
             "value": 65,
             "simulation": {
@@ -2201,7 +2261,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5MHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBIb3BwZXJ8TG93TGV2ZWw=",
+            "id": "ns=1;b=A00000C8",
             "name": "LowLevel",
             "value": false,
             "valueMethods": [
@@ -2210,7 +2270,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5MXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBIb3BwZXJ8SGlnaExldmVs",
+            "id": "ns=1;b=A00000C9",
             "name": "HighLevel",
             "value": false,
             "valueMethods": [
@@ -2222,10 +2282,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Liter-Lars / ProductTester",
-        "id": "ns=1;b=ADAwMDE5MnxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBQcm9kdWN0VGVzdGVyfA==",
+        "id": "ns=1;b=A00000CA",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE5M3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBQcm9kdWN0VGVzdGVyfE1lYXN1cmVkV2VpZ2h0",
+            "id": "ns=1;b=A00000CB",
             "name": "MeasuredWeight",
             "value": 500,
             "simulation": {
@@ -2242,7 +2302,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5NHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBQcm9kdWN0VGVzdGVyfFByb2R1Y3RPSw==",
+            "id": "ns=1;b=A00000CC",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -2262,7 +2322,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5NXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBQcm9kdWN0VGVzdGVyfFRvdGFsVGVzdGVk",
+            "id": "ns=1;b=A00000CD",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -2275,7 +2335,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5NnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIExpdGVyLUxhcnMgLyBQcm9kdWN0VGVzdGVyfFRvdGFsUmVqZWN0ZWQ=",
+            "id": "ns=1;b=A00000CE",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -2291,10 +2351,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Tiern",
-        "id": "ns=1;b=ADAwMDE5N3xEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufA==",
+        "id": "ns=1;b=A00000CF",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDE5OHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFJVTg==",
+            "id": "ns=1;b=A00000D0",
             "name": "RUN",
             "value": true,
             "valueMethods": [
@@ -2303,7 +2363,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDE5OXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFNUQVRF",
+            "id": "ns=1;b=A00000D1",
             "name": "STATE",
             "value": 6,
             "valueMethods": [
@@ -2312,7 +2372,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwMHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufE1PREU=",
+            "id": "ns=1;b=A00000D2",
             "name": "MODE",
             "value": 1,
             "valueMethods": [
@@ -2321,7 +2381,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwMXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufEhPTEQ=",
+            "id": "ns=1;b=A00000D3",
             "name": "HOLD",
             "value": false,
             "valueMethods": [
@@ -2330,7 +2390,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwMnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFJFU0VU",
+            "id": "ns=1;b=A00000D4",
             "name": "RESET",
             "value": false,
             "valueMethods": [
@@ -2339,7 +2399,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwM3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFNlbGVjdGVkUmVjaXBl",
+            "id": "ns=1;b=A00000D5",
             "name": "SelectedRecipe",
             "value": 1,
             "valueMethods": [
@@ -2348,7 +2408,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwNHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFVuaXRzUGVyUGFjaw==",
+            "id": "ns=1;b=A00000D6",
             "name": "UnitsPerPack",
             "value": 10,
             "valueMethods": [
@@ -2357,7 +2417,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwNXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufEFjdHVhbFJhdGVfcGVyX2g=",
+            "id": "ns=1;b=A00000D7",
             "name": "ActualRate_per_h",
             "value": 360,
             "simulation": {
@@ -2374,7 +2434,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwNnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFRvdGFsUGFja2FnZXM=",
+            "id": "ns=1;b=A00000D8",
             "name": "TotalPackages",
             "value": 0,
             "simulation": {
@@ -2382,7 +2442,7 @@
               "interval": 5,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDE5OHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFJVTg==",
+                "nodeNs": "ns=1;b=A00000D0",
                 "value": true
               }
             },
@@ -2391,7 +2451,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIwN3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJufFNjcmFwUGFja2FnZXM=",
+            "id": "ns=1;b=A00000D9",
             "name": "ScrapPackages",
             "value": 0,
             "simulation": {
@@ -2407,10 +2467,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Tiern / ProductTester",
-        "id": "ns=1;b=ADAwMDIwOHxEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJuIC8gUHJvZHVjdFRlc3Rlcnw=",
+        "id": "ns=1;b=A00000DA",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDIwOXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJuIC8gUHJvZHVjdFRlc3RlcnxNZWFzdXJlZFdlaWdodA==",
+            "id": "ns=1;b=A00000DB",
             "name": "MeasuredWeight",
             "value": 10,
             "simulation": {
@@ -2427,7 +2487,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxMHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJuIC8gUHJvZHVjdFRlc3RlcnxQcm9kdWN0T0s=",
+            "id": "ns=1;b=A00000DC",
             "name": "ProductOK",
             "value": true,
             "simulation": {
@@ -2447,7 +2507,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxMXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJuIC8gUHJvZHVjdFRlc3RlcnxUb3RhbFRlc3RlZA==",
+            "id": "ns=1;b=A00000DD",
             "name": "TotalTested",
             "value": 0,
             "simulation": {
@@ -2460,7 +2520,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxMnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFRpZXJuIC8gUHJvZHVjdFRlc3RlcnxUb3RhbFJlamVjdGVk",
+            "id": "ns=1;b=A00000DE",
             "name": "TotalRejected",
             "value": 0,
             "simulation": {
@@ -2476,10 +2536,10 @@
       },
       {
         "name": "Nordlys Matverk Smakstun / L301 - Stunlinja / Stable-Ståle",
-        "id": "ns=1;b=ADAwMDIxM3xEfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8",
+        "id": "ns=1;b=A00000DF",
         "items": [
           {
-            "id": "ns=1;b=ADAwMDIxNHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UnVubmluZw==",
+            "id": "ns=1;b=A00000E0",
             "name": "Running",
             "value": true,
             "valueMethods": [
@@ -2488,7 +2548,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxNXxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8U3RhdGU=",
+            "id": "ns=1;b=A00000E1",
             "name": "State",
             "value": 30,
             "valueMethods": [
@@ -2497,7 +2557,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxNnxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UGFja2FnZXNSZWNlaXZlZA==",
+            "id": "ns=1;b=A00000E2",
             "name": "PackagesReceived",
             "value": 0,
             "simulation": {
@@ -2505,7 +2565,7 @@
               "interval": 8,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDIxNHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UnVubmluZw==",
+                "nodeNs": "ns=1;b=A00000E0",
                 "value": true
               }
             },
@@ -2514,7 +2574,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxN3xWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UGFsbGV0Q291bnQ=",
+            "id": "ns=1;b=A00000E3",
             "name": "PalletCount",
             "value": 0,
             "simulation": {
@@ -2522,7 +2582,7 @@
               "interval": 300,
               "value": 1,
               "dependsOn": {
-                "nodeNs": "ns=1;b=ADAwMDIxNHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UnVubmluZw==",
+                "nodeNs": "ns=1;b=A00000E0",
                 "value": true
               }
             },
@@ -2531,7 +2591,7 @@
             ]
           },
           {
-            "id": "ns=1;b=ADAwMDIxOHxWfE5vcmRseXNfU21ha3N0dW58Tm9yZGx5cyBNYXR2ZXJrIFNtYWtzdHVuIC8gTDMwMSAtIFN0dW5saW5qYSAvIFN0YWJsZS1TdMOlbGV8UGFsbGV0RnVsbA==",
+            "id": "ns=1;b=A00000E4",
             "name": "PalletFull",
             "value": false,
             "simulation": {
