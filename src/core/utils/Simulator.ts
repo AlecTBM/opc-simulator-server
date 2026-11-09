@@ -23,10 +23,19 @@ export default class Simulator {
     }
 
     setInterval(() => {
-      if (simulation.type === 'conditional') {
-        this.conditional();
-      } else if (this.conditionsSatisfied()) {
-        this.runSimulation(simulation.type);
+      switch (simulation.type) {
+        case 'conditional':
+          this.conditional();
+          break;
+
+        case 'increase':
+        case 'decrease':
+        case 'randomize':
+        case 'sinus':
+          if (this.conditionsSatisfied()) {
+            this.runSimulation(simulation.type);
+          }
+          break;
       }
 
       if (this.t > 3200) this.t = 1;
