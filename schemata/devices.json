@@ -1,170 +1,215 @@
 {
-    "$schema": "http://json-schema.org/draft-07/schema#",
-    "type": "object",
-    "patternProperties": {
-        "^.+$": {
-            "type": "object",
-            "properties": {
-                "name": {
-                    "type": "string"
-                },
-                "items": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": {
-                                "type": "string"
-                            },
-                            "id": {
-                                "type": "string",
-                                "pattern": "^ns=\\d+;b=[0-9A-F]"
-                            },
-                            "items": {
-                                "type": "array",
-                                "items": {
-                                    "type": "object",
-                                    "properties": {
-                                        "id": {
-                                            "type": "string",
-                                            "pattern": "^ns=\\d+;b=[0-9A-F]"
-                                        },
-                                        "name": {
-                                            "type": "string"
-                                        },
-                                        "value": {
-                                            "type": [
-                                                "boolean",
-                                                "number"
-                                            ]
-                                        },
-                                        "simulation": {
-                                            "type": "object",
-                                            "properties": {
-                                                "dependsOn": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "nodeNs": {
-                                                            "type": "string"
-                                                        },
-                                                        "value": {
-                                                            "type": ["number", "boolean", "string"]
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "nodeNs",
-                                                        "value"
-                                                    ]
-                                                },
-                                                "type": {
-                                                    "type": "string",
-                                                    "enum": [
-                                                        "increase",
-                                                        "decrease",
-                                                        "randomize",
-                                                        "sinus",
-                                                        "anomaly"
-                                                    ]
-                                                },
-                                                "value": {
-                                                    "type": ["number", "boolean", "string"]
-                                                },
-                                                "interval": {
-                                                    "type": "number"
-                                                },
-                                                "randomize": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "min": {
-                                                            "type": "number"
-                                                        },
-                                                        "max": {
-                                                            "type": "number"
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "min",
-                                                        "max"
-                                                    ]
-                                                },
-                                                "sinus": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "amplitude": {
-                                                            "type": "number"
-                                                        },
-                                                        "offset": {
-                                                            "type": "number"
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "amplitude",
-                                                        "offset"
-                                                    ]
-                                                },
-                                                "anomaly": {
-                                                    "type": "object",
-                                                    "properties": {
-                                                        "min": {
-                                                            "type": "number"
-                                                        },
-                                                        "max": {
-                                                            "type": "number"
-                                                        },
-                                                        "ends": {
-                                                            "type": "boolean"
-                                                        },
-                                                        "targetValue": {
-                                                            "type": ["number", "boolean", "string"]
-                                                        }
-                                                    },
-                                                    "required": [
-                                                        "min",
-                                                        "max",
-                                                        "ends",
-                                                        "targetValue"
-                                                    ]
-                                                }
-
-                                            },
-                                            "required": [
-                                                "type",
-                                                "interval"
-                                            ]
-                                        },
-                                        "valueMethods": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "string",
-                                                "enum": [
-                                                    "get",
-                                                    "set"
-                                                ]
-                                            }
-                                        }
-                                    },
-                                    "required": [
-                                        "id",
-                                        "name",
-                                        "value",
-                                        "valueMethods"
-                                    ]
-                                }
-                            }
-                        },
-                        "required": [
-                            "name",
-                            "id",
-                            "items"
-                        ]
-                    }
-                }
-            },
-            "required": [
-                "name",
-                "items"
-            ]
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "patternProperties": {
+    "^.+$": {
+      "$ref": "#/$defs/rootFolder"
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "rootFolder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
         }
+      },
+      "required": [
+        "name",
+        "items"
+      ]
     },
-    "additionalProperties": false
+    "folder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ns=\\d+;(i=\\d+|s=.+|g=[0-9a-fA-F-]+|b=.+)$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "items"
+      ]
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^ns=\\d+;(i=\\d+|s=.+|g=[0-9a-fA-F-]+|b=.+)$"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "type": [
+            "string",
+            "number"
+          ]
+        },
+        "value": {
+          "type": [
+            "boolean",
+            "number",
+            "string"
+          ]
+        },
+        "simulation": {
+          "type": "object",
+          "properties": {
+            "dependsOn": {
+              "type": "object",
+              "properties": {
+                "nodeNs": {
+                  "type": "string"
+                },
+                "value": {
+                  "type": [
+                    "number",
+                    "boolean",
+                    "string"
+                  ]
+                }
+              },
+              "required": [
+                "nodeNs",
+                "value"
+              ]
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "increase",
+                "decrease",
+                "randomize",
+                "sinus",
+                "anomaly"
+              ]
+            },
+            "value": {
+              "type": [
+                "number",
+                "boolean",
+                "string"
+              ]
+            },
+            "interval": {
+              "type": "number"
+            },
+            "randomize": {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                },
+                "base": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "min",
+                "max"
+              ]
+            },
+            "sinus": {
+              "type": "object",
+              "properties": {
+                "amplitude": {
+                  "type": "number"
+                },
+                "offset": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "amplitude",
+                "offset"
+              ]
+            },
+            "anomaly": {
+              "type": "object",
+              "properties": {
+                "min": {
+                  "type": "number"
+                },
+                "max": {
+                  "type": "number"
+                },
+                "ends": {
+                  "type": "boolean"
+                },
+                "targetValue": {
+                  "type": [
+                    "number",
+                    "boolean",
+                    "string"
+                  ]
+                },
+                "threshold": {
+                  "type": "number"
+                }
+              },
+              "required": [
+                "min",
+                "max",
+                "ends",
+                "targetValue"
+              ]
+            }
+          },
+          "required": [
+            "type",
+            "interval"
+          ]
+        },
+        "valueMethods": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "get",
+              "set"
+            ]
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "value",
+        "valueMethods"
+      ]
+    },
+    "item": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/folder"
+        },
+        {
+          "$ref": "#/$defs/node"
+        }
+      ]
+    }
+  }
 }
