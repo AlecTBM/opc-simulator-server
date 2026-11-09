@@ -274,6 +274,33 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.Smaksmia.Data.BatchId",
+                    "name": "BatchId",
+                    "value": "BATCH-FG-26001",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.Smaksmia.Data.ProductCode",
+                    "name": "ProductCode",
+                    "value": "FG-BASE-01",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.Smaksmia.Data.ProductName",
+                    "name": "ProductName",
+                    "value": "Fjordglott Original",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
                   }
                 ]
               }
@@ -342,6 +369,24 @@
                     "id": "ns=1;s=FG.Process.FillingTank01.Data.OutletRoute",
                     "name": "OutletRoute",
                     "value": 0,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank01.Data.ProductCode",
+                    "name": "ProductCode",
+                    "value": "EMPTY",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank01.Data.BatchId",
+                    "name": "BatchId",
+                    "value": "NONE",
                     "valueMethods": [
                       "get",
                       "set"
@@ -418,6 +463,24 @@
                       "get",
                       "set"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank02.Data.ProductCode",
+                    "name": "ProductCode",
+                    "value": "EMPTY",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank02.Data.BatchId",
+                    "name": "BatchId",
+                    "value": "NONE",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
                   }
                 ]
               }
@@ -490,6 +553,24 @@
                       "get",
                       "set"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank03.Data.ProductCode",
+                    "name": "ProductCode",
+                    "value": "EMPTY",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.Process.FillingTank03.Data.BatchId",
+                    "name": "BatchId",
+                    "value": "NONE",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
                   }
                 ]
               }
@@ -531,6 +612,24 @@
                     "id": "ns=1;s=FG.FillingLine01.Fjordfylleren.Fjordfylleren.Recipe.NominalSpeed.per.h",
                     "name": "NominalSpeed_per_h",
                     "value": 9600,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Fjordfylleren.Recipe.RecipeName",
+                    "name": "RecipeName",
+                    "value": "Mini 250",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Fjordfylleren.Recipe.ProductCode",
+                    "name": "ProductCode",
+                    "value": "FG-250-NAT",
                     "valueMethods": [
                       "get",
                       "set"
@@ -644,7 +743,23 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Fjordfylleren.ProductTester.LastRejectReason",
+                    "name": "LastRejectReason",
+                    "value": "None",
+                    "valueMethods": [
+                      "get"
+                    ]
                   }
+                ]
+              },
+              {
+                "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Fjordfylleren.StateText",
+                "name": "StateText",
+                "value": "Running",
+                "valueMethods": [
+                  "get"
                 ]
               }
             ]
@@ -770,7 +885,23 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Firklover.ProductTester.LastRejectReason",
+                    "name": "LastRejectReason",
+                    "value": "None",
+                    "valueMethods": [
+                      "get"
+                    ]
                   }
+                ]
+              },
+              {
+                "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Firklover.StateText",
+                "name": "StateText",
+                "value": "Execute",
+                "valueMethods": [
+                  "get"
                 ]
               }
             ]
@@ -845,7 +976,23 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Eskeballetten.ProductTester.LastRejectReason",
+                    "name": "LastRejectReason",
+                    "value": "None",
+                    "valueMethods": [
+                      "get"
+                    ]
                   }
+                ]
+              },
+              {
+                "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Eskeballetten.StateText",
+                "name": "StateText",
+                "value": "Running",
+                "valueMethods": [
+                  "get"
                 ]
               }
             ]
@@ -1191,6 +1338,14 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine01.Fjordfylleren.Palle.Petter.Status.StateText",
+                    "name": "StateText",
+                    "value": "Running",
+                    "valueMethods": [
+                      "get"
+                    ]
                   }
                 ]
               },
@@ -1255,6 +1410,24 @@
                     "id": "ns=1;s=FG.FillingLine02.Glottlinja.Glottfylleren.Recipe.NominalSpeed.per.h",
                     "name": "NominalSpeed_per_h",
                     "value": 7200,
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.Glottfylleren.Recipe.RecipeName",
+                    "name": "RecipeName",
+                    "value": "Mini 100",
+                    "valueMethods": [
+                      "get",
+                      "set"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.Glottfylleren.Recipe.ProductCode",
+                    "name": "ProductCode",
+                    "value": "FG-100",
                     "valueMethods": [
                       "get",
                       "set"
@@ -1368,7 +1541,23 @@
                     "valueMethods": [
                       "get"
                     ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.Glottfylleren.ProductTester.LastRejectReason",
+                    "name": "LastRejectReason",
+                    "value": "None",
+                    "valueMethods": [
+                      "get"
+                    ]
                   }
+                ]
+              },
+              {
+                "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.Glottfylleren.StateText",
+                "name": "StateText",
+                "value": "Running",
+                "valueMethods": [
+                  "get"
                 ]
               }
             ]
@@ -1447,7 +1636,23 @@
                         "valueMethods": [
                           "get"
                         ]
+                      },
+                      {
+                        "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.ParallelPackers.Atteball.ProductTester.LastRejectReason",
+                        "name": "LastRejectReason",
+                        "value": "None",
+                        "valueMethods": [
+                          "get"
+                        ]
                       }
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.ParallelPackers.Atteball.StateText",
+                    "name": "StateText",
+                    "value": "Running",
+                    "valueMethods": [
+                      "get"
                     ]
                   }
                 ]
@@ -1522,7 +1727,23 @@
                         "valueMethods": [
                           "get"
                         ]
+                      },
+                      {
+                        "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.ParallelPackers.Oktapakk.ProductTester.LastRejectReason",
+                        "name": "LastRejectReason",
+                        "value": "None",
+                        "valueMethods": [
+                          "get"
+                        ]
                       }
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.ParallelPackers.Oktapakk.StateText",
+                    "name": "StateText",
+                    "value": "Running",
+                    "valueMethods": [
+                      "get"
                     ]
                   }
                 ]
@@ -1885,6 +2106,14 @@
                         "threshold": 0.95
                       }
                     },
+                    "valueMethods": [
+                      "get"
+                    ]
+                  },
+                  {
+                    "id": "ns=1;s=1.s.FG.FillingLine02.Glottlinja.Palladium.Status.StateText",
+                    "name": "StateText",
+                    "value": "Running",
                     "valueMethods": [
                       "get"
                     ]
