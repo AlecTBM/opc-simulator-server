@@ -150,7 +150,7 @@
           {
             "id": "ns=1;s=SM.FaultTest.State",
             "name": "State",
-            "value": "Running",
+            "value": "Stopped",
             "valueMethods": [
               "get"
             ],
@@ -166,8 +166,6 @@
                 "transitions": [
                   {
                     "to": "Faulted",
-                    "delay": 0,
-                    "priority": 100,
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -177,13 +175,29 @@
                           "value": true
                         }
                       ]
-                    }
+                    },
+                    "delay": 0,
+                    "priority": 100
                   },
                   {
-                    "to": "Stopped",
+                    "from": "Stopped",
+                    "to": "Running",
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=SM.Start",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
                     "delay": 0,
-                    "priority": 10,
+                    "priority": 20
+                  },
+                  {
                     "from": "Running",
+                    "to": "Stopped",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -193,13 +207,13 @@
                           "value": true
                         }
                       ]
-                    }
+                    },
+                    "delay": 0,
+                    "priority": 10
                   },
                   {
-                    "to": "Stopped",
-                    "delay": 1,
-                    "priority": 50,
                     "from": "Faulted",
+                    "to": "Stopped",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -209,7 +223,9 @@
                           "value": true
                         }
                       ]
-                    }
+                    },
+                    "delay": 1,
+                    "priority": 50
                   }
                 ]
               }
@@ -414,10 +430,8 @@
                 ],
                 "transitions": [
                   {
-                    "to": "Stopped",
-                    "delay": 0,
-                    "priority": 0,
                     "from": "Healthy",
+                    "to": "Stopped",
                     "conditions": {
                       "logic": "OR",
                       "items": [
@@ -432,7 +446,30 @@
                           "value": true
                         }
                       ]
-                    }
+                    },
+                    "delay": 0,
+                    "priority": 10
+                  },
+                  {
+                    "from": "Stopped",
+                    "to": "Healthy",
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=SM.Stop",
+                          "operator": "==",
+                          "value": false
+                        },
+                        {
+                          "nodeNs": "ns=1;s=SM.Fault",
+                          "operator": "==",
+                          "value": false
+                        }
+                      ]
+                    },
+                    "delay": 0,
+                    "priority": 10
                   }
                 ]
               }
