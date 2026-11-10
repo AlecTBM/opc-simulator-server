@@ -1,624 +1,317 @@
 {
-  "Condition_Test_Factory": {
-    "name": "Condition Logic Test Factory",
+  "Mapping_Test_Factory": {
+    "name": "Mapping Test Factory",
     "items": [
       {
-        "id": "ns=1;s=TEST.SharedInputs",
-        "name": "00_SharedInputs",
+        "id": "ns=1;s=MAP.Inputs",
+        "name": "00_Inputs",
         "items": [
           {
-            "id": "ns=1;s=TEST.Input.Run",
-            "name": "Run",
-            "value": true,
+            "id": "ns=1;s=MAP.RecipeNo",
+            "name": "RecipeNo",
+            "value": 1,
             "valueMethods": [
               "get",
               "set"
             ]
           },
           {
-            "id": "ns=1;s=TEST.Input.Ready",
-            "name": "Ready",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=TEST.Input.Fault",
-            "name": "Fault",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=TEST.Input.Level",
-            "name": "Level",
-            "value": 50,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=TEST.Input.State",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=TEST.Input.Mode",
-            "name": "Mode",
+            "id": "ns=1;s=MAP.ModeCode",
+            "name": "ModeCode",
             "value": "AUTO",
             "valueMethods": [
               "get",
               "set"
             ]
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.SingleEquality",
-        "name": "01_SingleCondition_Equality",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.SingleEquality.Counter",
-            "name": "Counter",
-            "value": 0,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "increase",
-              "interval": 1,
-              "value": 1,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.NotEqual",
-        "name": "02_Operator_NotEqual",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.NotEqual.Result",
-            "name": "Result",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Mode",
-                    "operator": "!=",
-                    "value": "MANUAL"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.LessThan",
-        "name": "03_Operator_LessThan",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.LessThan.Result",
-            "name": "LevelLow",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": "<",
-                    "value": 15
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.LessEqual",
-        "name": "04_Operator_LessEqual",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.LessEqual.Result",
-            "name": "LevelLowOrEqual",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": "<=",
-                    "value": 15
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.GreaterThan",
-        "name": "05_Operator_GreaterThan",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.GreaterThan.Result",
-            "name": "LevelHigh",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": ">",
-                    "value": 85
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.GreaterEqual",
-        "name": "06_Operator_GreaterEqual",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.GreaterEqual.Result",
-            "name": "LevelHighOrEqual",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": ">=",
-                    "value": 85
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.MultiAnd",
-        "name": "07_MultipleConditions_AND",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.MultiAnd.Result",
-            "name": "CanProduce",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Ready",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Fault",
-                    "operator": "==",
-                    "value": false
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": ">",
-                    "value": 10
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.MultiOr",
-        "name": "08_MultipleConditions_OR",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.MultiOr.Result",
-            "name": "StopRequested",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "OR",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Fault",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Level",
-                    "operator": "<",
-                    "value": 5
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": false
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.CondValues",
-        "name": "09_Conditional_ResultTypes",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.CondValues.Boolean",
-            "name": "BooleanResult",
-            "value": false,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.State",
-                    "operator": "==",
-                    "value": 30
-                  }
-                ]
-              }
-            }
           },
           {
-            "id": "ns=1;s=TEST.CondValues.Number",
-            "name": "NumberResult",
-            "value": 0,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": 100,
-              "falseValue": 0,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Fault",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          },
-          {
-            "id": "ns=1;s=TEST.CondValues.String",
-            "name": "StringResult",
-            "value": "Stopped",
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 1,
-              "trueValue": "Running",
-              "falseValue": "Stopped",
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.IncreaseConditions",
-        "name": "10_Increase_WithMultipleConditions",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.IncreaseConditions.Counter",
-            "name": "ProductionCounter",
-            "value": 0,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "increase",
-              "interval": 1,
-              "value": 3,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Ready",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Fault",
-                    "operator": "==",
-                    "value": false
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.DecreaseConditions",
-        "name": "11_Decrease_WithConditions",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.DecreaseConditions.Level",
-            "name": "SimulatedLevel",
-            "value": 100,
-            "valueMethods": [
-              "get",
-              "set"
-            ],
-            "simulation": {
-              "type": "decrease",
-              "interval": 1,
-              "value": 0.5,
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.State",
-                    "operator": ">=",
-                    "value": 30
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.RandomizeConditions",
-        "name": "12_Randomize_WithConditions",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.RandomizeConditions.Temperature",
-            "name": "Temperature",
-            "value": 72,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "randomize",
-              "interval": 1,
-              "randomize": {
-                "base": 72,
-                "min": 1,
-                "max": 1
-              },
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.SinusConditions",
-        "name": "13_Sinus_WithConditions",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.SinusConditions.Pressure",
-            "name": "Pressure",
-            "value": 3.2,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "sinus",
-              "interval": 1,
-              "sinus": {
-                "amplitude": 0.4,
-                "offset": 3.2
-              },
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Mode",
-                    "operator": "==",
-                    "value": "AUTO"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.AnomalyConditions",
-        "name": "14_Anomaly_WithConditions",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.AnomalyConditions.Fault",
-            "name": "RandomFault",
+            "id": "ns=1;s=MAP.BoolCode",
+            "name": "BoolCode",
             "value": false,
             "valueMethods": [
               "get",
               "set"
-            ],
-            "simulation": {
-              "type": "anomaly",
-              "interval": 1,
-              "anomaly": {
-                "min": 3,
-                "max": 10,
-                "targetValue": true,
-                "threshold": 0.8,
-                "duration": 5
-              },
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Run",
-                    "operator": "==",
-                    "value": true
-                  },
-                  {
-                    "nodeNs": "ns=1;s=TEST.Input.Fault",
-                    "operator": "==",
-                    "value": false
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=TEST.DeepFolders",
-        "name": "15_RecursiveFolders_And_StringNodeIds",
-        "items": [
-          {
-            "id": "ns=1;s=TEST.DeepFolders.Level2",
-            "name": "Level2",
-            "items": [
-              {
-                "id": "ns=1;s=TEST.DeepFolders.Level2.Level3",
-                "name": "Level3",
-                "items": [
-                  {
-                    "id": "ns=1;s=TEST.DeepFolders.Level2.Level3.Level4",
-                    "name": "Level4",
-                    "items": [
-                      {
-                        "id": "ns=1;s=TEST.DeepFolders.Level2.Level3.Level4.Value",
-                        "name": "DeepValue",
-                        "value": "Recursive folders OK",
-                        "valueMethods": [
-                          "get",
-                          "set"
-                        ]
-                      }
-                    ]
-                  }
-                ]
-              }
             ]
+          },
+          {
+            "id": "ns=1;s=MAP.Enabled",
+            "name": "Enabled",
+            "value": true,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.ForwardString",
+        "name": "01_Forward_Number_To_String",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.RecipeName",
+            "name": "RecipeName",
+            "value": "Mini 250",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Mini 250",
+                  "2": "Family 500"
+                },
+                "defaultValue": "Unknown"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.ForwardNumber",
+        "name": "02_Forward_Number_To_Number",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.ProductSize",
+            "name": "ProductSize",
+            "value": 250,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": 250,
+                  "2": 500
+                },
+                "defaultValue": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.ForwardBoolean",
+        "name": "03_Forward_Boolean_To_String",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.BoolText",
+            "name": "BoolText",
+            "value": "Disabled",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.BoolCode",
+                "map": {
+                  "false": "Disabled",
+                  "true": "Enabled"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.ForwardStringSource",
+        "name": "04_Forward_String_To_Number",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.ModeNumber",
+            "name": "ModeNumber",
+            "value": 1,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.ModeCode",
+                "map": {
+                  "AUTO": 1,
+                  "MANUAL": 2,
+                  "SERVICE": 3
+                },
+                "defaultValue": 0
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.DefaultValue",
+        "name": "05_DefaultValue",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.UnknownRecipeText",
+            "name": "UnknownRecipeText",
+            "value": "Initial",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Known 1",
+                  "2": "Known 2"
+                },
+                "defaultValue": "Unknown recipe"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.NoDefault",
+        "name": "06_NoDefault_KeepsPrevious",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.KeepPrevious",
+            "name": "KeepPrevious",
+            "value": "Initial value",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Mapped one",
+                  "2": "Mapped two"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.Conditional",
+        "name": "07_Mapping_WithConditions",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.ConditionalName",
+            "name": "ConditionalName",
+            "value": "Initial",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Mini 250",
+                  "2": "Family 500"
+                }
+              },
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=MAP.Enabled",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.BidirectionalString",
+        "name": "08_Bidirectional_Number_String",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.BidirectionalRecipeName",
+            "name": "BidirectionalRecipeName",
+            "value": "Mini 250",
+            "valueMethods": [
+              "get",
+              "set"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Mini 250",
+                  "2": "Family 500"
+                },
+                "bidirectional": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.BidirectionalBoolean",
+        "name": "09_Bidirectional_Boolean_String",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.BidirectionalBoolText",
+            "name": "BidirectionalBoolText",
+            "value": "Disabled",
+            "valueMethods": [
+              "get",
+              "set"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.BoolCode",
+                "map": {
+                  "false": "Disabled",
+                  "true": "Enabled"
+                },
+                "bidirectional": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=MAP.InvalidReverse",
+        "name": "10_InvalidReverseWrite",
+        "items": [
+          {
+            "id": "ns=1;s=MAP.StrictRecipeName",
+            "name": "StrictRecipeName",
+            "value": "Mini 250",
+            "valueMethods": [
+              "get",
+              "set"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 1,
+              "mapping": {
+                "source": "ns=1;s=MAP.RecipeNo",
+                "map": {
+                  "1": "Mini 250",
+                  "2": "Family 500"
+                },
+                "bidirectional": true
+              }
+            }
           }
         ]
       }

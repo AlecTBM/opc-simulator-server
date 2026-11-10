@@ -28,6 +28,12 @@ export default class Simulator {
           this.conditional();
           break;
 
+        case 'mapping':
+          if (this.conditionsSatisfied()) {
+            this.mapping();
+          }
+          break;
+
         case 'increase':
         case 'decrease':
         case 'randomize':
@@ -108,6 +114,25 @@ export default class Simulator {
     }
 
     return compare(actualValue, expectedValue);
+  }
+
+
+  private mapping() {
+    const config = this.node.simulation?.mapping;
+    if (!config) return;
+
+    const sourceValue = this.getNodeValue(config.source);
+    if (sourceValue === undefined || sourceValue === null) {
+      Logger.error(`Mapping source node ${config.source} not found`);
+      return;
+    }
+
+    const key = String(sourceValue);
+    if (Object.prototype.hasOwnProperty.call(config.map, key)) {
+      this.node.value = config.map[key];
+    } else if (config.defaultValue !== undefined) {
+      this.node.value = config.defaultValue;
+    }
   }
 
   private conditional() {

@@ -15,6 +15,13 @@ export interface SimulationConditions {
     items: SimulationCondition[];
 }
 
+export interface SimulationMapping {
+    source: string;
+    map: Record<string, SimulationValue>;
+    defaultValue?: SimulationValue;
+    bidirectional?: boolean;
+}
+
 export interface DeviceFolder {
     name: string;
     id: string;
@@ -28,7 +35,7 @@ export interface DeviceNode {
     value: SimulationValue;
     valueMethods: ('set' | 'get')[];
     simulation?: {
-        type: 'increase' | 'decrease' | 'randomize' | 'sinus' | 'anomaly' | 'conditional';
+        type: 'increase' | 'decrease' | 'randomize' | 'sinus' | 'anomaly' | 'conditional' | 'mapping';
         value?: number;
         interval: number;
         conditions?: SimulationConditions;
@@ -44,5 +51,6 @@ export interface DeviceNode {
             duration: number;
             ends?: boolean;
         };
+        mapping?: SimulationMapping;
     };
 }

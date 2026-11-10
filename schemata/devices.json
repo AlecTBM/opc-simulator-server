@@ -2,15 +2,23 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "patternProperties": {
-    "^.+$": { "$ref": "#/$defs/rootFolder" }
+    "^.+$": {
+      "$ref": "#/$defs/rootFolder"
+    }
   },
   "additionalProperties": false,
   "$defs": {
     "value": {
       "anyOf": [
-        { "type": "boolean" },
-        { "type": "number" },
-        { "type": "string" }
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
       ]
     },
     "nodeId": {
@@ -20,14 +28,29 @@
     "condition": {
       "type": "object",
       "properties": {
-        "nodeNs": { "type": "string" },
+        "nodeNs": {
+          "type": "string"
+        },
         "operator": {
           "type": "string",
-          "enum": ["==", "!=", "<", "<=", ">", ">="]
+          "enum": [
+            "==",
+            "!=",
+            "<",
+            "<=",
+            ">",
+            ">="
+          ]
         },
-        "value": { "$ref": "#/$defs/value" }
+        "value": {
+          "$ref": "#/$defs/value"
+        }
       },
-      "required": ["nodeNs", "operator", "value"],
+      "required": [
+        "nodeNs",
+        "operator",
+        "value"
+      ],
       "additionalProperties": false
     },
     "conditions": {
@@ -35,39 +58,64 @@
       "properties": {
         "logic": {
           "type": "string",
-          "enum": ["AND", "OR"]
+          "enum": [
+            "AND",
+            "OR"
+          ]
         },
         "items": {
           "type": "array",
           "minItems": 1,
-          "items": { "$ref": "#/$defs/condition" }
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
         }
       },
-      "required": ["logic", "items"],
+      "required": [
+        "logic",
+        "items"
+      ],
       "additionalProperties": false
     },
     "rootFolder": {
       "type": "object",
       "properties": {
-        "name": { "type": "string" },
+        "name": {
+          "type": "string"
+        },
         "items": {
           "type": "array",
-          "items": { "$ref": "#/$defs/item" }
+          "items": {
+            "$ref": "#/$defs/item"
+          }
         }
       },
-      "required": ["name", "items"]
+      "required": [
+        "name",
+        "items"
+      ]
     },
     "folder": {
       "type": "object",
       "properties": {
-        "id": { "$ref": "#/$defs/nodeId" },
-        "name": { "type": "string" },
+        "id": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "name": {
+          "type": "string"
+        },
         "items": {
           "type": "array",
-          "items": { "$ref": "#/$defs/item" }
+          "items": {
+            "$ref": "#/$defs/item"
+          }
         }
       },
-      "required": ["id", "name", "items"],
+      "required": [
+        "id",
+        "name",
+        "items"
+      ],
       "additionalProperties": false
     },
     "simulation": {
@@ -75,51 +123,140 @@
       "properties": {
         "type": {
           "type": "string",
-          "enum": ["increase", "decrease", "randomize", "sinus", "anomaly", "conditional"]
+          "enum": [
+            "increase",
+            "decrease",
+            "randomize",
+            "sinus",
+            "anomaly",
+            "conditional",
+            "mapping"
+          ]
         },
-        "interval": { "type": "number", "exclusiveMinimum": 0 },
-        "value": { "type": "number" },
-        "conditions": { "$ref": "#/$defs/conditions" },
-        "trueValue": { "$ref": "#/$defs/value" },
-        "falseValue": { "$ref": "#/$defs/value" },
+        "interval": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "value": {
+          "type": "number"
+        },
+        "conditions": {
+          "$ref": "#/$defs/conditions"
+        },
+        "trueValue": {
+          "$ref": "#/$defs/value"
+        },
+        "falseValue": {
+          "$ref": "#/$defs/value"
+        },
         "randomize": {
           "type": "object",
           "properties": {
-            "min": { "type": "number" },
-            "max": { "type": "number" },
-            "base": { "type": "number" }
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "base": {
+              "type": "number"
+            }
           },
-          "required": ["min", "max", "base"],
+          "required": [
+            "min",
+            "max",
+            "base"
+          ],
           "additionalProperties": false
         },
         "sinus": {
           "type": "object",
           "properties": {
-            "amplitude": { "type": "number" },
-            "offset": { "type": "number" }
+            "amplitude": {
+              "type": "number"
+            },
+            "offset": {
+              "type": "number"
+            }
           },
-          "required": ["amplitude", "offset"],
+          "required": [
+            "amplitude",
+            "offset"
+          ],
           "additionalProperties": false
         },
         "anomaly": {
           "type": "object",
           "properties": {
-            "min": { "type": "number" },
-            "max": { "type": "number" },
-            "ends": { "type": "boolean" },
-            "targetValue": { "$ref": "#/$defs/value" },
-            "threshold": { "type": "number", "minimum": 0, "maximum": 1 },
-            "duration": { "type": "number", "exclusiveMinimum": 0 }
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "ends": {
+              "type": "boolean"
+            },
+            "targetValue": {
+              "$ref": "#/$defs/value"
+            },
+            "threshold": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            },
+            "duration": {
+              "type": "number",
+              "exclusiveMinimum": 0
+            }
           },
-          "required": ["min", "max", "targetValue", "threshold", "duration"],
+          "required": [
+            "min",
+            "max",
+            "targetValue",
+            "threshold",
+            "duration"
+          ],
           "additionalProperties": false
+        },
+        "mapping": {
+          "$ref": "#/$defs/mapping"
         }
       },
-      "required": ["type", "interval"],
+      "required": [
+        "type",
+        "interval"
+      ],
       "allOf": [
         {
-          "if": { "properties": { "type": { "const": "conditional" } } },
-          "then": { "required": ["conditions", "trueValue", "falseValue"] }
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conditional"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "conditions",
+              "trueValue",
+              "falseValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mapping"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "mapping"
+            ]
+          }
         }
       ],
       "additionalProperties": false
@@ -127,24 +264,82 @@
     "node": {
       "type": "object",
       "properties": {
-        "id": { "$ref": "#/$defs/nodeId" },
-        "name": { "type": "string" },
-        "type": { "anyOf": [{ "type": "string" }, { "type": "number" }] },
-        "value": { "$ref": "#/$defs/value" },
-        "simulation": { "$ref": "#/$defs/simulation" },
+        "id": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "name": {
+          "type": "string"
+        },
+        "type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "number"
+            }
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        },
+        "simulation": {
+          "$ref": "#/$defs/simulation"
+        },
         "valueMethods": {
           "type": "array",
-          "items": { "type": "string", "enum": ["get", "set"] }
+          "items": {
+            "type": "string",
+            "enum": [
+              "get",
+              "set"
+            ]
+          }
         }
       },
-      "required": ["id", "name", "value", "valueMethods"],
+      "required": [
+        "id",
+        "name",
+        "value",
+        "valueMethods"
+      ],
       "additionalProperties": false
     },
     "item": {
       "oneOf": [
-        { "$ref": "#/$defs/folder" },
-        { "$ref": "#/$defs/node" }
+        {
+          "$ref": "#/$defs/folder"
+        },
+        {
+          "$ref": "#/$defs/node"
+        }
       ]
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "map": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        "defaultValue": {
+          "$ref": "#/$defs/value"
+        },
+        "bidirectional": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "map"
+      ],
+      "additionalProperties": false
     }
   }
 }
