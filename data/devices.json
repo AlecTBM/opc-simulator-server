@@ -1,50 +1,14 @@
 {
-  "StateMachine_Test_Factory": {
-    "name": "State Machine Test Factory",
+  "Cycle_Test_Factory": {
+    "name": "Cycle and Condition Delay Test Factory",
     "items": [
       {
-        "id": "ns=1;s=SM.Inputs",
+        "id": "ns=1;s=C.Inputs",
         "name": "00_Inputs",
         "items": [
           {
-            "id": "ns=1;s=SM.Start",
-            "name": "Start",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=SM.Stop",
-            "name": "Stop",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=SM.Fault",
-            "name": "Fault",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=SM.Reset",
-            "name": "Reset",
-            "value": false,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=SM.DownstreamRunning",
-            "name": "DownstreamRunning",
+            "id": "ns=1;s=C.Run",
+            "name": "Run",
             "value": true,
             "valueMethods": [
               "get",
@@ -52,8 +16,8 @@
             ]
           },
           {
-            "id": "ns=1;s=SM.UpstreamRunning",
-            "name": "UpstreamRunning",
+            "id": "ns=1;s=C.PA",
+            "name": "PackerA",
             "value": true,
             "valueMethods": [
               "get",
@@ -61,9 +25,9 @@
             ]
           },
           {
-            "id": "ns=1;s=SM.Select",
-            "name": "Select",
-            "value": 1,
+            "id": "ns=1;s=C.PB",
+            "name": "PackerB",
+            "value": true,
             "valueMethods": [
               "get",
               "set"
@@ -72,336 +36,31 @@
         ]
       },
       {
-        "id": "ns=1;s=SM.Basic",
-        "name": "01_BasicStartStop",
+        "id": "ns=1;s=C.DelayOn",
+        "name": "01_Condition_OnDelay",
         "items": [
           {
-            "id": "ns=1;s=SM.Basic.State",
-            "name": "State",
-            "value": "Stopped",
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "stateMachine",
-              "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  "Stopped",
-                  "Starting",
-                  "Running",
-                  "Stopping"
-                ],
-                "transitions": [
-                  {
-                    "to": "Starting",
-                    "delay": 0,
-                    "priority": 0,
-                    "from": "Stopped",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Start",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "to": "Running",
-                    "delay": 2,
-                    "priority": 0,
-                    "from": "Starting"
-                  },
-                  {
-                    "to": "Stopping",
-                    "delay": 0,
-                    "priority": 0,
-                    "from": "Running",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Stop",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "to": "Stopped",
-                    "delay": 2,
-                    "priority": 0,
-                    "from": "Stopping"
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=SM.FaultTest",
-        "name": "02_PriorityFaultReset",
-        "items": [
-          {
-            "id": "ns=1;s=SM.FaultTest.State",
-            "name": "State",
-            "value": "Stopped",
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "stateMachine",
-              "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  "Stopped",
-                  "Running",
-                  "Faulted"
-                ],
-                "transitions": [
-                  {
-                    "to": "Faulted",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Fault",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    },
-                    "delay": 0,
-                    "priority": 100
-                  },
-                  {
-                    "from": "Stopped",
-                    "to": "Running",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Start",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    },
-                    "delay": 0,
-                    "priority": 20
-                  },
-                  {
-                    "from": "Running",
-                    "to": "Stopped",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Stop",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    },
-                    "delay": 0,
-                    "priority": 10
-                  },
-                  {
-                    "from": "Faulted",
-                    "to": "Stopped",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Reset",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    },
-                    "delay": 1,
-                    "priority": 50
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=SM.Blocked",
-        "name": "03_DelayedBlocked",
-        "items": [
-          {
-            "id": "ns=1;s=SM.Blocked.State",
-            "name": "State",
-            "value": "Running",
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "stateMachine",
-              "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  "Stopped",
-                  "Running",
-                  "Blocked"
-                ],
-                "transitions": [
-                  {
-                    "to": "Blocked",
-                    "delay": 3,
-                    "priority": 20,
-                    "from": "Running",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.DownstreamRunning",
-                          "operator": "==",
-                          "value": false
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "to": "Running",
-                    "delay": 1,
-                    "priority": 20,
-                    "from": "Blocked",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.DownstreamRunning",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=SM.Starved",
-        "name": "04_DelayedStarved",
-        "items": [
-          {
-            "id": "ns=1;s=SM.Starved.State",
-            "name": "State",
-            "value": 30,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "stateMachine",
-              "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  0,
-                  30,
-                  40
-                ],
-                "transitions": [
-                  {
-                    "to": 40,
-                    "delay": 3,
-                    "priority": 0,
-                    "from": 30,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.UpstreamRunning",
-                          "operator": "==",
-                          "value": false
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "to": 30,
-                    "delay": 1,
-                    "priority": 0,
-                    "from": 40,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.UpstreamRunning",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=SM.Boolean",
-        "name": "05_BooleanStateMachine",
-        "items": [
-          {
-            "id": "ns=1;s=SM.Boolean.State",
-            "name": "State",
+            "id": "ns=1;s=C.DelayOn.Result",
+            "name": "Result",
             "value": false,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "stateMachine",
+              "type": "conditional",
               "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  false,
-                  true
-                ],
-                "transitions": [
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "delay": {
+                  "on": 2
+                },
+                "items": [
                   {
-                    "to": true,
-                    "delay": 0,
-                    "priority": 0,
-                    "from": false,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Start",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
-                  },
-                  {
-                    "to": false,
-                    "delay": 0,
-                    "priority": 0,
-                    "from": true,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Stop",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    }
+                    "nodeNs": "ns=1;s=C.Run",
+                    "operator": "==",
+                    "value": true
                   }
                 ]
               }
@@ -410,66 +69,31 @@
         ]
       },
       {
-        "id": "ns=1;s=SM.OR",
-        "name": "06_ORConditions",
+        "id": "ns=1;s=C.DelayOff",
+        "name": "02_Condition_OffDelay",
         "items": [
           {
-            "id": "ns=1;s=SM.OR.State",
-            "name": "State",
-            "value": "Healthy",
+            "id": "ns=1;s=C.DelayOff.Result",
+            "name": "Result",
+            "value": true,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "stateMachine",
+              "type": "conditional",
               "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  "Healthy",
-                  "Stopped"
-                ],
-                "transitions": [
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "delay": {
+                  "off": 2
+                },
+                "items": [
                   {
-                    "from": "Healthy",
-                    "to": "Stopped",
-                    "conditions": {
-                      "logic": "OR",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Stop",
-                          "operator": "==",
-                          "value": true
-                        },
-                        {
-                          "nodeNs": "ns=1;s=SM.Fault",
-                          "operator": "==",
-                          "value": true
-                        }
-                      ]
-                    },
-                    "delay": 0,
-                    "priority": 10
-                  },
-                  {
-                    "from": "Stopped",
-                    "to": "Healthy",
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Stop",
-                          "operator": "==",
-                          "value": false
-                        },
-                        {
-                          "nodeNs": "ns=1;s=SM.Fault",
-                          "operator": "==",
-                          "value": false
-                        }
-                      ]
-                    },
-                    "delay": 0,
-                    "priority": 10
+                    "nodeNs": "ns=1;s=C.Run",
+                    "operator": "==",
+                    "value": true
                   }
                 ]
               }
@@ -478,70 +102,147 @@
         ]
       },
       {
-        "id": "ns=1;s=SM.GenericSelection",
-        "name": "07_GenericSelection",
+        "id": "ns=1;s=C.Cycle50",
+        "name": "03_Cycle_50Percent_Boolean",
         "items": [
           {
-            "id": "ns=1;s=SM.Select.State",
-            "name": "State",
-            "value": "One",
+            "id": "ns=1;s=C.Cycle50.Result",
+            "name": "Result",
+            "value": true,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "stateMachine",
+              "type": "cycle",
               "interval": 0.25,
-              "stateMachine": {
-                "states": [
-                  "One",
-                  "Two",
-                  "Three"
-                ],
-                "transitions": [
+              "cycle": {
+                "onDuration": 2,
+                "offDuration": 2,
+                "onValue": true,
+                "offValue": false,
+                "inactiveValue": true
+              },
+              "conditions": {
+                "logic": "AND",
+                "items": [
                   {
-                    "to": "One",
-                    "delay": 0,
-                    "priority": 0,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Select",
-                          "operator": "==",
-                          "value": 1
-                        }
-                      ]
-                    }
+                    "nodeNs": "ns=1;s=C.Run",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=C.CycleString",
+        "name": "04_Cycle_StringValues",
+        "items": [
+          {
+            "id": "ns=1;s=C.CycleString.Result",
+            "name": "Result",
+            "value": "Idle",
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "cycle",
+              "interval": 0.25,
+              "cycle": {
+                "onDuration": 1,
+                "offDuration": 1,
+                "onValue": "Running",
+                "offValue": "Blocked",
+                "inactiveValue": "Idle"
+              },
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=C.Run",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=C.Parallel",
+        "name": "05_ParallelPackers_50Percent",
+        "items": [
+          {
+            "id": "ns=1;s=C.Parallel.FillerRun",
+            "name": "FillerRunning",
+            "value": true,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "cycle",
+              "interval": 0.25,
+              "cycle": {
+                "onDuration": 3,
+                "offDuration": 3,
+                "onValue": true,
+                "offValue": false,
+                "inactiveValue": true
+              },
+              "conditions": {
+                "logic": "OR",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=C.PA",
+                    "operator": "==",
+                    "value": false
                   },
                   {
-                    "to": "Two",
-                    "delay": 0,
-                    "priority": 0,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Select",
-                          "operator": "==",
-                          "value": 2
-                        }
-                      ]
-                    }
-                  },
+                    "nodeNs": "ns=1;s=C.PB",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=C.DelayedCycle",
+        "name": "06_Cycle_WithConditionDelay",
+        "items": [
+          {
+            "id": "ns=1;s=C.DelayedCycle.Result",
+            "name": "Result",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "cycle",
+              "interval": 0.25,
+              "cycle": {
+                "onDuration": 1,
+                "offDuration": 1,
+                "onValue": true,
+                "offValue": false,
+                "inactiveValue": false
+              },
+              "conditions": {
+                "logic": "AND",
+                "delay": {
+                  "on": 2,
+                  "off": 1
+                },
+                "items": [
                   {
-                    "to": "Three",
-                    "delay": 0,
-                    "priority": 0,
-                    "conditions": {
-                      "logic": "AND",
-                      "items": [
-                        {
-                          "nodeNs": "ns=1;s=SM.Select",
-                          "operator": "==",
-                          "value": 3
-                        }
-                      ]
-                    }
+                    "nodeNs": "ns=1;s=C.Run",
+                    "operator": "==",
+                    "value": true
                   }
                 ]
               }
