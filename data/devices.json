@@ -94,10 +94,10 @@
                 ],
                 "transitions": [
                   {
-                    "from": "Stopped",
                     "to": "Starting",
                     "delay": 0,
                     "priority": 0,
+                    "from": "Stopped",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -110,16 +110,16 @@
                     }
                   },
                   {
-                    "from": "Starting",
                     "to": "Running",
                     "delay": 2,
-                    "priority": 0
+                    "priority": 0,
+                    "from": "Starting"
                   },
                   {
-                    "from": "Running",
                     "to": "Stopping",
                     "delay": 0,
                     "priority": 0,
+                    "from": "Running",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -132,10 +132,10 @@
                     }
                   },
                   {
-                    "from": "Stopping",
                     "to": "Stopped",
                     "delay": 2,
-                    "priority": 0
+                    "priority": 0,
+                    "from": "Stopping"
                   }
                 ]
               }
@@ -165,7 +165,6 @@
                 ],
                 "transitions": [
                   {
-                    
                     "to": "Faulted",
                     "delay": 0,
                     "priority": 100,
@@ -181,10 +180,10 @@
                     }
                   },
                   {
-                    "from": "Running",
                     "to": "Stopped",
                     "delay": 0,
                     "priority": 10,
+                    "from": "Running",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -197,10 +196,10 @@
                     }
                   },
                   {
-                    "from": "Faulted",
                     "to": "Stopped",
                     "delay": 1,
                     "priority": 50,
+                    "from": "Faulted",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -240,10 +239,10 @@
                 ],
                 "transitions": [
                   {
-                    "from": "Running",
                     "to": "Blocked",
                     "delay": 3,
                     "priority": 20,
+                    "from": "Running",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -256,10 +255,10 @@
                     }
                   },
                   {
-                    "from": "Blocked",
                     "to": "Running",
                     "delay": 1,
                     "priority": 20,
+                    "from": "Blocked",
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -299,10 +298,10 @@
                 ],
                 "transitions": [
                   {
-                    "from": 30,
                     "to": 40,
                     "delay": 3,
                     "priority": 0,
+                    "from": 30,
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -315,10 +314,10 @@
                     }
                   },
                   {
-                    "from": 40,
                     "to": 30,
                     "delay": 1,
                     "priority": 0,
+                    "from": 40,
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -357,10 +356,10 @@
                 ],
                 "transitions": [
                   {
-                    "from": false,
                     "to": true,
                     "delay": 0,
                     "priority": 0,
+                    "from": false,
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -373,10 +372,10 @@
                     }
                   },
                   {
-                    "from": true,
                     "to": false,
                     "delay": 0,
                     "priority": 0,
+                    "from": true,
                     "conditions": {
                       "logic": "AND",
                       "items": [
@@ -415,10 +414,10 @@
                 ],
                 "transitions": [
                   {
-                    "from": "Healthy",
                     "to": "Stopped",
                     "delay": 0,
                     "priority": 0,
+                    "from": "Healthy",
                     "conditions": {
                       "logic": "OR",
                       "items": [
@@ -442,7 +441,7 @@
         ]
       },
       {
-        "id": "ns=1;s=SM.Select",
+        "id": "ns=1;s=SM.GenericSelection",
         "name": "07_GenericSelection",
         "items": [
           {
@@ -463,7 +462,6 @@
                 ],
                 "transitions": [
                   {
-                    
                     "to": "One",
                     "delay": 0,
                     "priority": 0,
@@ -479,7 +477,6 @@
                     }
                   },
                   {
-                    
                     "to": "Two",
                     "delay": 0,
                     "priority": 0,
@@ -495,7 +492,6 @@
                     }
                   },
                   {
-                    
                     "to": "Three",
                     "delay": 0,
                     "priority": 0,
