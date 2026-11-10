@@ -1,50 +1,543 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
-  "patternProperties": {"^.+$": {"$ref": "#/$defs/rootFolder"}},
+  "patternProperties": {
+    "^.+$": {
+      "$ref": "#/$defs/rootFolder"
+    }
+  },
   "additionalProperties": false,
   "$defs": {
-    "value": {"anyOf": [{"type":"boolean"},{"type":"number"},{"type":"string"}]},
-    "nodeId": {"type":"string","pattern":"^ns=\\d+;(i=\\d+|s=.+|g=[0-9a-fA-F-]+|b=.+)$"},
-    "condition": {"type":"object","properties":{"nodeNs":{"type":"string"},"operator":{"type":"string","enum":["==","!=","<","<=",">",">="]},"value":{"$ref":"#/$defs/value"}},"required":["nodeNs","operator","value"],"additionalProperties":false},
-    "conditions": {"type":"object","properties":{"logic":{"type":"string","enum":["AND","OR"]},"items":{"type":"array","minItems":1,"items":{"$ref":"#/$defs/condition"}}},"required":["logic","items"],"additionalProperties":false},
-    "rootFolder": {"type":"object","properties":{"name":{"type":"string"},"items":{"type":"array","items":{"$ref":"#/$defs/item"}}},"required":["name","items"]},
-    "folder": {"type":"object","properties":{"id":{"$ref":"#/$defs/nodeId"},"name":{"type":"string"},"items":{"type":"array","items":{"$ref":"#/$defs/item"}}},"required":["id","name","items"],"additionalProperties":false},
-    "simulation": {
-      "type":"object",
-      "properties": {
-        "type":{"type":"string","enum":["increase","decrease","randomize","sinus","anomaly","conditional","mapping","calculation"]},
-        "interval":{"type":"number","exclusiveMinimum":0},
-        "value":{"type":"number"},
-        "conditions":{"$ref":"#/$defs/conditions"},
-        "trueValue":{"$ref":"#/$defs/value"},
-        "falseValue":{"$ref":"#/$defs/value"},
-        "randomize":{"type":"object","properties":{"min":{"type":"number"},"max":{"type":"number"},"base":{"type":"number"}},"required":["min","max","base"],"additionalProperties":false},
-        "sinus":{"type":"object","properties":{"amplitude":{"type":"number"},"offset":{"type":"number"}},"required":["amplitude","offset"],"additionalProperties":false},
-        "anomaly":{"type":"object","properties":{"min":{"type":"number"},"max":{"type":"number"},"ends":{"type":"boolean"},"targetValue":{"$ref":"#/$defs/value"},"threshold":{"type":"number","minimum":0,"maximum":1},"duration":{"type":"number","exclusiveMinimum":0}},"required":["min","max","targetValue","threshold","duration"],"additionalProperties":false},
-        "mapping":{"$ref":"#/$defs/mapping"},
-        "calculation":{"$ref":"#/$defs/calculation"}
-      },
-      "required":["type","interval"],
-      "allOf":[
-        {"if":{"properties":{"type":{"const":"conditional"}}},"then":{"required":["conditions","trueValue","falseValue"]}},
-        {"if":{"properties":{"type":{"const":"mapping"}}},"then":{"required":["mapping"]}},
-        {"if":{"properties":{"type":{"const":"calculation"}}},"then":{"required":["calculation"]}}
-      ],
-      "additionalProperties":false
-    },
-    "node": {"type":"object","properties":{"id":{"$ref":"#/$defs/nodeId"},"name":{"type":"string"},"type":{"anyOf":[{"type":"string"},{"type":"number"}]},"value":{"$ref":"#/$defs/value"},"simulation":{"$ref":"#/$defs/simulation"},"valueMethods":{"type":"array","items":{"type":"string","enum":["get","set"]}}},"required":["id","name","value","valueMethods"],"additionalProperties":false},
-    "item": {"oneOf":[{"$ref":"#/$defs/folder"},{"$ref":"#/$defs/node"}]},
-    "mapping": {"type":"object","properties":{"source":{"type":"string"},"map":{"type":"object","minProperties":1,"additionalProperties":{"$ref":"#/$defs/value"}},"defaultValue":{"$ref":"#/$defs/value"},"bidirectional":{"type":"boolean"}},"required":["source","map"],"additionalProperties":false},
-    "calculationInput": {
-      "oneOf":[
-        {"type":"object","properties":{"source":{"type":"string"}},"required":["source"],"additionalProperties":false},
-        {"type":"object","properties":{"value":{"$ref":"#/$defs/value"}},"required":["value"],"additionalProperties":false},
-        {"type":"object","properties":{"previous":{"const":true}},"required":["previous"],"additionalProperties":false}
+    "value": {
+      "anyOf": [
+        {
+          "type": "boolean"
+        },
+        {
+          "type": "number"
+        },
+        {
+          "type": "string"
+        }
       ]
     },
-    "operatorStep": {"type":"object","properties":{"operator":{"type":"string","enum":["add","subtract","multiply","divide"]},"inputs":{"type":"array","minItems":2,"items":{"$ref":"#/$defs/calculationInput"}}},"required":["operator","inputs"],"additionalProperties":false},
-    "functionStep": {"type":"object","properties":{"function":{"type":"string","enum":["negate","absolute","round","floor","ceil","sqrt"]},"input":{"$ref":"#/$defs/calculationInput"}},"required":["function"],"additionalProperties":false},
-    "calculation": {"type":"object","properties":{"steps":{"type":"array","minItems":1,"items":{"oneOf":[{"$ref":"#/$defs/operatorStep"},{"$ref":"#/$defs/functionStep"}]}},"limits":{"type":"object","properties":{"min":{"type":"number"},"max":{"type":"number"}},"minProperties":1,"additionalProperties":false},"precision":{"type":"integer","minimum":0,"maximum":15}},"required":["steps"],"additionalProperties":false}
+    "nodeId": {
+      "type": "string",
+      "pattern": "^ns=\\d+;(i=\\d+|s=.+|g=[0-9a-fA-F-]+|b=.+)$"
+    },
+    "condition": {
+      "type": "object",
+      "properties": {
+        "nodeNs": {
+          "type": "string"
+        },
+        "operator": {
+          "type": "string",
+          "enum": [
+            "==",
+            "!=",
+            "<",
+            "<=",
+            ">",
+            ">="
+          ]
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        }
+      },
+      "required": [
+        "nodeNs",
+        "operator",
+        "value"
+      ],
+      "additionalProperties": false
+    },
+    "conditions": {
+      "type": "object",
+      "properties": {
+        "logic": {
+          "type": "string",
+          "enum": [
+            "AND",
+            "OR"
+          ]
+        },
+        "items": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/condition"
+          }
+        }
+      },
+      "required": [
+        "logic",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "stateTransition": {
+      "type": "object",
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/value"
+        },
+        "to": {
+          "$ref": "#/$defs/value"
+        },
+        "conditions": {
+          "$ref": "#/$defs/conditions"
+        },
+        "delay": {
+          "type": "number",
+          "minimum": 0
+        },
+        "priority": {
+          "type": "integer"
+        }
+      },
+      "required": [
+        "to"
+      ],
+      "additionalProperties": false
+    },
+    "stateMachine": {
+      "type": "object",
+      "properties": {
+        "states": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        "transitions": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/stateTransition"
+          }
+        }
+      },
+      "required": [
+        "states",
+        "transitions"
+      ],
+      "additionalProperties": false
+    },
+    "mapping": {
+      "type": "object",
+      "properties": {
+        "source": {
+          "type": "string"
+        },
+        "map": {
+          "type": "object",
+          "minProperties": 1,
+          "additionalProperties": {
+            "$ref": "#/$defs/value"
+          }
+        },
+        "defaultValue": {
+          "$ref": "#/$defs/value"
+        },
+        "bidirectional": {
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "source",
+        "map"
+      ],
+      "additionalProperties": false
+    },
+    "calculationInput": {
+      "oneOf": [
+        {
+          "type": "object",
+          "properties": {
+            "source": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "source"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "value": {
+              "$ref": "#/$defs/value"
+            }
+          },
+          "required": [
+            "value"
+          ],
+          "additionalProperties": false
+        },
+        {
+          "type": "object",
+          "properties": {
+            "previous": {
+              "const": true
+            }
+          },
+          "required": [
+            "previous"
+          ],
+          "additionalProperties": false
+        }
+      ]
+    },
+    "operatorStep": {
+      "type": "object",
+      "properties": {
+        "operator": {
+          "type": "string",
+          "enum": [
+            "add",
+            "subtract",
+            "multiply",
+            "divide"
+          ]
+        },
+        "inputs": {
+          "type": "array",
+          "minItems": 2,
+          "items": {
+            "$ref": "#/$defs/calculationInput"
+          }
+        }
+      },
+      "required": [
+        "operator",
+        "inputs"
+      ],
+      "additionalProperties": false
+    },
+    "functionStep": {
+      "type": "object",
+      "properties": {
+        "function": {
+          "type": "string",
+          "enum": [
+            "negate",
+            "absolute",
+            "round",
+            "floor",
+            "ceil",
+            "sqrt"
+          ]
+        },
+        "input": {
+          "$ref": "#/$defs/calculationInput"
+        }
+      },
+      "required": [
+        "function"
+      ],
+      "additionalProperties": false
+    },
+    "calculation": {
+      "type": "object",
+      "properties": {
+        "steps": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "$ref": "#/$defs/operatorStep"
+              },
+              {
+                "$ref": "#/$defs/functionStep"
+              }
+            ]
+          }
+        },
+        "limits": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            }
+          },
+          "minProperties": 1,
+          "additionalProperties": false
+        },
+        "precision": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 15
+        }
+      },
+      "required": [
+        "steps"
+      ],
+      "additionalProperties": false
+    },
+    "rootFolder": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      },
+      "required": [
+        "name",
+        "items"
+      ]
+    },
+    "folder": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "name": {
+          "type": "string"
+        },
+        "items": {
+          "type": "array",
+          "items": {
+            "$ref": "#/$defs/item"
+          }
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "items"
+      ],
+      "additionalProperties": false
+    },
+    "simulation": {
+      "type": "object",
+      "properties": {
+        "type": {
+          "type": "string",
+          "enum": [
+            "increase",
+            "decrease",
+            "randomize",
+            "sinus",
+            "anomaly",
+            "conditional",
+            "mapping",
+            "calculation",
+            "stateMachine"
+          ]
+        },
+        "interval": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "value": {
+          "type": "number"
+        },
+        "conditions": {
+          "$ref": "#/$defs/conditions"
+        },
+        "trueValue": {
+          "$ref": "#/$defs/value"
+        },
+        "falseValue": {
+          "$ref": "#/$defs/value"
+        },
+        "mapping": {
+          "$ref": "#/$defs/mapping"
+        },
+        "calculation": {
+          "$ref": "#/$defs/calculation"
+        },
+        "stateMachine": {
+          "$ref": "#/$defs/stateMachine"
+        },
+        "randomize": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "base": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "min",
+            "max",
+            "base"
+          ],
+          "additionalProperties": false
+        },
+        "sinus": {
+          "type": "object",
+          "properties": {
+            "amplitude": {
+              "type": "number"
+            },
+            "offset": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "amplitude",
+            "offset"
+          ],
+          "additionalProperties": false
+        },
+        "anomaly": {
+          "type": "object",
+          "properties": {
+            "min": {
+              "type": "number"
+            },
+            "max": {
+              "type": "number"
+            },
+            "targetValue": {
+              "$ref": "#/$defs/value"
+            },
+            "threshold": {
+              "type": "number"
+            },
+            "duration": {
+              "type": "number"
+            }
+          },
+          "required": [
+            "min",
+            "max",
+            "targetValue",
+            "threshold",
+            "duration"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "type",
+        "interval"
+      ],
+      "allOf": [
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "conditional"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "conditions",
+              "trueValue",
+              "falseValue"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "mapping"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "mapping"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "calculation"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "calculation"
+            ]
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "type": {
+                "const": "stateMachine"
+              }
+            }
+          },
+          "then": {
+            "required": [
+              "stateMachine"
+            ]
+          }
+        }
+      ],
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "$ref": "#/$defs/nodeId"
+        },
+        "name": {
+          "type": "string"
+        },
+        "value": {
+          "$ref": "#/$defs/value"
+        },
+        "valueMethods": {
+          "type": "array",
+          "items": {
+            "enum": [
+              "get",
+              "set"
+            ]
+          }
+        },
+        "simulation": {
+          "$ref": "#/$defs/simulation"
+        }
+      },
+      "required": [
+        "id",
+        "name",
+        "value",
+        "valueMethods"
+      ],
+      "additionalProperties": false
+    },
+    "item": {
+      "oneOf": [
+        {
+          "$ref": "#/$defs/folder"
+        },
+        {
+          "$ref": "#/$defs/node"
+        }
+      ]
+    }
   }
 }

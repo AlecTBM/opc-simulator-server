@@ -43,11 +43,21 @@ export type CalculationStep = CalculationOperatorStep | CalculationFunctionStep;
 
 export interface SimulationCalculation {
     steps: CalculationStep[];
-    limits?: {
-        min?: number;
-        max?: number;
-    };
+    limits?: { min?: number; max?: number };
     precision?: number;
+}
+
+export interface StateMachineTransition {
+    from?: SimulationValue;
+    to: SimulationValue;
+    conditions?: SimulationConditions;
+    delay?: number;
+    priority?: number;
+}
+
+export interface SimulationStateMachine {
+    states: SimulationValue[];
+    transitions: StateMachineTransition[];
 }
 
 export interface DeviceFolder {
@@ -64,14 +74,9 @@ export interface DeviceNode {
     valueMethods: ('set' | 'get')[];
     simulation?: {
         type:
-            | 'increase'
-            | 'decrease'
-            | 'randomize'
-            | 'sinus'
-            | 'anomaly'
-            | 'conditional'
-            | 'mapping'
-            | 'calculation';
+            | 'increase' | 'decrease' | 'randomize' | 'sinus'
+            | 'anomaly' | 'conditional' | 'mapping' | 'calculation'
+            | 'stateMachine';
         value?: number;
         interval: number;
         conditions?: SimulationConditions;
@@ -89,5 +94,6 @@ export interface DeviceNode {
         };
         mapping?: SimulationMapping;
         calculation?: SimulationCalculation;
+        stateMachine?: SimulationStateMachine;
     };
 }
