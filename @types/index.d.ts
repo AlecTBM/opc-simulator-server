@@ -3,6 +3,8 @@ import { DataType } from 'node-opcua';
 export type SimulationValue = number | string | boolean;
 export type ConditionOperator = '==' | '!=' | '<' | '<=' | '>' | '>=';
 export type ConditionLogic = 'AND' | 'OR';
+export type CalculationOperator = 'add' | 'subtract' | 'multiply' | 'divide';
+export type CalculationFunction = 'negate' | 'absolute' | 'round' | 'floor' | 'ceil' | 'sqrt';
 
 export interface SimulationCondition {
     nodeNs: string;
@@ -22,6 +24,32 @@ export interface SimulationMapping {
     bidirectional?: boolean;
 }
 
+export type CalculationInput =
+    | { source: string }
+    | { value: SimulationValue }
+    | { previous: true };
+
+export interface CalculationOperatorStep {
+    operator: CalculationOperator;
+    inputs: CalculationInput[];
+}
+
+export interface CalculationFunctionStep {
+    function: CalculationFunction;
+    input?: CalculationInput;
+}
+
+export type CalculationStep = CalculationOperatorStep | CalculationFunctionStep;
+
+export interface SimulationCalculation {
+    steps: CalculationStep[];
+    limits?: {
+        min?: number;
+        max?: number;
+    };
+    precision?: number;
+}
+
 export interface DeviceFolder {
     name: string;
     id: string;
@@ -35,7 +63,15 @@ export interface DeviceNode {
     value: SimulationValue;
     valueMethods: ('set' | 'get')[];
     simulation?: {
-        type: 'increase' | 'decrease' | 'randomize' | 'sinus' | 'anomaly' | 'conditional' | 'mapping';
+        type:
+            | 'increase'
+            | 'decrease'
+            | 'randomize'
+            | 'sinus'
+            | 'anomaly'
+            | 'conditional'
+            | 'mapping'
+            | 'calculation';
         value?: number;
         interval: number;
         conditions?: SimulationConditions;
@@ -52,5 +88,6 @@ export interface DeviceNode {
             ends?: boolean;
         };
         mapping?: SimulationMapping;
+        calculation?: SimulationCalculation;
     };
 }

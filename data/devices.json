@@ -318,3 +318,797 @@
     ]
   }
 }
+{
+  "Calculation_Test_Factory": {
+    "name": "Calculation Test Factory",
+    "items": [
+      {
+        "id": "ns=1;s=CALC.Inputs",
+        "name": "00_Inputs",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.A",
+            "name": "A_Number",
+            "value": 10,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.B",
+            "name": "B_Number",
+            "value": 4,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.NumericString",
+            "name": "NumericString",
+            "value": "12.5",
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.InvalidString",
+            "name": "InvalidString",
+            "value": "AUTO",
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.BoolTrue",
+            "name": "BoolTrue",
+            "value": true,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.BoolFalse",
+            "name": "BoolFalse",
+            "value": false,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.Negative",
+            "name": "Negative",
+            "value": -12.5,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.Decimal",
+            "name": "Decimal",
+            "value": 12.56,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.Total",
+            "name": "Total",
+            "value": 1000,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.Scrap",
+            "name": "Scrap",
+            "value": 25,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=CALC.Enabled",
+            "name": "Enabled",
+            "value": true,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test1",
+        "name": "01_Add",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Add",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "add",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.A"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.B"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test2",
+        "name": "02_Subtract",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Subtract",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "subtract",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.A"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.B"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test3",
+        "name": "03_Multiply_StringConversion",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Multiply",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "multiply",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.NumericString"
+                      },
+                      {
+                        "value": 2
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test4",
+        "name": "04_Divide",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Divide",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "divide",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.A"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.B"
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test5",
+        "name": "05_DivideByZero",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.DivideZero",
+            "name": "Result",
+            "value": 99,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "divide",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.A"
+                      },
+                      {
+                        "value": 0
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test6",
+        "name": "06_BooleanConversion",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.BoolAdd",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "add",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.BoolTrue"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.BoolFalse"
+                      },
+                      {
+                        "value": 5
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test7",
+        "name": "07_InvalidStringBecomesZero",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Invalid",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "add",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.InvalidString"
+                      },
+                      {
+                        "value": 5
+                      }
+                    ]
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test8",
+        "name": "08_Negate",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.negate",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "negate",
+                    "input": {
+                      "source": "ns=1;s=CALC.Negative"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test9",
+        "name": "09_Absolute",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.absolute",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "absolute",
+                    "input": {
+                      "source": "ns=1;s=CALC.Negative"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test10",
+        "name": "10_Round",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.round",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "round",
+                    "input": {
+                      "source": "ns=1;s=CALC.Decimal"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test11",
+        "name": "11_Floor",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.floor",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "floor",
+                    "input": {
+                      "source": "ns=1;s=CALC.Decimal"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test12",
+        "name": "12_Ceil",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.ceil",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "ceil",
+                    "input": {
+                      "source": "ns=1;s=CALC.Decimal"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test13",
+        "name": "13_SquareRoot",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Sqrt",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "sqrt",
+                    "input": {
+                      "value": 25
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test14",
+        "name": "14_SquareRootNegative",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.SqrtNegative",
+            "name": "Result",
+            "value": 99,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "function": "sqrt",
+                    "input": {
+                      "value": -25
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test15",
+        "name": "15_MinLimit",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.MinLimit",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "subtract",
+                    "inputs": [
+                      {
+                        "value": 5
+                      },
+                      {
+                        "value": 10
+                      }
+                    ]
+                  }
+                ],
+                "limits": {
+                  "min": 0
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test16",
+        "name": "16_MaxLimit",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.MaxLimit",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "multiply",
+                    "inputs": [
+                      {
+                        "value": 60
+                      },
+                      {
+                        "value": 2
+                      }
+                    ]
+                  }
+                ],
+                "limits": {
+                  "max": 100
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test17",
+        "name": "17_Precision",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Precision",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "divide",
+                    "inputs": [
+                      {
+                        "value": 10
+                      },
+                      {
+                        "value": 3
+                      }
+                    ]
+                  }
+                ],
+                "precision": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test18",
+        "name": "18_ChainedScrapPercentage",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.ScrapPercent",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "divide",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.Scrap"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.Total"
+                      }
+                    ]
+                  },
+                  {
+                    "operator": "multiply",
+                    "inputs": [
+                      {
+                        "previous": true
+                      },
+                      {
+                        "value": 100
+                      }
+                    ]
+                  },
+                  {
+                    "function": "absolute"
+                  }
+                ],
+                "limits": {
+                  "min": 0,
+                  "max": 100
+                },
+                "precision": 2
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test19",
+        "name": "19_CalculationWithCondition",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Conditional",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "add",
+                    "inputs": [
+                      {
+                        "source": "ns=1;s=CALC.A"
+                      },
+                      {
+                        "source": "ns=1;s=CALC.B"
+                      }
+                    ]
+                  }
+                ]
+              },
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=CALC.Enabled",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=CALC.Test20",
+        "name": "20_ChainedPreviousMultipleTimes",
+        "items": [
+          {
+            "id": "ns=1;s=CALC.Chain",
+            "name": "Result",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "calculation",
+              "interval": 1,
+              "calculation": {
+                "steps": [
+                  {
+                    "operator": "add",
+                    "inputs": [
+                      {
+                        "value": 2
+                      },
+                      {
+                        "value": 3
+                      }
+                    ]
+                  },
+                  {
+                    "operator": "multiply",
+                    "inputs": [
+                      {
+                        "previous": true
+                      },
+                      {
+                        "value": "4"
+                      }
+                    ]
+                  },
+                  {
+                    "function": "negate"
+                  },
+                  {
+                    "function": "absolute"
+                  }
+                ],
+                "precision": 0
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+}
