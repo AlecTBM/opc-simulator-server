@@ -1,209 +1,166 @@
 {
-  "Cycle_Test_Factory": {
-    "name": "Cycle and Condition Delay Test Factory",
+  "Select_Limits_Test_Factory": {
+    "name": "Select and Limits Test Factory",
     "items": [
       {
-        "id": "ns=1;s=C.Inputs",
+        "id": "ns=1;s=S.Inputs",
         "name": "00_Inputs",
         "items": [
           {
-            "id": "ns=1;s=C.Run",
-            "name": "Run",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=C.PA",
-            "name": "PackerA",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          },
-          {
-            "id": "ns=1;s=C.PB",
-            "name": "PackerB",
-            "value": true,
-            "valueMethods": [
-              "get",
-              "set"
-            ]
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=C.DelayOn",
-        "name": "01_Condition_OnDelay",
-        "items": [
-          {
-            "id": "ns=1;s=C.DelayOn.Result",
-            "name": "Result",
+            "id": "ns=1;s=S.Fill",
+            "name": "Filling",
             "value": false,
             "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "conditional",
-              "interval": 0.25,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "delay": {
-                  "on": 2
-                },
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=C.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=C.DelayOff",
-        "name": "02_Condition_OffDelay",
-        "items": [
+              "get",
+              "set"
+            ]
+          },
           {
-            "id": "ns=1;s=C.DelayOff.Result",
-            "name": "Result",
+            "id": "ns=1;s=S.Run",
+            "name": "Running",
             "value": true,
             "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=S.Mode",
+            "name": "Mode",
+            "value": 1,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=S.IncLim",
+        "name": "01_Increase_MaxLimit",
+        "items": [
+          {
+            "id": "ns=1;s=S.IncLim.V",
+            "name": "Value",
+            "value": 98,
+            "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "conditional",
-              "interval": 0.25,
-              "trueValue": true,
-              "falseValue": false,
-              "conditions": {
-                "logic": "AND",
-                "delay": {
-                  "off": 2
-                },
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=C.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
+              "type": "increase",
+              "interval": 1,
+              "value": 5,
+              "limits": {
+                "max": 100
               }
             }
           }
         ]
       },
       {
-        "id": "ns=1;s=C.Cycle50",
-        "name": "03_Cycle_50Percent_Boolean",
+        "id": "ns=1;s=S.DecLim",
+        "name": "02_Decrease_MinLimit",
         "items": [
           {
-            "id": "ns=1;s=C.Cycle50.Result",
-            "name": "Result",
-            "value": true,
+            "id": "ns=1;s=S.DecLim.V",
+            "name": "Value",
+            "value": 2,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "cycle",
-              "interval": 0.25,
-              "cycle": {
-                "onDuration": 2,
-                "offDuration": 2,
-                "onValue": true,
-                "offValue": false,
-                "inactiveValue": true
-              },
-              "conditions": {
-                "logic": "AND",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=C.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
+              "type": "decrease",
+              "interval": 1,
+              "value": 5,
+              "limits": {
+                "min": 0
               }
             }
           }
         ]
       },
       {
-        "id": "ns=1;s=C.CycleString",
-        "name": "04_Cycle_StringValues",
+        "id": "ns=1;s=S.Select",
+        "name": "03_Select_FirstMatch",
         "items": [
           {
-            "id": "ns=1;s=C.CycleString.Result",
-            "name": "Result",
-            "value": "Idle",
+            "id": "ns=1;s=S.Select.V",
+            "name": "Value",
+            "value": 50,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "cycle",
-              "interval": 0.25,
-              "cycle": {
-                "onDuration": 1,
-                "offDuration": 1,
-                "onValue": "Running",
-                "offValue": "Blocked",
-                "inactiveValue": "Idle"
+              "type": "select",
+              "interval": 1,
+              "limits": {
+                "min": 0,
+                "max": 100
               },
-              "conditions": {
-                "logic": "AND",
-                "items": [
+              "select": {
+                "cases": [
                   {
-                    "nodeNs": "ns=1;s=C.Run",
-                    "operator": "==",
-                    "value": true
-                  }
-                ]
-              }
-            }
-          }
-        ]
-      },
-      {
-        "id": "ns=1;s=C.Parallel",
-        "name": "05_ParallelPackers_50Percent",
-        "items": [
-          {
-            "id": "ns=1;s=C.Parallel.FillerRun",
-            "name": "FillerRunning",
-            "value": true,
-            "valueMethods": [
-              "get"
-            ],
-            "simulation": {
-              "type": "cycle",
-              "interval": 0.25,
-              "cycle": {
-                "onDuration": 3,
-                "offDuration": 3,
-                "onValue": true,
-                "offValue": false,
-                "inactiveValue": true
-              },
-              "conditions": {
-                "logic": "OR",
-                "items": [
-                  {
-                    "nodeNs": "ns=1;s=C.PA",
-                    "operator": "==",
-                    "value": false
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": false
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 3
+                    }
                   },
                   {
-                    "nodeNs": "ns=1;s=C.PB",
-                    "operator": "==",
-                    "value": false
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 2
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": false
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 1
+                    }
                   }
                 ]
               }
@@ -212,37 +169,170 @@
         ]
       },
       {
-        "id": "ns=1;s=C.DelayedCycle",
-        "name": "06_Cycle_WithConditionDelay",
+        "id": "ns=1;s=S.Default",
+        "name": "04_Select_Default",
         "items": [
           {
-            "id": "ns=1;s=C.DelayedCycle.Result",
-            "name": "Result",
-            "value": false,
+            "id": "ns=1;s=S.Default.V",
+            "name": "Value",
+            "value": 0,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "cycle",
-              "interval": 0.25,
-              "cycle": {
-                "onDuration": 1,
-                "offDuration": 1,
-                "onValue": true,
-                "offValue": false,
-                "inactiveValue": false
-              },
-              "conditions": {
-                "logic": "AND",
-                "delay": {
-                  "on": 2,
-                  "off": 1
-                },
-                "items": [
+              "type": "select",
+              "interval": 1,
+              "select": {
+                "cases": [
                   {
-                    "nodeNs": "ns=1;s=C.Run",
-                    "operator": "==",
-                    "value": true
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Mode",
+                          "operator": "==",
+                          "value": 2
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 10
+                    }
+                  }
+                ],
+                "default": {
+                  "type": "increase",
+                  "value": 1
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=S.Delay",
+        "name": "05_Select_WithDelayedCase",
+        "items": [
+          {
+            "id": "ns=1;s=S.Delay.V",
+            "name": "Value",
+            "value": 0,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "select",
+              "interval": 0.25,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "delay": {
+                        "on": 2
+                      },
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 1
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "id": "ns=1;s=S.Hopper",
+        "name": "06_HopperScenario",
+        "items": [
+          {
+            "id": "ns=1;s=S.Hopper.Level",
+            "name": "Level",
+            "value": 50,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "select",
+              "interval": 1,
+              "limits": {
+                "min": 0,
+                "max": 100
+              },
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": false
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 3
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 2
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=S.Fill",
+                          "operator": "==",
+                          "value": false
+                        },
+                        {
+                          "nodeNs": "ns=1;s=S.Run",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 1
+                    }
                   }
                 ]
               }
