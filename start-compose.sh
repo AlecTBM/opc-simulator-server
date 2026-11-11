@@ -11,4 +11,4 @@ fi
 printf 'OPCUA_HOST_IP=%s\n' "$HOST_IP" > .env
 echo "Starting stack with OPCUA_HOST_IP=$HOST_IP"
 
-docker compose up -d --build
+docker compose up -d
