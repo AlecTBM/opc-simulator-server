@@ -1,7 +1,8 @@
 FROM nodered/node-red:latest
 
-USER root
-RUN cd /data && npm install --omit=dev --no-audit --no-fund \
-    @flowfuse/node-red-dashboard \
-    node-red-contrib-opcua
+COPY --chown=node-red:root nodered/package.json /data/package.json
+RUN cd /data && npm install --omit=dev --no-audit --no-fund
+
+COPY --chown=node-red:root nodered/settings.js /data/settings.js
+
 USER node-red

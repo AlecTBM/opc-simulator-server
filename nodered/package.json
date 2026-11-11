@@ -1,0 +1,10 @@
+{
+  "name": "opc-simulator-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Node-RED OPC UA dashboard for opc-simulator-server",
+  "dependencies": {
+    "@flowfuse/node-red-dashboard": "latest",
+    "node-red-contrib-opcua": "latest"
+  }
+}

@@ -23,11 +23,15 @@ services:
     depends_on:
       - opc-simulator
     environment:
-      - TZ=Europe/Oslo
+      TZ: Europe/Oslo
+      FLOWS: flows.json
+      NODE_RED_CREDENTIAL_SECRET: ${NODE_RED_CREDENTIAL_SECRET:-opc-simulator-dashboard}
     ports:
       - "1880:1880"
     volumes:
       - node_red_data:/data
+      - ./nodered/flows.json:/data/flows.json
+      - ./nodered/settings.js:/data/settings.js:ro
 
 volumes:
   node_modules:
