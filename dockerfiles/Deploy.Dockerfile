@@ -1,10 +1,25 @@
-FROM node:20-alpine
+FROM node:20 AS build
 
 WORKDIR /app
+
 COPY package*.json ./
-RUN npm install
+RUN npm ci
+
 COPY . .
 RUN npm run build
 
+FROM node:20-slim AS runtime
 
-CMD ["npm", "run", "start"]
+WORKDIR /app
+ENV NODE_ENV=production
+
+COPY package*.json ./
+RUN npm ci --omit=dev && npm cache clean --force
+
+COPY --from=build /app/dist ./dist
+COPY data ./data
+COPY schemata ./schemata
+
+EXPOSE 4840
+
+CMD ["npm", "start"]

@@ -1,19 +1,19 @@
 {
-  "name": "opc-ua",
+  "name": "opc-simulator-server",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Configurable OPC UA simulation server",
+  "main": "dist/index.js",
   "scripts": {
     "dev": "nodemon src/index.ts",
     "dev:debug": "LOG_LEVEL=debug nodemon src/index.ts",
+    "build": "tsc",
+    "typecheck": "tsc --noEmit",
     "start": "node dist/index.js",
-    "lint": "eslint ./src/** --fix",
-    "test": "nyc mocha -r ts-node/register ./test/*.spec.ts --exit",
-    "build": "tsc"
+    "lint": "eslint ./src/**",
+    "lint:fix": "eslint ./src/** --fix"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": ["opc-ua", "opcua", "simulator", "industrial", "iot"],
+  "license": "MIT",
   "dependencies": {
     "ajv": "^8.16.0",
     "node-opcua": "^2.124.0",
