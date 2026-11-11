@@ -11,5 +11,21 @@ services:
     ports:
       - "4840:4840"
 
+  nodered:
+    build:
+      context: .
+      dockerfile: dockerfiles/NodeRED.Dockerfile
+    image: opc-simulator-nodered:local
+    restart: unless-stopped
+    init: true
+    depends_on:
+      - opc-simulator
+    environment:
+      - TZ=Europe/Oslo
+    ports:
+      - "1880:1880"
+    volumes:
+      - node_red_data:/data
 volumes:
   node_modules:
+  node_red_data:
