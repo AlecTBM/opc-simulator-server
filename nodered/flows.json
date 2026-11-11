@@ -1,35 +1,2260 @@
 [
   {
-    "id": "tab_opc_test",
+    "id": "tab_nordlys_dashboard",
     "type": "tab",
-    "label": "OPC UA Connection Test",
+    "label": "Nordlys Factory Dashboard",
     "disabled": false,
-    "info": "Git-managed baseline flow. Subscribe to Fjordgløtt RawTank1 Level."
+    "info": "Both factories on one Dashboard 2.0 page."
   },
   {
-    "id": "inject_subscribe",
+    "id": "inj_0",
     "type": "inject",
-    "z": "tab_opc_test",
-    "name": "Subscribe RawTank1 Level",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt1.level",
     "props": [
-      { "p": "topic", "vt": "str" },
-      { "p": "action", "v": "subscribe", "vt": "str" },
-      { "p": "interval", "v": "500", "vt": "num" }
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
     ],
     "repeat": "",
     "crontab": "",
     "once": true,
-    "onceDelay": "2",
+    "onceDelay": "2.0",
     "topic": "ns=1;s=FG.Process.RawTank1.Level;datatype=Double",
-    "x": 190,
-    "y": 120,
-    "wires": [["opc_client"]]
+    "x": 130,
+    "y": 80,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
   },
   {
-    "id": "opc_client",
+    "id": "inj_1",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt1.fill",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=FG.Process.RawTank1.Filling;datatype=Boolean",
+    "x": 130,
+    "y": 108,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_2",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt1.auto",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=FG.Process.RawTank1.AutoFillEnabled;datatype=Boolean",
+    "x": 130,
+    "y": 136,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_3",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt2.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=FG.Process.RawTank2.Level;datatype=Double",
+    "x": 130,
+    "y": 164,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_4",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt2.fill",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=FG.Process.RawTank2.Filling;datatype=Boolean",
+    "x": 130,
+    "y": 192,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_5",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.rt2.auto",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=FG.Process.RawTank2.AutoFillEnabled;datatype=Boolean",
+    "x": 130,
+    "y": 220,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_6",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Status.StateText;datatype=String",
+    "x": 130,
+    "y": 248,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_7",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.running",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Status.Running;datatype=Boolean",
+    "x": 130,
+    "y": 276,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_8",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.blocked",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Status.Blocked;datatype=Boolean",
+    "x": 130,
+    "y": 304,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_9",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.starved",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Status.Starved;datatype=Boolean",
+    "x": 130,
+    "y": 332,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_10",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.batch",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Batch.BatchId;datatype=String",
+    "x": 130,
+    "y": 360,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_11",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.process.product",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=FG.Process.Smaksmia.Batch.ProductCode;datatype=String",
+    "x": 130,
+    "y": 388,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_12",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft1.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=FG.Process.FillingTank1.Level;datatype=Double",
+    "x": 130,
+    "y": 416,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_13",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft1.route",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=FG.Process.FillingTank1.OutletRoute;datatype=Double",
+    "x": 130,
+    "y": 444,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_14",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft2.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=FG.Process.FillingTank2.Level;datatype=Double",
+    "x": 130,
+    "y": 472,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_15",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft2.route",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=FG.Process.FillingTank2.OutletRoute;datatype=Double",
+    "x": 130,
+    "y": 500,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_16",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft3.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=FG.Process.FillingTank3.Level;datatype=Double",
+    "x": 130,
+    "y": 528,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_17",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.ft3.route",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=FG.Process.FillingTank3.OutletRoute;datatype=Double",
+    "x": 130,
+    "y": 556,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_18",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Status.Running;datatype=Boolean",
+    "x": 130,
+    "y": 584,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_19",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.cmd",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Status.RunCommand;datatype=Boolean",
+    "x": 130,
+    "y": 612,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_20",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Status.State;datatype=String",
+    "x": 130,
+    "y": 640,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_21",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.speed",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Production.ActualSpeed;datatype=Double",
+    "x": 130,
+    "y": 668,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_22",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.count",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Production.TotalProduced;datatype=Double",
+    "x": 130,
+    "y": 696,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_23",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.recipe",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Recipe.RecipeName;datatype=String",
+    "x": 130,
+    "y": 724,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_24",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.filler.recipeNo",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Recipe.SelectedRecipe;datatype=Double",
+    "x": 380,
+    "y": 80,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_25",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.hopper",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Level;datatype=Double",
+    "x": 380,
+    "y": 108,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_26",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.p1.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=FG.Line1.Firkløver.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 136,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_27",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.p1.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=FG.Line1.Firkløver.Status.State;datatype=String",
+    "x": 380,
+    "y": 164,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_28",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.p2.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=FG.Line1.Eskeballetten.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 192,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_29",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.p2.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=FG.Line1.Eskeballetten.Status.State;datatype=String",
+    "x": 380,
+    "y": 220,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_30",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l1.pal.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=FG.Line1.PallePetter.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 248,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_31",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 276,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_32",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.cmd",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Status.RunCommand;datatype=Boolean",
+    "x": 380,
+    "y": 304,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_33",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Status.State;datatype=String",
+    "x": 380,
+    "y": 332,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_34",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.speed",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Production.ActualSpeed;datatype=Double",
+    "x": 380,
+    "y": 360,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_35",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.count",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Production.TotalProduced;datatype=Double",
+    "x": 380,
+    "y": 388,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_36",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.recipe",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Recipe.RecipeName;datatype=String",
+    "x": 380,
+    "y": 416,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_37",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.filler.recipeNo",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Recipe.SelectedRecipe;datatype=Double",
+    "x": 380,
+    "y": 444,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_38",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.hopper",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Level;datatype=Double",
+    "x": 380,
+    "y": 472,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_39",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.pa.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=FG.Line2.Åtteball.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 500,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_40",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.pa.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=FG.Line2.Åtteball.Status.State;datatype=String",
+    "x": 380,
+    "y": 528,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_41",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.pb.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=FG.Line2.Oktapakk.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 556,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_42",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.pb.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=FG.Line2.Oktapakk.Status.State;datatype=String",
+    "x": 380,
+    "y": 584,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_43",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "fg.l2.pal.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=FG.Line2.Palladium.Status.Running;datatype=Boolean",
+    "x": 380,
+    "y": 612,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_44",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.rt1.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=ST.RT1.LEVEL;datatype=Double",
+    "x": 380,
+    "y": 640,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_45",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.rt1.auto",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=ST.RT1.AUTOFILL;datatype=Boolean",
+    "x": 380,
+    "y": 668,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_46",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.rt2.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=ST.RT2.LEVEL;datatype=Double",
+    "x": 380,
+    "y": 696,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_47",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.rt2.auto",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=ST.RT2.AUTOFILL;datatype=Boolean",
+    "x": 380,
+    "y": 724,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_48",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.process.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=ST.Produktportalen.RUN;datatype=Boolean",
+    "x": 630,
+    "y": 80,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_49",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.process.blocked",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=ST.Produktportalen.BLOCKED;datatype=Boolean",
+    "x": 630,
+    "y": 108,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_50",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.process.starved",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=ST.Produktportalen.STARVED;datatype=Boolean",
+    "x": 630,
+    "y": 136,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_51",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.process.batch",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=ST.Produktportalen.BATCH;datatype=String",
+    "x": 630,
+    "y": 164,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_52",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.tt1.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=ST.TT1.LEVEL;datatype=Double",
+    "x": 630,
+    "y": 192,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_53",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.tt1.route",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=ST.TT1.ROUTE;datatype=Double",
+    "x": 630,
+    "y": 220,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_54",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.tt2.level",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=ST.TT2.LEVEL;datatype=Double",
+    "x": 630,
+    "y": 248,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_55",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.tt2.route",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=ST.TT2.ROUTE;datatype=Double",
+    "x": 630,
+    "y": 276,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_56",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.7199999999999998",
+    "topic": "ns=1;s=ST.L301.FIL.RUN;datatype=Boolean",
+    "x": 630,
+    "y": 304,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_57",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.cmd",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.84",
+    "topic": "ns=1;s=ST.L301.FIL.CMD;datatype=Boolean",
+    "x": 630,
+    "y": 332,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_58",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.96",
+    "topic": "ns=1;s=ST.L301.FIL.STATE;datatype=Double",
+    "x": 630,
+    "y": 360,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_59",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.speed",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "3.08",
+    "topic": "ns=1;s=ST.L301.FIL.SPEED;datatype=Double",
+    "x": 630,
+    "y": 388,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_60",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.count",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.0",
+    "topic": "ns=1;s=ST.L301.FIL.COUNT;datatype=Double",
+    "x": 630,
+    "y": 416,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_61",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.filler.recipe",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.12",
+    "topic": "ns=1;s=ST.L301.FIL.RECNO;datatype=Double",
+    "x": 630,
+    "y": 444,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_62",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.hopper",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.24",
+    "topic": "ns=1;s=ST.L301.FIL.HOP_LEVEL;datatype=Double",
+    "x": 630,
+    "y": 472,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_63",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.packer.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.36",
+    "topic": "ns=1;s=ST.L301.PK.RUN;datatype=Boolean",
+    "x": 630,
+    "y": 500,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_64",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.packer.state",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.48",
+    "topic": "ns=1;s=ST.L301.PK.STATE;datatype=Double",
+    "x": 630,
+    "y": 528,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "inj_65",
+    "type": "inject",
+    "z": "tab_nordlys_dashboard",
+    "name": "st.pallet.run",
+    "props": [
+      {
+        "p": "topic",
+        "vt": "str"
+      },
+      {
+        "p": "action",
+        "v": "subscribe",
+        "vt": "str"
+      },
+      {
+        "p": "interval",
+        "v": "1000",
+        "vt": "num"
+      }
+    ],
+    "repeat": "",
+    "crontab": "",
+    "once": true,
+    "onceDelay": "2.6",
+    "topic": "ns=1;s=ST.L301.PAL.RUN;datatype=Boolean",
+    "x": 630,
+    "y": 556,
+    "wires": [
+      [
+        "opc_client_sub"
+      ]
+    ]
+  },
+  {
+    "id": "opc_client_sub",
     "type": "OpcUa-Client",
-    "z": "tab_opc_test",
-    "endpoint": "opc_endpoint",
+    "z": "tab_nordlys_dashboard",
+    "endpoint": "opc_endpoint_main",
     "action": "subscribe",
     "deadbandtype": "a",
     "deadbandvalue": 0,
@@ -47,46 +2272,116 @@
     "sendBufferSize": 8192,
     "setstatusandtime": false,
     "keepsessionalive": true,
-    "name": "OPC Simulator",
-    "x": 470,
+    "name": "Subscribe factory tags",
+    "x": 730,
     "y": 120,
-    "wires": [["function_value"], [], []]
+    "wires": [
+      [
+        "fn_aggregate"
+      ],
+      [],
+      []
+    ]
   },
   {
-    "id": "function_value",
+    "id": "fn_aggregate",
     "type": "function",
-    "z": "tab_opc_test",
-    "name": "Normalize OPC value",
-    "func": "let value = msg.payload;\nif (value && typeof value === 'object' && value.value !== undefined) value = value.value;\nif (value && typeof value === 'object' && value.value !== undefined) value = value.value;\nmsg.payload = value;\nmsg.topic = 'FG.Process.RawTank1.Level';\nreturn msg;",
+    "z": "tab_nordlys_dashboard",
+    "name": "Aggregate factory state",
+    "func": "const tagMap = {\"ns=1;s=FG.Process.RawTank1.Level\": \"fg.rt1.level\", \"ns=1;s=FG.Process.RawTank1.Filling\": \"fg.rt1.fill\", \"ns=1;s=FG.Process.RawTank1.AutoFillEnabled\": \"fg.rt1.auto\", \"ns=1;s=FG.Process.RawTank2.Level\": \"fg.rt2.level\", \"ns=1;s=FG.Process.RawTank2.Filling\": \"fg.rt2.fill\", \"ns=1;s=FG.Process.RawTank2.AutoFillEnabled\": \"fg.rt2.auto\", \"ns=1;s=FG.Process.Smaksmia.Status.StateText\": \"fg.process.state\", \"ns=1;s=FG.Process.Smaksmia.Status.Running\": \"fg.process.running\", \"ns=1;s=FG.Process.Smaksmia.Status.Blocked\": \"fg.process.blocked\", \"ns=1;s=FG.Process.Smaksmia.Status.Starved\": \"fg.process.starved\", \"ns=1;s=FG.Process.Smaksmia.Batch.BatchId\": \"fg.process.batch\", \"ns=1;s=FG.Process.Smaksmia.Batch.ProductCode\": \"fg.process.product\", \"ns=1;s=FG.Process.FillingTank1.Level\": \"fg.ft1.level\", \"ns=1;s=FG.Process.FillingTank1.OutletRoute\": \"fg.ft1.route\", \"ns=1;s=FG.Process.FillingTank2.Level\": \"fg.ft2.level\", \"ns=1;s=FG.Process.FillingTank2.OutletRoute\": \"fg.ft2.route\", \"ns=1;s=FG.Process.FillingTank3.Level\": \"fg.ft3.level\", \"ns=1;s=FG.Process.FillingTank3.OutletRoute\": \"fg.ft3.route\", \"ns=1;s=FG.Line1.Fjordfylleren.Status.Running\": \"fg.l1.filler.run\", \"ns=1;s=FG.Line1.Fjordfylleren.Status.RunCommand\": \"fg.l1.filler.cmd\", \"ns=1;s=FG.Line1.Fjordfylleren.Status.State\": \"fg.l1.filler.state\", \"ns=1;s=FG.Line1.Fjordfylleren.Production.ActualSpeed\": \"fg.l1.filler.speed\", \"ns=1;s=FG.Line1.Fjordfylleren.Production.TotalProduced\": \"fg.l1.filler.count\", \"ns=1;s=FG.Line1.Fjordfylleren.Recipe.RecipeName\": \"fg.l1.filler.recipe\", \"ns=1;s=FG.Line1.Fjordfylleren.Recipe.SelectedRecipe\": \"fg.l1.filler.recipeNo\", \"ns=1;s=FG.Line1.Fjordfylleren.Hopper.Level\": \"fg.l1.hopper\", \"ns=1;s=FG.Line1.Firkløver.Status.Running\": \"fg.l1.p1.run\", \"ns=1;s=FG.Line1.Firkløver.Status.State\": \"fg.l1.p1.state\", \"ns=1;s=FG.Line1.Eskeballetten.Status.Running\": \"fg.l1.p2.run\", \"ns=1;s=FG.Line1.Eskeballetten.Status.State\": \"fg.l1.p2.state\", \"ns=1;s=FG.Line1.PallePetter.Status.Running\": \"fg.l1.pal.run\", \"ns=1;s=FG.Line2.Gløttfylleren.Status.Running\": \"fg.l2.filler.run\", \"ns=1;s=FG.Line2.Gløttfylleren.Status.RunCommand\": \"fg.l2.filler.cmd\", \"ns=1;s=FG.Line2.Gløttfylleren.Status.State\": \"fg.l2.filler.state\", \"ns=1;s=FG.Line2.Gløttfylleren.Production.ActualSpeed\": \"fg.l2.filler.speed\", \"ns=1;s=FG.Line2.Gløttfylleren.Production.TotalProduced\": \"fg.l2.filler.count\", \"ns=1;s=FG.Line2.Gløttfylleren.Recipe.RecipeName\": \"fg.l2.filler.recipe\", \"ns=1;s=FG.Line2.Gløttfylleren.Recipe.SelectedRecipe\": \"fg.l2.filler.recipeNo\", \"ns=1;s=FG.Line2.Gløttfylleren.Hopper.Level\": \"fg.l2.hopper\", \"ns=1;s=FG.Line2.Åtteball.Status.Running\": \"fg.l2.pa.run\", \"ns=1;s=FG.Line2.Åtteball.Status.State\": \"fg.l2.pa.state\", \"ns=1;s=FG.Line2.Oktapakk.Status.Running\": \"fg.l2.pb.run\", \"ns=1;s=FG.Line2.Oktapakk.Status.State\": \"fg.l2.pb.state\", \"ns=1;s=FG.Line2.Palladium.Status.Running\": \"fg.l2.pal.run\", \"ns=1;s=ST.RT1.LEVEL\": \"st.rt1.level\", \"ns=1;s=ST.RT1.AUTOFILL\": \"st.rt1.auto\", \"ns=1;s=ST.RT2.LEVEL\": \"st.rt2.level\", \"ns=1;s=ST.RT2.AUTOFILL\": \"st.rt2.auto\", \"ns=1;s=ST.Produktportalen.RUN\": \"st.process.run\", \"ns=1;s=ST.Produktportalen.BLOCKED\": \"st.process.blocked\", \"ns=1;s=ST.Produktportalen.STARVED\": \"st.process.starved\", \"ns=1;s=ST.Produktportalen.BATCH\": \"st.process.batch\", \"ns=1;s=ST.TT1.LEVEL\": \"st.tt1.level\", \"ns=1;s=ST.TT1.ROUTE\": \"st.tt1.route\", \"ns=1;s=ST.TT2.LEVEL\": \"st.tt2.level\", \"ns=1;s=ST.TT2.ROUTE\": \"st.tt2.route\", \"ns=1;s=ST.L301.FIL.RUN\": \"st.filler.run\", \"ns=1;s=ST.L301.FIL.CMD\": \"st.filler.cmd\", \"ns=1;s=ST.L301.FIL.STATE\": \"st.filler.state\", \"ns=1;s=ST.L301.FIL.SPEED\": \"st.filler.speed\", \"ns=1;s=ST.L301.FIL.COUNT\": \"st.filler.count\", \"ns=1;s=ST.L301.FIL.RECNO\": \"st.filler.recipe\", \"ns=1;s=ST.L301.FIL.HOP_LEVEL\": \"st.hopper\", \"ns=1;s=ST.L301.PK.RUN\": \"st.packer.run\", \"ns=1;s=ST.L301.PK.STATE\": \"st.packer.state\", \"ns=1;s=ST.L301.PAL.RUN\": \"st.pallet.run\"};\nlet topic = String(msg.topic || '').split(';datatype=')[0];\nlet key = tagMap[topic];\nif (!key) return null;\nlet value = msg.payload;\nif (value && typeof value === 'object' && value.value !== undefined) value = value.value;\nif (value && typeof value === 'object' && value.value !== undefined) value = value.value;\nlet state = flow.get('factoryState') || {};\nstate[key] = value;\nstate._updated = Date.now();\nflow.set('factoryState', state);\nmsg.payload = state;\nmsg.topic = 'factory-state';\nreturn msg;",
     "outputs": 1,
     "timeout": 0,
     "noerr": 0,
     "initialize": "",
     "finalize": "",
     "libs": [],
-    "x": 710,
+    "x": 970,
     "y": 120,
-    "wires": [["debug_value"]]
+    "wires": [
+      [
+        "ui_factory_template"
+      ]
+    ]
   },
   {
-    "id": "debug_value",
-    "type": "debug",
-    "z": "tab_opc_test",
-    "name": "RawTank1 Level",
-    "active": true,
-    "tosidebar": true,
-    "console": false,
-    "tostatus": true,
-    "complete": "payload",
-    "targetType": "msg",
-    "statusVal": "payload",
-    "statusType": "auto",
-    "x": 940,
+    "id": "ui_factory_template",
+    "type": "ui-template",
+    "z": "tab_nordlys_dashboard",
+    "group": "ui_group_main",
+    "page": "",
+    "ui": "",
+    "name": "Nordlys Factory Overview",
+    "order": 1,
+    "width": 0,
+    "height": 0,
+    "head": "",
+    "format": "<template>\n<div class=\"factory-dashboard\">\n  <header><div><h1>Nordlys Matverk</h1><p>Live OPC UA factory overview</p></div><div class=\"live\"><span></span> LIVE</div></header>\n  <section class=\"factory\">\n    <div class=\"section-title\"><h2>Fjordgløtt</h2><small>Structured OPC UA model</small></div>\n    <div class=\"process-row\">\n      <tank title=\"Råvare Roar\" :level=\"v('fg.rt1.level')\" :max=\"10000\" :active=\"v('fg.rt1.fill')\"><button @click=\"write('FG.Process.RawTank1.AutoFillEnabled','Boolean',!v('fg.rt1.auto'))\">Auto {{v('fg.rt1.auto')?'ON':'OFF'}}</button></tank>\n      <tank title=\"Ingrediens Ingrid\" :level=\"v('fg.rt2.level')\" :max=\"10000\" :active=\"v('fg.rt2.fill')\"><button @click=\"write('FG.Process.RawTank2.AutoFillEnabled','Boolean',!v('fg.rt2.auto'))\">Auto {{v('fg.rt2.auto')?'ON':'OFF'}}</button></tank>\n      <arrow/><machine title=\"Smaksmia\" :state=\"processState('fg')\"><b>{{text('fg.process.batch')}}</b><small>{{text('fg.process.product')}}</small></machine><arrow/>\n      <tank title=\"Tango Tank\" :level=\"v('fg.ft1.level')\" :max=\"10000\" :route=\"route(v('fg.ft1.route'))\"/><tank title=\"Foxtrot Fat\" :level=\"v('fg.ft2.level')\" :max=\"10000\" :route=\"route(v('fg.ft2.route'))\"/><tank title=\"Disco Dronning\" :level=\"v('fg.ft3.level')\" :max=\"10000\" :route=\"route(v('fg.ft3.route'))\"/>\n    </div>\n    <div class=\"line\"><h3>Linje 1</h3><machine title=\"Fjordfylleren\" :state=\"text('fg.l1.filler.state')\"><metric label=\"Speed\" :value=\"num('fg.l1.filler.speed')+' /h'\"/><metric label=\"Hopper\" :value=\"pct('fg.l1.hopper')+'%'\"/><small>{{text('fg.l1.filler.recipe')}}</small><div class=\"buttons\"><button @click=\"bool('FG.Line1.Fjordfylleren.Status.RunCommand',true)\">Start</button><button class=\"stop\" @click=\"bool('FG.Line1.Fjordfylleren.Status.RunCommand',false)\">Stop</button><button @click=\"numwrite('FG.Line1.Fjordfylleren.Recipe.SelectedRecipe',1)\">R1</button><button @click=\"numwrite('FG.Line1.Fjordfylleren.Recipe.SelectedRecipe',2)\">R2</button></div></machine><arrow/><machine title=\"Firkløver\" :state=\"text('fg.l1.p1.state')\"/><arrow/><machine title=\"Eskeballetten\" :state=\"text('fg.l1.p2.state')\"/><arrow/><machine title=\"Palle-Petter\" :state=\"v('fg.l1.pal.run')?'Running':'Stopped'\"/></div>\n    <div class=\"line\"><h3>Linje 2</h3><machine title=\"Gløttfylleren\" :state=\"text('fg.l2.filler.state')\"><metric label=\"Speed\" :value=\"num('fg.l2.filler.speed')+' /h'\"/><metric label=\"Hopper\" :value=\"pct('fg.l2.hopper')+'%'\"/><small>{{text('fg.l2.filler.recipe')}}</small><div class=\"buttons\"><button @click=\"bool('FG.Line2.Gløttfylleren.Status.RunCommand',true)\">Start</button><button class=\"stop\" @click=\"bool('FG.Line2.Gløttfylleren.Status.RunCommand',false)\">Stop</button><button @click=\"numwrite('FG.Line2.Gløttfylleren.Recipe.SelectedRecipe',1)\">R1</button><button @click=\"numwrite('FG.Line2.Gløttfylleren.Recipe.SelectedRecipe',2)\">R2</button></div></machine><arrow/><div class=\"parallel\"><machine title=\"Åtteball\" :state=\"text('fg.l2.pa.state')\"/><machine title=\"Oktapakk\" :state=\"text('fg.l2.pb.state')\"/></div><arrow/><machine title=\"Palladium\" :state=\"v('fg.l2.pal.run')?'Running':'Stopped'\"/></div>\n  </section>\n  <section class=\"factory legacy\">\n    <div class=\"section-title\"><h2>Smakstun</h2><small>Legacy PLC-style model</small></div>\n    <div class=\"process-row\"><tank title=\"Råvare-Rita\" :level=\"v('st.rt1.level')\" :max=\"10000\"><button @click=\"write('ST.RT1.AUTOFILL','Boolean',!v('st.rt1.auto'))\">Auto {{v('st.rt1.auto')?'ON':'OFF'}}</button></tank><tank title=\"Base-Bjarne\" :level=\"v('st.rt2.level')\" :max=\"10000\"><button @click=\"write('ST.RT2.AUTOFILL','Boolean',!v('st.rt2.auto'))\">Auto {{v('st.rt2.auto')?'ON':'OFF'}}</button></tank><arrow/><machine title=\"Produktportalen\" :state=\"processState('st')\"/><arrow/><tank title=\"Tappetank Turbo\" :level=\"v('st.tt1.level')\" :max=\"10000\" :route=\"route(v('st.tt1.route'))\"/><tank title=\"Tappetank Tetris\" :level=\"v('st.tt2.level')\" :max=\"10000\" :route=\"route(v('st.tt2.route'))\"/></div>\n    <div class=\"line\"><h3>Linje 301</h3><machine title=\"Liter-Lars\" :state=\"v('st.filler.run')?'Running':'Stopped'\"><metric label=\"Speed\" :value=\"num('st.filler.speed')+' /h'\"/><metric label=\"Hopper\" :value=\"pct('st.hopper')+'%'\"/><div class=\"buttons\"><button @click=\"bool('ST.L301.FIL.CMD',true)\">Start</button><button class=\"stop\" @click=\"bool('ST.L301.FIL.CMD',false)\">Stop</button><button @click=\"numwrite('ST.L301.FIL.RECNO',1)\">R1</button><button @click=\"numwrite('ST.L301.FIL.RECNO',2)\">R2</button></div></machine><arrow/><machine title=\"Tiern\" :state=\"v('st.packer.run')?'Running':'Stopped'\"/><arrow/><machine title=\"Stable-Ståle\" :state=\"v('st.pallet.run')?'Running':'Stopped'\"/></div>\n  </section>\n</div>\n</template>\n<script>\nconst Machine={props:['title','state'],template:`<div class=\"machine\" :class=\"cls\"><div class=\"lamp\"></div><h4>{{title}}</h4><strong>{{state||'Unknown'}}</strong><slot/></div>`,computed:{cls(){return String(this.state||'').toLowerCase()}}}\nconst Tank={props:['title','level','max','active','route'],template:`<div class=\"tank-card\"><h4>{{title}}</h4><div class=\"tank\"><div class=\"liquid\" :class=\"{active}\" :style=\"{height:percent+'%'}\"></div><span>{{Math.round(percent)}}%</span></div><small v-if=\"route\">{{route}}</small><slot/></div>`,computed:{percent(){return Math.max(0,Math.min(100,(Number(this.level)||0)/(Number(this.max)||100)*100))}}}\nconst Arrow={template:`<div class=\"arrow\">➜</div>`}\nconst Metric={props:['label','value'],template:`<div class=\"metric\"><span>{{label}}</span><b>{{value}}</b></div>`}\nexport default {components:{Machine,Tank,Arrow,Metric},data(){return{state:{}}},watch:{msg:{deep:true,handler(m){if(m&&m.payload)this.state={...m.payload}}}},methods:{v(k){return this.state[k]},text(k){return this.v(k)??'—'},num(k){let n=Number(this.v(k));return Number.isFinite(n)?Math.round(n):0},pct(k){return Math.round(Math.max(0,Math.min(100,Number(this.v(k))||0)))},route(v){return Number(v)===1?'→ Line 1':Number(v)===2?'→ Line 2':'No route'},processState(p){if(this.v(p+'.process.starved'))return'Starved';if(this.v(p+'.process.blocked'))return'Blocked';return this.v(p+'.process.running')?'Running':'Stopped'},write(nodeId,datatype,value){this.send({payload:{nodeId,datatype,value}})},bool(n,v){this.write(n,'Boolean',v)},numwrite(n,v){this.write(n,'Double',v)}}}\n</script>\n<style>\n.factory-dashboard{font-family:Inter,Arial,sans-serif;color:#e8eef7;background:#0b1220;padding:18px;min-height:100%;box-sizing:border-box}.factory-dashboard header{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}.factory-dashboard h1,.factory-dashboard h2,.factory-dashboard h3,.factory-dashboard h4{margin:0}.factory-dashboard header p{margin:4px 0;color:#8fa2bd}.live{font-weight:700;color:#66e3a4}.live span,.lamp{display:inline-block;width:10px;height:10px;border-radius:50%;background:#66e3a4;box-shadow:0 0 10px #66e3a4}.factory{border:1px solid #26354c;border-radius:14px;padding:16px;margin:14px 0;background:#111b2d}.legacy{background:#151a27}.section-title{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid #26354c;padding-bottom:10px}.section-title small{color:#8fa2bd}.process-row,.line{display:flex;align-items:center;gap:12px;overflow-x:auto;padding:16px 2px}.line{border-top:1px dashed #26354c}.line h3{min-width:70px;color:#8fa2bd}.machine{min-width:160px;background:#1a2940;border:2px solid #3d536f;border-radius:10px;padding:12px;position:relative}.machine.running{border-color:#39c879}.machine.blocked,.machine.starved{border-color:#f0b64b}.machine.faulted{border-color:#ee5d68}.machine.stopped{border-color:#64748b}.machine .lamp{position:absolute;right:10px;top:10px}.machine.blocked .lamp,.machine.starved .lamp{background:#f0b64b;box-shadow:0 0 10px #f0b64b}.machine.faulted .lamp{background:#ee5d68}.machine.stopped .lamp{background:#64748b;box-shadow:none}.machine strong{display:block;margin:8px 0;color:#c8d6e8}.machine small{display:block;color:#93a8c3}.parallel{display:grid;gap:8px}.tank-card{min-width:116px;text-align:center}.tank{width:74px;height:110px;border:3px solid #7991ad;border-radius:8px 8px 16px 16px;margin:8px auto;position:relative;overflow:hidden;background:#0b1220}.liquid{position:absolute;bottom:0;width:100%;background:linear-gradient(#42bde8,#2478c5);transition:height .5s}.liquid.active{animation:pulse 1s infinite alternate}.tank span{position:absolute;inset:45% 0 auto;font-weight:800;text-shadow:0 1px 3px #000}.tank-card small{display:block;color:#7ed0f5}.arrow{font-size:28px;color:#5d799d}.metric{display:flex;justify-content:space-between;font-size:12px;margin-top:5px}.metric span{color:#8fa2bd}.buttons{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}.factory-dashboard button{border:0;border-radius:6px;padding:5px 8px;background:#2c6ebd;color:white;cursor:pointer}.factory-dashboard button.stop{background:#a8404a}@keyframes pulse{from{filter:brightness(.8)}to{filter:brightness(1.3)}}@media(max-width:900px){.process-row,.line{align-items:stretch}.machine{min-width:150px}}\n</style>",
+    "storeOutMessages": true,
+    "passthru": false,
+    "resendOnRefresh": true,
+    "templateScope": "local",
+    "className": "",
+    "x": 1220,
     "y": 120,
-    "wires": []
+    "wires": [
+      [
+        "fn_write"
+      ]
+    ]
   },
   {
-    "id": "opc_endpoint",
+    "id": "fn_write",
+    "type": "function",
+    "z": "tab_nordlys_dashboard",
+    "name": "Format OPC write",
+    "func": "const p=msg.payload||{}; if(!p.nodeId||!p.datatype)return null; msg.topic=`ns=1;s=${p.nodeId};datatype=${p.datatype}`; msg.payload=p.value; msg.action='write'; return msg;",
+    "outputs": 1,
+    "timeout": 0,
+    "noerr": 0,
+    "initialize": "",
+    "finalize": "",
+    "libs": [],
+    "x": 1460,
+    "y": 180,
+    "wires": [
+      [
+        "opc_client_write"
+      ]
+    ]
+  },
+  {
+    "id": "opc_client_write",
+    "type": "OpcUa-Client",
+    "z": "tab_nordlys_dashboard",
+    "endpoint": "opc_endpoint_main",
+    "action": "write",
+    "deadbandtype": "a",
+    "deadbandvalue": 0,
+    "time": 1,
+    "timeUnit": "s",
+    "certificate": "None",
+    "localfile": "",
+    "localkeyfile": "",
+    "securitymode": "None",
+    "securitypolicy": "None",
+    "useTransport": false,
+    "maxChunkCount": 1,
+    "maxMessageSize": 8192,
+    "receiveBufferSize": 8192,
+    "sendBufferSize": 8192,
+    "setstatusandtime": false,
+    "keepsessionalive": true,
+    "name": "Write controls",
+    "x": 1700,
+    "y": 180,
+    "wires": [
+      [],
+      [],
+      []
+    ]
+  },
+  {
+    "id": "opc_endpoint_main",
     "type": "OpcUa-Endpoint",
     "endpoint": "opc.tcp://opc-simulator:4840/UA/Cpro",
     "secpol": "None",
@@ -95,5 +2390,79 @@
     "usercert": false,
     "usercertificate": "",
     "userprivatekey": ""
+  },
+  {
+    "id": "ui_base_main",
+    "type": "ui-base",
+    "name": "Nordlys Dashboard",
+    "path": "/dashboard",
+    "appIcon": "",
+    "includeClientData": true,
+    "acceptsClientConfig": [
+      "ui-notification",
+      "ui-control"
+    ],
+    "showPathInSidebar": false,
+    "headerContent": "page",
+    "navigationStyle": "default",
+    "titleBarStyle": "default",
+    "showReconnectNotification": true,
+    "notificationDisplayTime": 1,
+    "showDisconnectNotification": true,
+    "allowInstall": false
+  },
+  {
+    "id": "ui_theme_main",
+    "type": "ui-theme",
+    "name": "Nordlys Dark",
+    "colors": {
+      "surface": "#111b2d",
+      "primary": "#2c6ebd",
+      "bgPage": "#0b1220",
+      "groupBg": "#111b2d",
+      "groupOutline": "#26354c"
+    },
+    "sizes": {
+      "density": "default",
+      "pagePadding": "0px",
+      "groupGap": "0px",
+      "groupBorderRadius": "0px",
+      "widgetGap": "0px"
+    }
+  },
+  {
+    "id": "ui_page_main",
+    "type": "ui-page",
+    "name": "Factories",
+    "ui": "ui_base_main",
+    "path": "/factories",
+    "icon": "factory",
+    "layout": "grid",
+    "theme": "ui_theme_main",
+    "breakpoints": [
+      {
+        "name": "Default",
+        "px": "0",
+        "cols": "12"
+      }
+    ],
+    "order": 1,
+    "className": "",
+    "visible": "true",
+    "disabled": "false"
+  },
+  {
+    "id": "ui_group_main",
+    "type": "ui-group",
+    "name": "Factory Overview",
+    "page": "ui_page_main",
+    "width": "12",
+    "height": "1",
+    "order": 1,
+    "showTitle": false,
+    "className": "",
+    "visible": "true",
+    "disabled": "false",
+    "groupType": "default"
   }
 ]
