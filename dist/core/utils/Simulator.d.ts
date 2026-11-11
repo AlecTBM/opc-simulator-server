@@ -1,0 +1,33 @@
+import { Namespace } from 'node-opcua';
+import { DeviceNode } from '../../../@types';
+export default class Simulator {
+    namespace: Namespace;
+    node: DeviceNode;
+    t: number;
+    private transitionElapsed;
+    private conditionRuntime;
+    private cycleRuntime;
+    constructor(namespace: Namespace, node: DeviceNode);
+    simulateNodeValue(): void;
+    private executeTopLevel;
+    private select;
+    private executeSelected;
+    private executeSimple;
+    private rawConditionsSatisfied;
+    private conditionsSatisfied;
+    private evaluateCondition;
+    private numCmp;
+    private cycle;
+    private stateMachine;
+    private conditional;
+    private mapping;
+    private calculation;
+    private executeStep;
+    private resolve;
+    private toNum;
+    private safe;
+    private eq;
+    private applyLimitsToNode;
+    private anomaly;
+    private getNodeValue;
+}

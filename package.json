@@ -12,11 +12,17 @@
     "lint": "eslint ./src/**",
     "lint:fix": "eslint ./src/** --fix"
   },
-  "keywords": ["opc-ua", "opcua", "simulator", "industrial", "iot"],
+  "keywords": [
+    "opc-ua",
+    "opcua",
+    "simulator",
+    "industrial",
+    "iot"
+  ],
   "license": "MIT",
   "dependencies": {
-    "ajv": "^8.16.0",
-    "node-opcua": "^2.124.0",
+    "ajv": "^8.20.0",
+    "node-opcua": "^2.187.26",
     "pino": "^9.2.0",
     "pino-pretty": "^11.2.1"
   },
@@ -27,5 +33,8 @@
     "nodemon": "^3.1.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.4.5"
+  },
+  "engines": {
+    "node": ">=22.13.0"
   }
 }
