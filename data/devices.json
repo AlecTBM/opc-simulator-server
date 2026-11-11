@@ -13,19 +13,61 @@
               {
                 "id": "ns=1;s=FG.Process.RawTank1.Level",
                 "name": "Level",
-                "value": 7000,
+                "value": 10000,
                 "valueMethods": [
                   "get"
                 ],
                 "simulation": {
-                  "type": "sinus",
-                  "interval": 4,
-                  "sinus": {
-                    "amplitude": 1800,
-                    "offset": 6500
+                  "type": "select",
+                  "interval": 1,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank1.SelectedForProduction",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank1.SelectedForProduction",
+                              "operator": "==",
+                              "value": false
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank1.AutoFillEnabled",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      }
+                    ]
                   },
                   "limits": {
-                    "min": 500,
+                    "min": 0,
                     "max": 10000
                   }
                 }
@@ -70,6 +112,92 @@
                     ]
                   }
                 }
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank1.AutoFillEnabled",
+                "name": "AutoFillEnabled",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank1.SelectedForProduction",
+                "name": "SelectedForProduction",
+                "value": false,
+                "valueMethods": [
+                  "get"
+                ],
+                "simulation": {
+                  "type": "select",
+                  "interval": 0.25,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "OR",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 3
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "conditional",
+                          "trueValue": true,
+                          "falseValue": true
+                        }
+                      }
+                    ],
+                    "default": {
+                      "type": "conditional",
+                      "trueValue": false,
+                      "falseValue": false
+                    }
+                  }
+                }
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank1.Filling",
+                "name": "Filling",
+                "value": false,
+                "valueMethods": [
+                  "get"
+                ],
+                "simulation": {
+                  "type": "conditional",
+                  "interval": 0.25,
+                  "trueValue": true,
+                  "falseValue": false,
+                  "conditions": {
+                    "logic": "AND",
+                    "items": [
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank1.SelectedForProduction",
+                        "operator": "==",
+                        "value": false
+                      },
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank1.AutoFillEnabled",
+                        "operator": "==",
+                        "value": true
+                      },
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                        "operator": "<",
+                        "value": 10000
+                      }
+                    ]
+                  }
+                }
               }
             ]
           },
@@ -80,19 +208,61 @@
               {
                 "id": "ns=1;s=FG.Process.RawTank2.Level",
                 "name": "Level",
-                "value": 7000,
+                "value": 0,
                 "valueMethods": [
                   "get"
                 ],
                 "simulation": {
-                  "type": "sinus",
-                  "interval": 4,
-                  "sinus": {
-                    "amplitude": 1800,
-                    "offset": 6500
+                  "type": "select",
+                  "interval": 1,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank2.SelectedForProduction",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank2.SelectedForProduction",
+                              "operator": "==",
+                              "value": false
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.RawTank2.AutoFillEnabled",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      }
+                    ]
                   },
                   "limits": {
-                    "min": 500,
+                    "min": 0,
                     "max": 10000
                   }
                 }
@@ -137,6 +307,92 @@
                     ]
                   }
                 }
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank2.AutoFillEnabled",
+                "name": "AutoFillEnabled",
+                "value": true,
+                "valueMethods": [
+                  "get",
+                  "set"
+                ]
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank2.SelectedForProduction",
+                "name": "SelectedForProduction",
+                "value": false,
+                "valueMethods": [
+                  "get"
+                ],
+                "simulation": {
+                  "type": "select",
+                  "interval": 0.25,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "OR",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 4
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "conditional",
+                          "trueValue": true,
+                          "falseValue": true
+                        }
+                      }
+                    ],
+                    "default": {
+                      "type": "conditional",
+                      "trueValue": false,
+                      "falseValue": false
+                    }
+                  }
+                }
+              },
+              {
+                "id": "ns=1;s=FG.Process.RawTank2.Filling",
+                "name": "Filling",
+                "value": false,
+                "valueMethods": [
+                  "get"
+                ],
+                "simulation": {
+                  "type": "conditional",
+                  "interval": 0.25,
+                  "trueValue": true,
+                  "falseValue": false,
+                  "conditions": {
+                    "logic": "AND",
+                    "items": [
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank2.SelectedForProduction",
+                        "operator": "==",
+                        "value": false
+                      },
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank2.AutoFillEnabled",
+                        "operator": "==",
+                        "value": true
+                      },
+                      {
+                        "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                        "operator": "<",
+                        "value": 10000
+                      }
+                    ]
+                  }
+                }
               }
             ]
           },
@@ -147,16 +403,224 @@
               {
                 "id": "ns=1;s=FG.Process.FillingTank1.Level",
                 "name": "Level",
-                "value": 6500,
+                "value": 0,
                 "valueMethods": [
                   "get"
                 ],
                 "simulation": {
-                  "type": "sinus",
-                  "interval": 5,
-                  "sinus": {
-                    "amplitude": 3200,
-                    "offset": 5200
+                  "type": "select",
+                  "interval": 1,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 4
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 4
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 4
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank1.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      }
+                    ]
                   },
                   "limits": {
                     "min": 0,
@@ -278,16 +742,141 @@
               {
                 "id": "ns=1;s=FG.Process.FillingTank2.Level",
                 "name": "Level",
-                "value": 6500,
+                "value": 0,
                 "valueMethods": [
                   "get"
                 ],
                 "simulation": {
-                  "type": "sinus",
-                  "interval": 5,
-                  "sinus": {
-                    "amplitude": 3200,
-                    "offset": 5200
+                  "type": "select",
+                  "interval": 1,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank2.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank2.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank2.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank2.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      }
+                    ]
                   },
                   "limits": {
                     "min": 0,
@@ -409,16 +998,141 @@
               {
                 "id": "ns=1;s=FG.Process.FillingTank3.Level",
                 "name": "Level",
-                "value": 6500,
+                "value": 0,
                 "valueMethods": [
                   "get"
                 ],
                 "simulation": {
-                  "type": "sinus",
-                  "interval": 5,
-                  "sinus": {
-                    "amplitude": 3200,
-                    "offset": 5200
+                  "type": "select",
+                  "interval": 1,
+                  "select": {
+                    "cases": [
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 3
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank3.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 3
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank3.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 116.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                              "operator": "==",
+                              "value": 3
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "increase",
+                          "value": 166.67
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank3.OutletRoute",
+                              "operator": "==",
+                              "value": 1
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line1.Fjordfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      },
+                      {
+                        "conditions": {
+                          "logic": "AND",
+                          "items": [
+                            {
+                              "nodeNs": "ns=1;s=FG.Process.FillingTank3.OutletRoute",
+                              "operator": "==",
+                              "value": 2
+                            },
+                            {
+                              "nodeNs": "ns=1;s=FG.Line2.Gløttfylleren.Hopper.Filling",
+                              "operator": "==",
+                              "value": true
+                            }
+                          ]
+                        },
+                        "simulation": {
+                          "type": "decrease",
+                          "value": 50
+                        }
+                      }
+                    ]
                   },
                   "limits": {
                     "min": 0,
@@ -550,7 +1264,7 @@
                     ],
                     "simulation": {
                       "type": "stateMachine",
-                      "interval": 1,
+                      "interval": 0.25,
                       "stateMachine": {
                         "states": [
                           1,
@@ -561,27 +1275,87 @@
                         "transitions": [
                           {
                             "to": 2,
-                            "delay": 45,
-                            "priority": 0,
-                            "from": 1
+                            "delay": 0,
+                            "priority": 20,
+                            "from": 1,
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                                  "operator": "<=",
+                                  "value": 0
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                                  "operator": ">=",
+                                  "value": 2000
+                                }
+                              ]
+                            }
                           },
                           {
                             "to": 3,
-                            "delay": 45,
-                            "priority": 0,
-                            "from": 2
+                            "delay": 0,
+                            "priority": 20,
+                            "from": 2,
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                                  "operator": "<=",
+                                  "value": 0
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                                  "operator": ">=",
+                                  "value": 2000
+                                }
+                              ]
+                            }
                           },
                           {
                             "to": 4,
-                            "delay": 45,
-                            "priority": 0,
-                            "from": 3
+                            "delay": 0,
+                            "priority": 20,
+                            "from": 3,
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                                  "operator": "<=",
+                                  "value": 0
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                                  "operator": ">=",
+                                  "value": 2000
+                                }
+                              ]
+                            }
                           },
                           {
                             "to": 1,
-                            "delay": 45,
-                            "priority": 0,
-                            "from": 4
+                            "delay": 0,
+                            "priority": 20,
+                            "from": 4,
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                                  "operator": "<=",
+                                  "value": 0
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                                  "operator": ">=",
+                                  "value": 2000
+                                }
+                              ]
+                            }
                           }
                         ]
                       }
@@ -596,18 +1370,233 @@
                     ],
                     "simulation": {
                       "type": "conditional",
-                      "interval": 1,
+                      "interval": 0.25,
                       "trueValue": true,
                       "falseValue": false,
                       "conditions": {
                         "logic": "AND",
                         "items": [
                           {
-                            "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
-                            "operator": ">=",
-                            "value": 1
+                            "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Blocked",
+                            "operator": "==",
+                            "value": false
+                          },
+                          {
+                            "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Starved",
+                            "operator": "==",
+                            "value": false
                           }
                         ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "ns=1;s=FG.Process.Smaksmia.Status.Blocked",
+                    "name": "Blocked",
+                    "value": false,
+                    "valueMethods": [
+                      "get"
+                    ],
+                    "simulation": {
+                      "type": "select",
+                      "interval": 0.25,
+                      "select": {
+                        "cases": [
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                                  "operator": "==",
+                                  "value": 1
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.FillingTank1.Level",
+                                  "operator": ">=",
+                                  "value": 9999
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": true,
+                              "falseValue": true
+                            }
+                          },
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                                  "operator": "==",
+                                  "value": 2
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.FillingTank2.Level",
+                                  "operator": ">=",
+                                  "value": 9999
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": true,
+                              "falseValue": true
+                            }
+                          },
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                                  "operator": "==",
+                                  "value": 3
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.FillingTank3.Level",
+                                  "operator": ">=",
+                                  "value": 9999
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": true,
+                              "falseValue": true
+                            }
+                          },
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.State",
+                                  "operator": "==",
+                                  "value": 4
+                                },
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.FillingTank1.Level",
+                                  "operator": ">=",
+                                  "value": 9999
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": true,
+                              "falseValue": true
+                            }
+                          }
+                        ],
+                        "default": {
+                          "type": "conditional",
+                          "trueValue": false,
+                          "falseValue": false
+                        }
+                      }
+                    }
+                  },
+                  {
+                    "id": "ns=1;s=FG.Process.Smaksmia.Status.Starved",
+                    "name": "Starved",
+                    "value": false,
+                    "valueMethods": [
+                      "get"
+                    ],
+                    "simulation": {
+                      "type": "conditional",
+                      "interval": 0.25,
+                      "trueValue": true,
+                      "falseValue": false,
+                      "conditions": {
+                        "logic": "AND",
+                        "items": [
+                          {
+                            "nodeNs": "ns=1;s=FG.Process.RawTank1.Level",
+                            "operator": "<=",
+                            "value": 0
+                          },
+                          {
+                            "nodeNs": "ns=1;s=FG.Process.RawTank2.Level",
+                            "operator": "<=",
+                            "value": 0
+                          }
+                        ]
+                      }
+                    }
+                  },
+                  {
+                    "id": "ns=1;s=FG.Process.Smaksmia.Status.StateText",
+                    "name": "StateText",
+                    "value": "Running",
+                    "valueMethods": [
+                      "get"
+                    ],
+                    "simulation": {
+                      "type": "select",
+                      "interval": 0.25,
+                      "select": {
+                        "cases": [
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Starved",
+                                  "operator": "==",
+                                  "value": true
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": "Starved",
+                              "falseValue": "Starved"
+                            }
+                          },
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Blocked",
+                                  "operator": "==",
+                                  "value": true
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": "Blocked",
+                              "falseValue": "Blocked"
+                            }
+                          },
+                          {
+                            "conditions": {
+                              "logic": "AND",
+                              "items": [
+                                {
+                                  "nodeNs": "ns=1;s=FG.Process.Smaksmia.Status.Running",
+                                  "operator": "==",
+                                  "value": true
+                                }
+                              ]
+                            },
+                            "simulation": {
+                              "type": "conditional",
+                              "trueValue": "Running",
+                              "falseValue": "Running"
+                            }
+                          }
+                        ],
+                        "default": {
+                          "type": "conditional",
+                          "trueValue": "Stopped",
+                          "falseValue": "Stopped"
+                        }
                       }
                     }
                   }
@@ -5227,16 +6216,58 @@
           {
             "id": "ns=1;s=ST.RT1.LEVEL",
             "name": "LEVEL",
-            "value": 6000,
+            "value": 10000,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "sinus",
-              "interval": 5,
-              "sinus": {
-                "amplitude": 2500,
-                "offset": 5500
+              "type": "select",
+              "interval": 1,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT1.SELECTED",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 166.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT1.SELECTED",
+                          "operator": "==",
+                          "value": false
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.RT1.AUTOFILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 166.67
+                    }
+                  }
+                ]
               },
               "limits": {
                 "min": 0,
@@ -5260,6 +6291,68 @@
                 "max": 0.5
               }
             }
+          },
+          {
+            "id": "ns=1;s=ST.RT1.AUTOFILL",
+            "name": "AUTOFILL",
+            "value": true,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=ST.RT1.SELECTED",
+            "name": "SELECTED",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                    "operator": "==",
+                    "value": 1
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ns=1;s=ST.RT1.FILLING",
+            "name": "FILLING",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.RT1.SELECTED",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "nodeNs": "ns=1;s=ST.RT1.AUTOFILL",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
         ]
       },
@@ -5270,16 +6363,58 @@
           {
             "id": "ns=1;s=ST.RT2.LEVEL",
             "name": "LEVEL",
-            "value": 6000,
+            "value": 0,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "sinus",
-              "interval": 5,
-              "sinus": {
-                "amplitude": 2500,
-                "offset": 5500
+              "type": "select",
+              "interval": 1,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT2.SELECTED",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 166.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT2.SELECTED",
+                          "operator": "==",
+                          "value": false
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.RT2.AUTOFILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 166.67
+                    }
+                  }
+                ]
               },
               "limits": {
                 "min": 0,
@@ -5303,6 +6438,68 @@
                 "max": 0.5
               }
             }
+          },
+          {
+            "id": "ns=1;s=ST.RT2.AUTOFILL",
+            "name": "AUTOFILL",
+            "value": true,
+            "valueMethods": [
+              "get",
+              "set"
+            ]
+          },
+          {
+            "id": "ns=1;s=ST.RT2.SELECTED",
+            "name": "SELECTED",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                    "operator": "==",
+                    "value": 2
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "id": "ns=1;s=ST.RT2.FILLING",
+            "name": "FILLING",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.RT2.SELECTED",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "nodeNs": "ns=1;s=ST.RT2.AUTOFILL",
+                    "operator": "==",
+                    "value": true
+                  }
+                ]
+              }
+            }
           }
         ]
       },
@@ -5316,33 +6513,130 @@
             "value": true,
             "valueMethods": [
               "get"
-            ]
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.Produktportalen.BLOCKED",
+                    "operator": "==",
+                    "value": false
+                  },
+                  {
+                    "nodeNs": "ns=1;s=ST.Produktportalen.STARVED",
+                    "operator": "==",
+                    "value": false
+                  }
+                ]
+              }
+            }
           },
           {
             "id": "ns=1;s=ST.Produktportalen.STATE",
             "name": "STATE",
-            "value": 30,
+            "value": 1,
             "valueMethods": [
               "get"
-            ]
+            ],
+            "simulation": {
+              "type": "stateMachine",
+              "interval": 0.25,
+              "stateMachine": {
+                "states": [
+                  1,
+                  2
+                ],
+                "transitions": [
+                  {
+                    "to": 2,
+                    "delay": 0,
+                    "priority": 0,
+                    "from": 1,
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT1.LEVEL",
+                          "operator": "<=",
+                          "value": 0
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.RT2.LEVEL",
+                          "operator": ">=",
+                          "value": 2000
+                        }
+                      ]
+                    }
+                  },
+                  {
+                    "to": 1,
+                    "delay": 0,
+                    "priority": 0,
+                    "from": 2,
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.RT2.LEVEL",
+                          "operator": "<=",
+                          "value": 0
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.RT1.LEVEL",
+                          "operator": ">=",
+                          "value": 2000
+                        }
+                      ]
+                    }
+                  }
+                ]
+              }
+            }
           },
           {
             "id": "ns=1;s=ST.Produktportalen.SRC",
             "name": "SRC_TANK",
             "value": 1,
             "valueMethods": [
-              "get",
-              "set"
-            ]
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 0.5,
+              "mapping": {
+                "source": "ns=1;s=ST.Produktportalen.STATE",
+                "map": {
+                  "1": 1,
+                  "2": 2
+                },
+                "defaultValue": 0
+              }
+            }
           },
           {
             "id": "ns=1;s=ST.Produktportalen.DST",
             "name": "DST_TANK",
             "value": 1,
             "valueMethods": [
-              "get",
-              "set"
-            ]
+              "get"
+            ],
+            "simulation": {
+              "type": "mapping",
+              "interval": 0.5,
+              "mapping": {
+                "source": "ns=1;s=ST.Produktportalen.STATE",
+                "map": {
+                  "1": 1,
+                  "2": 2
+                },
+                "defaultValue": 0
+              }
+            }
           },
           {
             "id": "ns=1;s=ST.Produktportalen.FLOW",
@@ -5385,6 +6679,100 @@
               "get",
               "set"
             ]
+          },
+          {
+            "id": "ns=1;s=ST.Produktportalen.BLOCKED",
+            "name": "BLOCKED",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "select",
+              "interval": 0.25,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.TT1.LEVEL",
+                          "operator": ">=",
+                          "value": 9999
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "conditional",
+                      "trueValue": true,
+                      "falseValue": true
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 2
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.TT2.LEVEL",
+                          "operator": ">=",
+                          "value": 9999
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "conditional",
+                      "trueValue": true,
+                      "falseValue": true
+                    }
+                  }
+                ],
+                "default": {
+                  "type": "conditional",
+                  "trueValue": false,
+                  "falseValue": false
+                }
+              }
+            }
+          },
+          {
+            "id": "ns=1;s=ST.Produktportalen.STARVED",
+            "name": "STARVED",
+            "value": false,
+            "valueMethods": [
+              "get"
+            ],
+            "simulation": {
+              "type": "conditional",
+              "interval": 0.25,
+              "trueValue": true,
+              "falseValue": false,
+              "conditions": {
+                "logic": "AND",
+                "items": [
+                  {
+                    "nodeNs": "ns=1;s=ST.RT1.LEVEL",
+                    "operator": "<=",
+                    "value": 0
+                  },
+                  {
+                    "nodeNs": "ns=1;s=ST.RT2.LEVEL",
+                    "operator": "<=",
+                    "value": 0
+                  }
+                ]
+              }
+            }
           }
         ]
       },
@@ -5395,16 +6783,89 @@
           {
             "id": "ns=1;s=ST.TT1.LEVEL",
             "name": "LEVEL",
-            "value": 6500,
+            "value": 0,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "sinus",
-              "interval": 5,
-              "sinus": {
-                "amplitude": 3000,
-                "offset": 5200
+              "type": "select",
+              "interval": 1,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.TT1.ROUTE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.L301.FIL.HOP_FILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 116.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 166.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.TT1.ROUTE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.L301.FIL.HOP_FILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 50
+                    }
+                  }
+                ]
               },
               "limits": {
                 "min": 0,
@@ -5439,16 +6900,89 @@
           {
             "id": "ns=1;s=ST.TT2.LEVEL",
             "name": "LEVEL",
-            "value": 6500,
+            "value": 0,
             "valueMethods": [
               "get"
             ],
             "simulation": {
-              "type": "sinus",
-              "interval": 5,
-              "sinus": {
-                "amplitude": 3000,
-                "offset": 5200
+              "type": "select",
+              "interval": 1,
+              "select": {
+                "cases": [
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 2
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.TT2.ROUTE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.L301.FIL.HOP_FILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 116.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.STATE",
+                          "operator": "==",
+                          "value": 2
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.Produktportalen.RUN",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "increase",
+                      "value": 166.67
+                    }
+                  },
+                  {
+                    "conditions": {
+                      "logic": "AND",
+                      "items": [
+                        {
+                          "nodeNs": "ns=1;s=ST.TT2.ROUTE",
+                          "operator": "==",
+                          "value": 1
+                        },
+                        {
+                          "nodeNs": "ns=1;s=ST.L301.FIL.HOP_FILL",
+                          "operator": "==",
+                          "value": true
+                        }
+                      ]
+                    },
+                    "simulation": {
+                      "type": "decrease",
+                      "value": 50
+                    }
+                  }
+                ]
               },
               "limits": {
                 "min": 0,
