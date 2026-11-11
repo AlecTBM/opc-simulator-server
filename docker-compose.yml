@@ -5,6 +5,8 @@ services:
       dockerfile: dockerfiles/Dev.Dockerfile
     restart: unless-stopped
     init: true
+    environment:
+      OPCUA_HOST_IP: ${OPCUA_HOST_IP}
     volumes:
       - ./:/app
       - node_modules:/app/node_modules
@@ -26,6 +28,7 @@ services:
       - "1880:1880"
     volumes:
       - node_red_data:/data
+
 volumes:
   node_modules:
   node_red_data:

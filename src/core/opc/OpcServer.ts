@@ -17,9 +17,17 @@ export default class OpcServer {
             port: 4840,
         },
     ) {
+        const alternateHostname = [
+            process.env.OPCUA_HOST_IP,
+            'opc-simulator',
+        ].filter((hostname): hostname is string => Boolean(hostname));
+
+        Logger.info(`OPC UA alternate hostnames: ${alternateHostname.join(', ')}`);
+
         this.server = new OPCUAServer({
             port: port || 4840,
             resourcePath: '/UA/Cpro',
+            alternateHostname,
             buildInfo: {
                 productName: 'Cpro OPC UA Server',
                 buildNumber: '1.0.0',
@@ -33,7 +41,7 @@ export default class OpcServer {
             for (const device in this.devices) {
                 const deviceObject: DeviceFolder = devices[device];
                 this.printDeviceFolderStructure(deviceObject);
-                const serverDeviceObject = new ServerDeviceObject(this.server, deviceObject).init();
+                new ServerDeviceObject(this.server, deviceObject).init();
             }
         });
     }
