@@ -659,7 +659,7 @@
                     "source": "ns=1;s=FG.Process.Smaksmia.Status.State",
                     "map": {
                       "1": 1,
-                      "2": 0,
+                      "2": 1,
                       "3": 0,
                       "4": 1
                     },
@@ -914,9 +914,9 @@
                   "mapping": {
                     "source": "ns=1;s=FG.Process.Smaksmia.Status.State",
                     "map": {
-                      "1": 0,
+                      "1": 2,
                       "2": 2,
-                      "3": 0,
+                      "3": 2,
                       "4": 0
                     },
                     "defaultValue": 0
